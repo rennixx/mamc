@@ -121,9 +121,8 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="pt-24">
-      <section className="section-spacing">
-        <div className="container-breathable max-w-3xl">
+    <div className="pt-24 min-h-screen flex flex-col items-center justify-center">
+      <section className="w-full max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-cream-100 mb-4 text-center">
             Book Your Experience
           </h1>
@@ -132,9 +131,9 @@ export default function BookingPage() {
           </p>
 
           {/* Step Indicator */}
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-center mb-12">
             {steps.map((label, i) => (
-              <div key={label} className="flex items-center flex-1">
+              <div key={label} className="flex items-center">
                 <div className="flex flex-col items-center">
                   <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center font-sans font-bold text-sm transition-all ${
@@ -151,7 +150,7 @@ export default function BookingPage() {
                 </div>
                 {i < steps.length - 1 && (
                   <div
-                    className={`flex-1 h-0.5 mx-2 ${
+                    className={`w-20 sm:w-32 h-0.5 mx-3 ${
                       i < step ? 'bg-gold-500' : 'bg-cream-400/10'
                     }`}
                   />
@@ -368,7 +367,6 @@ export default function BookingPage() {
               )}
             </div>
           </div>
-        </div>
       </section>
     </div>
   )
