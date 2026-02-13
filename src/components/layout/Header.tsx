@@ -37,7 +37,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="glass-nav mx-4 mt-4 rounded-2xl px-6 py-3">
+      <nav className="glass-nav max-w-6xl mx-auto mt-4 rounded-2xl px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="text-xl font-serif font-bold text-gold-400" onClick={closeMobileMenu}>
