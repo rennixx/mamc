@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "ئەسپەکانمان - سەنتەری مام",
+    "description": "ئەسپە جوانەکانیان لە سەنتەری مام بناسن",
+    "keywords": "ئەسپ، سواری، سوارچاکی، هەولێر، کوردستان"
+  },
+  "title": "ئەسپەکانمان",
+  "subtitle": "ئەسپە جوانەکەمان بناسن",
+  "filters": {
+    "availability": "بەردەستی",
+    "all": "هەموو",
+    "available": "بەردەستە",
+    "experience": "ئاستی ئەزموون",
+    "allLevels": "هەموو ئاستەکان",
+    "showing": "پیشاندانی {{count}} ئەسپ"
+  },
+  "levels": {
+    "beginner": "سەرەتایی",
+    "novice": "کەم ئەزموون",
+    "intermediate": "مامناوەند",
+    "advanced": "پێشکەوتوو"
+  },
+  "genders": {
+    "male": "نێر",
+    "female": "مێ",
+    "stallion": "ئەسپی نێر",
+    "mare": "ئەسپی مێ",
+    "gelding": "ئەسپی کووژاوە"
+  },
+  "age": "تەمەن",
+  "gender": "ڕەگەز",
+  "color": "ڕەنگ",
+  "maxWeight": "ئەوەندەی کێش",
+  "availability": {
+    "available": "بەردەستە",
+    "unavailable": "بەردەست نییە"
+  },
+  "noHorses": "هیچ ئەسپێک نەدۆزرایەوە",
+  "selectHorse": "هەڵبژاردنی {{name}}",
+  "viewDetails": "بینینی وردەکاری",
+  "unsuitableWarning": "ئەم ئەسپە ڕەنگاڵێی ئاستی ئەزموونی تۆ نییە."
+}

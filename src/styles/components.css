@@ -1,0 +1,95 @@
+@layer components {
+  /* Glass cards */
+  .glass-card {
+    @apply bg-white/8 backdrop-blur-md border border-white/15 shadow-lg;
+  }
+
+  .admin-glass-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-nav {
+    @apply bg-forest-900/80 backdrop-blur-md border-b border-white/10;
+  }
+
+  .section-spacing {
+    @apply py-20 md:py-32;
+  }
+
+  .container-breathable {
+    @apply container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl;
+  }
+
+  .nav-link {
+    @apply relative font-sans font-medium text-sm text-cream-100
+           hover:text-gold-400 transition-colors;
+  }
+
+  .nav-link::after {
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400
+           group-hover:w-full transition-all duration-300;
+    content: '';
+  }
+
+  .lang-button {
+    @apply px-2 md:px-3 py-1 md:py-1.5 font-sans text-xs font-bold
+           transition-all min-w-[40px] md:min-w-[45px];
+  }
+
+  .lang-button-active {
+    @apply bg-gold-500 text-forest-900 shadow-tactile scale-105;
+  }
+
+  .lang-button-inactive {
+    @apply text-cream-100 hover:bg-white/10;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 bg-cream-400/10 border border-cream-400/20
+           text-cream-100 font-sans focus:outline-none focus:border-gold-400
+           rounded transition-colors;
+  }
+
+  .form-label {
+    @apply flex items-center gap-2 text-cream-200 font-sans font-semibold mb-2;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-3
+           hover:border-gold-400 hover:shadow-luxury;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-5xl font-serif font-bold text-center
+           text-cream-100 mb-4 md:mb-6;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl font-sans text-cream-200 text-center
+           max-w-3xl mx-auto mb-12 md:mb-16;
+  }
+
+  .text-accent {
+    @apply text-gold-400;
+  }
+
+  .shadow-tactile {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-tactile-hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .shadow-luxury {
+    box-shadow: 0 10px 40px rgba(36, 59, 83, 0.15);
+  }
+
+  .shadow-luxury-lg {
+    box-shadow: 0 20px 60px rgba(36, 59, 83, 0.2);
+  }
+}

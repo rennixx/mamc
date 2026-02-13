@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "About Us - MAM Center Equestrian Club",
+    "description": "Discover the story of MAM Center, Kurdistan's premier equestrian destination. Learn about our passion for horses, our stunning mountain location, and our commitment to excellence.",
+    "keywords": "about MAM Center, equestrian center Iraq, horse riding Kurdistan, MAM Center story"
+  },
+  "scrollPrompt": "Scroll to continue",
+  "vision": {
+    "chapter": "Chapter 01",
+    "title": "Where Dreams Meet Horizons",
+    "subtitle": "Our journey began with a simple belief",
+    "story": "At MAM Center, we believe that the bond between humans and horses is one of nature's most beautiful connections. Founded with a passion for equestrian excellence and a deep love for Kurdistan's stunning landscapes, we created a sanctuary where riders of all levels can discover the magic of horse riding. Our mission is to share this transformative experience with everyone who walks through our gates."
+  },
+  "horsesStories": {
+    "title": "Our Beloved Horses",
+    "subtitle": "Meet the hearts of MAM Center",
+    "spirit": {
+      "story": "Spirit has a gentle soul that calms even the most nervous riders. He seems to understand exactly what each person needs, providing confidence with every gentle step.",
+      "personality": "Gentle & Patient",
+      "funFact": "Spirit once helped a young rider overcome their fear of horses in just one session. He stood perfectly still while they built up the courage to approach him."
+    },
+    "thunder": {
+      "story": "Thunder is our magnificent show jumper who inspires advanced riders to push their limits. His powerful build and graceful movements make every ride feel like flying.",
+      "personality": "Majestic & Bold",
+      "funFact": "Thunder has won 12 regional jumping competitions and loves to show off his skills during our annual exhibition events."
+    },
+    "lucky": {
+      "story": "Lucky earned her name by surviving a difficult journey before finding her forever home with us. Her resilience and affectionate nature make her a favorite among children and beginners.",
+      "personality": "Resilient & Loving",
+      "funFact": "Lucky has an incredible memory - she remembers and greets riders she hasn't seen in months with excited whinnies!"
+    }
+  },
+  "theLand": {
+    "title": "Our Land",
+    "subtitle": "Nestled in the heart of Kurdistan's mountains",
+    "description": "MAM Center is blessed with a location that feels like it was chosen by the horses themselves. Surrounded by the majestic mountains of Kurdistan, our trails offer breathtaking views that change with the seasons. The fresh mountain air, the golden sunlight streaming through the peaks, and the peaceful sounds of nature create the perfect backdrop for the equestrian experience.",
+    "seasons": {
+      "summer": {
+        "title": "Summer Adventures",
+        "description": "Golden mornings on mountain trails, refreshing rides through valleys, and sunset sessions that paint the sky in warm hues."
+      },
+      "winter": {
+        "title": "Winter Wonder",
+        "description": "Snow-capped peaks create a magical backdrop for indoor training sessions and peaceful moments in our heated lounge area."
+      }
+    }
+  },
+  "values": {
+    "title": "What We Believe In",
+    "subtitle": "The principles that guide everything we do",
+    "brandName": "MAM",
+    "items": {
+      "horseWelfare": {
+        "title": "Horse Welfare First",
+        "description": "Our horses are family. They receive the best care, proper rest, and all the love they deserve."
+      },
+      "confidence": {
+        "title": "Building Confidence",
+        "description": "Every rider starts somewhere. We create a safe, supportive environment where confidence grows naturally."
+      },
+      "community": {
+        "title": "Community Connection",
+        "description": "We're more than a riding center - we're a family of horse lovers united by passion."
+      },
+      "nature": {
+        "title": "Respect for Nature",
+        "description": "We honor the land that hosts us, practicing sustainable stewardship of our beautiful environment."
+      }
+    }
+  },
+  "facility": {
+    "title": "Our Facility",
+    "subtitle": "A space designed for horses and humans alike",
+    "items": {
+      "indoorArena": {
+        "title": "Indoor Riding Arena",
+        "description": "Our climate-controlled indoor arena ensures year-round training regardless of weather conditions."
+      },
+      "outdoorTrails": {
+        "title": "Mountain Trails",
+        "description": "Miles of scenic trails through Kurdistan's most breathtaking landscapes, from valleys to peaks."
+      },
+      "lounge": {
+        "title": "Guest Lounge",
+        "description": "A comfortable space for riders and families to relax, enjoy refreshments, and share stories."
+      },
+      "stables": {
+        "title": "Premium Stables",
+        "description": "Spacious, clean stables designed for our horses' comfort, with proper ventilation and natural light."
+      }
+    }
+  },
+  "cta": {
+    "title": "Write Your Own Story",
+    "subtitle": "Join us at MAM Center and create memories that will last a lifetime. Your journey with horses begins here.",
+    "primary": "Start Your Journey",
+    "secondary": "Contact Us"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "Baran Coffee",
+    "subtitle": "Premium coffee in the heart of nature"
+  },
+  "about": {
+    "title": "A Unique Coffee Experience",
+    "description": "Nestled within MAM Equestrian Center, Baran Coffee offers a serene escape where you can enjoy premium coffee and delicious pastries while surrounded by the beauty of horses and nature.",
+    "highlight": "Open daily from 8 AM to 10 PM"
+  },
+  "menu": {
+    "title": "Our Menu",
+    "coffee": {
+      "title": "Coffee & Beverages",
+      "items": {
+        "espresso": "Espresso",
+        "americano": "Americano",
+        "cappuccino": "Cappuccino",
+        "latte": "Latte",
+        "mocha": "Mocha",
+        "turkish": "Turkish Coffee",
+        "tea": "Fresh Tea",
+        "juice": "Fresh Juices"
+      }
+    },
+    "food": {
+      "title": "Food & Pastries",
+      "items": {
+        "croissant": "Fresh Croissants",
+        "sandwich": "Gourmet Sandwiches",
+        "salad": "Fresh Salads",
+        "cake": "Homemade Cakes",
+        "cookies": "Artisan Cookies",
+        "breakfast": "Breakfast Platters"
+      }
+    }
+  },
+  "features": {
+    "title": "Why Visit Baran Coffee?",
+    "items": {
+      "view": {
+        "title": "Scenic Views",
+        "description": "Enjoy your coffee with panoramic views of our riding arenas and stables"
+      },
+      "quality": {
+        "title": "Premium Quality",
+        "description": "We use only the finest coffee beans and fresh ingredients"
+      },
+      "atmosphere": {
+        "title": "Peaceful Atmosphere",
+        "description": "A tranquil setting perfect for relaxation or meetings"
+      },
+      "wifi": {
+        "title": "Free WiFi",
+        "description": "Stay connected while you enjoy your coffee"
+      }
+    }
+  },
+  "cta": {
+    "title": "Visit Us Today",
+    "description": "Whether you're here for the horses or just the coffee, we'd love to see you.",
+    "button": "Get Directions"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "title": "Horse Riding Safari",
+    "subtitle": "Discover Kurdistan's natural beauty on horseback"
+  },
+  "route": {
+    "title": "Scenic Routes",
+    "subtitle": "Choose your adventure level",
+    "difficulty": {
+      "beginner": "Beginner Walk",
+      "advanced": "Advanced Gallop"
+    },
+    "points": {
+      "start": "Start Point",
+      "valley": "Valley View",
+      "peak": "Mountain Peak",
+      "finish": "Finish"
+    }
+  },
+  "difficulty": {
+    "beginner": {
+      "duration": "2-3 hours",
+      "pace": "Walking speed, frequent photo stops",
+      "skill": "No prior experience needed",
+      "highlight": "Meadow path with mountain views"
+    },
+    "advanced": {
+      "duration": "1.5-2 hours",
+      "pace": "Cantering with controlled gallop sections",
+      "skill": "Confident at trot and canter",
+      "highlight": "Open fields + challenging hill climb"
+    },
+    "labels": {
+      "duration": "Duration",
+      "pace": "Pace",
+      "skill": "Skill Required",
+      "highlight": "Trail Highlight"
+    }
+  },
+  "bring": {
+    "title": "What to Bring?",
+    "essential": "Essential",
+    "optional": "Optional",
+    "items": {
+      "closedShoes": "Closed-toe shoes (no sandals)",
+      "sunscreenHat": "Sunscreen & hat",
+      "waterBottle": "Water bottle (1L minimum)",
+      "longPants": "Long pants recommended",
+      "camera": "Camera/phone for photos",
+      "jacket": "Light jacket (mornings can be cool)",
+      "sunglasses": "Sunglasses",
+      "repellent": "Insect repellent"
+    },
+    "tip": "Tip: Screenshot this list or print this page for easy reference"
+  },
+  "booking": {
+    "title": "Ready to Ride?",
+    "description": "Book your mountain adventure today. Group rates available for 5+ riders.",
+    "ctaPrimary": "Book Now",
+    "ctaSecondary": "Ask About Group Rates",
+    "info": {
+      "duration": {
+        "label": "Duration",
+        "value": "1.5 - 3 hours depending on route"
+      },
+      "groupSize": {
+        "label": "Group Size",
+        "value": "Max 8 riders per guide"
+      },
+      "availability": {
+        "label": "Availability",
+        "value": "Daily, 8 AM - 5 PM (weather permitting)"
+      }
+    },
+    "cta": {
+      "mobile": "Book Your Safari",
+      "desktop": "Book Safari"
+    }
+  },
+  "faq": {
+    "title": "Safari Questions?",
+    "subtitle": "Everything you need to know before booking your adventure",
+    "q1": {
+      "question": "Do I need prior horse riding experience?",
+      "answer": "No! We cater to all skill levels. Our guides will match you with a suitable horse and provide basic instruction before the safari. Beginners are always welcome."
+    },
+    "q2": {
+      "question": "What's the minimum age for safari?",
+      "answer": "The minimum age is 8 years old for our regular safari. Children must be accompanied by an adult. We also offer special family safaris for younger children (ages 6-7) with parent-led horses."
+    },
+    "q3": {
+      "question": "How long does the safari last?",
+      "answer": "Our standard safari is 2-3 hours including breaks. We also offer half-day (4-5 hours) and full-day (6-8 hours) safaris with lunch included for more experienced riders."
+    },
+    "q4": {
+      "question": "What should I wear?",
+      "answer": "Wear comfortable long pants (jeans or riding pants), closed-toe shoes with a small heel (boots are best), and layers for changing weather. We provide helmets and safety equipment."
+    },
+    "q5": {
+      "question": "Is it safe? What about insurance?",
+      "answer": "Safety is our top priority. All riders wear helmets, guides are certified, and horses are well-trained. We carry liability insurance, but recommend riders have personal travel/accident insurance."
+    },
+    "q6": {
+      "question": "Can I bring my camera?",
+      "answer": "Absolutely! The views are stunning. We recommend secure bags or backpacks. Our guides can also take photos at scenic stops. GoPros and action cameras are welcome."
+    },
+    "q7": {
+      "question": "What's included in the price?",
+      "answer": "Price includes: horse rental, helmet, guide service, bottled water, and scenic route access. Longer safaris include snacks/lunch. Transportation to the starting point is not included."
+    },
+    "q8": {
+      "question": "Do you offer group discounts?",
+      "answer": "Yes! Groups of 5+ people receive 10% off, and groups of 10+ receive 15% off. Perfect for corporate outings, family reunions, or friend groups. Contact us for custom packages."
+    }
+  }
+}

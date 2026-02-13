@@ -1,0 +1,85 @@
+{
+  "calendar": {
+    "title": "Select Date & Time",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "availableTimes": "Available Times",
+    "full": "Full",
+    "bookingSummary": "Booking Summary",
+    "at": "at",
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "days": {
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat"
+    },
+    "times": {
+      "8am": "8:00 AM",
+      "10am": "10:00 AM",
+      "12pm": "12:00 PM",
+      "2pm": "2:00 PM",
+      "4pm": "4:00 PM",
+      "6pm": "6:00 PM"
+    }
+  },
+  "maps": {
+    "title": "Our Location",
+    "visitTitle": "Visit MAM Center",
+    "getDirections": "Get Directions",
+    "centerName": "MAM Center",
+    "address": {
+      "line1": "Erbil - Soran Road",
+      "line2": "Shaqlawa District",
+      "line3": "Kurdistan Region, Iraq"
+    },
+    "info": {
+      "fromErbil": "From Erbil City",
+      "fromErbilValue": "45 minutes via Soran Road",
+      "parking": "Parking",
+      "parkingValue": "Free on-site parking available",
+      "hours": "Open Hours",
+      "hoursValue": "Daily 8:00 AM - 8:00 PM"
+    }
+  },
+  "stats": {
+    "happyRiders": "Happy Riders",
+    "yearsExperience": "Years Experience",
+    "horses": "Beautiful Horses"
+  },
+  "faq": {
+    "stillHaveQuestions": "Still have questions? We're here to help!",
+    "contactUs": "Contact Us"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real experiences from our community",
+    "joinSatisfied": "Join hundreds of satisfied riders and visitors",
+    "readMoreReviews": "Read more reviews on Google",
+    "viewAllReviews": "View All Google Reviews"
+  },
+  "horses": {
+    "yourHorse": "Your Horse",
+    "riderHorse": "Rider {{number}}'s Horse",
+    "selected": "Selected",
+    "allSelected": "All horses selected! You can continue to the next step.",
+    "partialSelection": "Selected {{count}} of {{total}} horses. Please select a horse for each rider.",
+    "noHorsesAvailable": "No horses are currently available. Please try again later."
+  }
+}

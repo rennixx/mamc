@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "badge": "Elite Training",
+    "title": "The Academy",
+    "subtitle": "Expert instruction for every skill level, from first ride to championship jumping",
+    "cta": "View Programs"
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Structured learning paths designed by professional riders",
+    "beginner": {
+      "title": "Foundation Riding",
+      "price": "75,000 IQD/session",
+      "duration": "45 min",
+      "level": "Beginner",
+      "description": "Learn the fundamentals of horsemanship, balance, and basic riding techniques in a safe environment.",
+      "features": ["Safety basics", "Balance & posture", "Walk & trot", "Basic handling"]
+    },
+    "intermediate": {
+      "title": "Advanced Riding",
+      "price": "100,000 IQD/session",
+      "duration": "60 min",
+      "level": "Intermediate",
+      "description": "Master advanced gaits, improve your seat, and develop precision in communication with your horse.",
+      "features": ["Canter work", "Lead changes", "Collection", "Trail riding"]
+    },
+    "jumping": {
+      "title": "Show Jumping",
+      "price": "150,000 IQD/session",
+      "duration": "75 min",
+      "level": "Advanced",
+      "description": "Competitive training for riders pursuing show jumping excellence with professional coaching.",
+      "features": ["Jump technique", "Course strategy", "Competition prep", "Advanced drills"]
+    },
+    "private": {
+      "title": "Private Lessons",
+      "price": "200,000 IQD/session",
+      "duration": "60 min",
+      "level": "All Levels",
+      "description": "One-on-one attention tailored to your specific goals and riding challenges.",
+      "features": ["Personalized coaching", "Flexible schedule", "Goal setting", "Rapid progress"]
+    }
+  },
+  "instructors": {
+    "title": "Meet Your Instructors",
+    "subtitle": "Learn from championship riders and certified professionals",
+    "sara": {
+      "name": "Sara Mustafa",
+      "role": "Head Instructor & Founder",
+      "bio": "20+ years riding experience. Former Iraqi National Champion. Certified FEI instructor specializing in show jumping and dressage.",
+      "specialties": ["Show Jumping", "Dressage", "Competition Prep"]
+    },
+    "omar": {
+      "name": "Omar Hassan",
+      "role": "Senior Instructor",
+      "bio": "15 years teaching experience. Expert in beginner instruction and trail riding safety. Patient, encouraging teaching style.",
+      "specialties": ["Beginner Training", "Trail Riding", "Horsemanship"]
+    },
+    "layla": {
+      "name": "Layla Ahmed",
+      "role": "Youth Instructor",
+      "bio": "Specialized in children's riding programs. 10 years experience creating fun, safe learning environments for young riders.",
+      "specialties": ["Youth Programs", "Pony Care", "Games & Activities"]
+    }
+  },
+  "schedule": {
+    "title": "Weekly Schedule",
+    "subtitle": "Group lessons run on a fixed schedule. Private lessons available by appointment.",
+    "days": {
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday"
+    },
+    "times": {
+      "morning": "9:00 AM",
+      "midday": "11:00 AM",
+      "afternoon": "3:00 PM",
+      "evening": "5:00 PM"
+    },
+    "available": "Available",
+    "full": "Full",
+    "private": "Private Only"
+  },
+  "booking": {
+    "title": "Ready to Start?",
+    "description": "Book your first lesson today. New riders receive a complimentary stable tour and safety briefing.",
+    "ctaPrimary": "Book a Lesson",
+    "ctaSecondary": "Contact Us"
+  },
+  "faq": {
+    "title": "Academy Questions?",
+    "subtitle": "Everything you need to know about our riding programs",
+    "q1": {
+      "question": "What age can children start riding lessons?",
+      "answer": "Children as young as 5 years old can begin with our pony lessons. Ages 8+ can join regular beginner classes. We assess each child individually to ensure they're ready physically and mentally."
+    },
+    "q2": {
+      "question": "How many lessons until I can ride independently?",
+      "answer": "Most beginners gain basic confidence in 6-10 lessons. However, everyone progresses differently. Our structured curriculum ensures safe, gradual advancement through skill levels."
+    },
+    "q3": {
+      "question": "Do you provide riding equipment?",
+      "answer": "We provide helmets and safety vests at no extra cost. For regular students, we recommend purchasing riding boots and pants for comfort. We can advise on where to buy quality gear locally."
+    },
+    "q4": {
+      "question": "Can I choose my instructor?",
+      "answer": "Yes! While we'll initially match you based on availability and skill level, you can request a specific instructor. Private lessons guarantee one-on-one time with your preferred coach."
+    },
+    "q5": {
+      "question": "What's the difference between group and private lessons?",
+      "answer": "Group lessons (3-6 students) are more affordable and great for building confidence with peers. Private lessons offer personalized attention, faster progression, and flexible scheduling."
+    },
+    "q6": {
+      "question": "Do you offer trial lessons?",
+      "answer": "Yes! We offer a discounted first-time trial lesson so you can experience our academy before committing. This includes horse introduction, safety briefing, and basic riding introduction."
+    },
+    "q7": {
+      "question": "What if I miss a scheduled lesson?",
+      "answer": "With 24-hour notice, you can reschedule at no charge. Same-day cancellations forfeit the lesson unless due to emergency or severe weather. We recommend booking makeup lessons within the same month."
+    },
+    "q8": {
+      "question": "Can adults with no experience join?",
+      "answer": "Absolutely! We have many adult beginners. Our adult programs focus on building confidence at your own pace in a supportive, non-judgmental environment. Age is just a number!"
+    }
+  }
+}

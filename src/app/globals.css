@@ -1,26 +1,284 @@
 @import "tailwindcss";
+@import "../styles/components.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --dark-mode: class;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Gilroy Font Face */
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('/fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('/fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bahij Font Face (Arabic/Kurdish) */
+@font-face {
+  font-family: 'bahij-roman';
+  src: url('/fonts/Bahij-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bahij-roman';
+  src: url('/fonts/Bahij-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bahij-roman';
+  src: url('/fonts/Bahij-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bahij-roman';
+  src: url('/fonts/Bahij-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* PRIMARY: Navy Blue */
+  --color-forest-50: #f0f4f8;
+  --color-forest-100: #d9e2ec;
+  --color-forest-200: #bcccdc;
+  --color-forest-300: #9fb3c8;
+  --color-forest-400: #829ab1;
+  --color-forest-500: #627d98;
+  --color-forest-600: #486581;
+  --color-forest-700: #334e68;
+  --color-forest-800: #243b53;
+  --color-forest-900: #102a43;
+
+  /* PRIMARY: Warm Saddle Brown */
+  --color-saddle-50: #f9f5f0;
+  --color-saddle-100: #f0e6d6;
+  --color-saddle-200: #e1ccad;
+  --color-saddle-300: #d0ad7e;
+  --color-saddle-400: #c08f54;
+  --color-saddle-500: #a67240;
+  --color-saddle-600: #8b5e35;
+  --color-saddle-700: #6f4a2d;
+  --color-saddle-800: #5a3d28;
+  --color-saddle-900: #4a3322;
+
+  /* SECONDARY: Cream */
+  --color-cream-50: #fefdfb;
+  --color-cream-100: #fdfbf7;
+  --color-cream-200: #faf6ee;
+  --color-cream-300: #f5f0e5;
+  --color-cream-400: #ede5d6;
+
+  /* SECONDARY: Slate Grey */
+  --color-slate-50: #f8f9fa;
+  --color-slate-100: #e9ecef;
+  --color-slate-200: #dee2e6;
+  --color-slate-300: #ced4da;
+  --color-slate-400: #adb5bd;
+  --color-slate-500: #6c757d;
+  --color-slate-600: #495057;
+  --color-slate-700: #343a40;
+  --color-slate-800: #212529;
+  --color-slate-900: #1a1d20;
+
+  /* ACCENT: Muted Gold */
+  --color-gold-50: #fdfaf2;
+  --color-gold-100: #faf3e0;
+  --color-gold-200: #f5e5c0;
+  --color-gold-300: #efd599;
+  --color-gold-400: #e8c87c;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b8941f;
+  --color-gold-700: #947618;
+  --color-gold-800: #735b14;
+  --color-gold-900: #5a4710;
+
+  /* ACTION: Dark Navy */
+  --color-action-50: #e8ecf0;
+  --color-action-100: #c4ced9;
+  --color-action-200: #9daebf;
+  --color-action-300: #758da5;
+  --color-action-400: #577491;
+  --color-action-500: #102a43;
+  --color-action-600: #0d243a;
+  --color-action-700: #0a1f30;
+  --color-action-800: #071926;
+  --color-action-900: #030f16;
+
+  /* TYPOGRAPHY */
+  --font-serif: 'Playfair Display', 'Amiri', Georgia, serif;
+  --font-sans: 'Gilroy-Regular', system-ui, -apple-system, sans-serif;
+
+  /* SHADOWS */
+  --shadow-tactile: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-tactile-hover: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-tactile-pressed: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-luxury: 0 10px 40px rgba(36, 59, 83, 0.15);
+  --shadow-luxury-lg: 0 20px 60px rgba(36, 59, 83, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900 text-cream-100;
+    @apply transition-colors duration-300 min-h-screen;
+  }
+
+  * {
+    font-family: 'Gilroy-Regular', system-ui, -apple-system, sans-serif;
+  }
+
+  html[lang="en"] *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    font-family: 'Gilroy-Regular', system-ui, -apple-system, sans-serif !important;
+  }
+
+  html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3,
+  html[lang="en"] h4, html[lang="en"] h5, html[lang="en"] h6 {
+    font-family: 'Gilroy-Bold', 'Gilroy-Regular', system-ui, sans-serif !important;
+    font-weight: bold;
+  }
+
+  html[lang="ku"] *, html[lang="ar"] * {
+    font-family: bahij-roman, sans-serif !important;
+  }
+
+  .font-arabic {
+    font-family: bahij-roman, sans-serif !important;
+  }
+
+  html[lang="ku"] h1, html[lang="ku"] h2, html[lang="ku"] h3,
+  html[lang="ku"] h4, html[lang="ku"] h5, html[lang="ku"] h6,
+  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3,
+  html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6 {
+    font-family: bahij-roman, sans-serif !important;
+    font-weight: bold;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  ::selection {
+    background-color: rgb(212 175 55 / 0.3);
+    color: #1a3a2d;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(16, 42, 67, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bg-leather-texture {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /><feColorMatrix values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.03 0" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.4" /></svg>');
+  background-color: rgba(166, 114, 64, 0.05);
+}
+
+/* RTL Support */
+[dir="rtl"] { direction: rtl; }
+[dir="ltr"] { direction: ltr; }
+[dir="rtl"] .icon-chevron-right,
+[dir="rtl"] svg[class*="chevron"],
+[dir="rtl"] [class*="arrow-right"] { transform: scaleX(-1); }
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+
+/* Accessibility */
+:focus-visible {
+  outline: 3px solid #d4af37 !important;
+  outline-offset: 2px !important;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+button:focus-visible, a:focus-visible,
+input:focus-visible, select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .glass-card, .glass-nav, .glass {
+    border: 2px solid currentColor !important;
+    backdrop-filter: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  button, [role="button"] { border: 2px solid ButtonBorder; }
+}
+
+@layer base {
+  :root {
+    --color-text-on-light: #102a43;
+    --color-text-on-dark: #f5f0e5;
+    --color-gold-text: #b8941f;
+    --color-gold-text-dark: #735b14;
+    --color-link-default: #577491;
+    --color-link-hover: #102a43;
+    --color-link-visited: #6f4a2d;
+  }
 }

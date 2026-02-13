@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "خيولنا - مركز مام",
+    "description": "تعرف على خيولنا الجميلة في مركز مام",
+    "keywords": "خيول، ركوب، فروسي، أربيل، كردستان"
+  },
+  "title": "خيولنا",
+  "subtitle": "تعرف على خيولنا الجميلة",
+  "filters": {
+    "availability": "التوفر",
+    "all": "الكل",
+    "available": "متاح",
+    "experience": "مستوى الخبرة",
+    "allLevels": "جميع المستويات",
+    "showing": "عرض {{count}} خيول"
+  },
+  "levels": {
+    "beginner": "مبتدئ",
+    "novice": "قليل الخبرة",
+    "intermediate": "متوسط",
+    "advanced": "متقدم"
+  },
+  "genders": {
+    "male": "ذكر",
+    "female": "أنثى",
+    "stallion": "حصان عربي",
+    "mare": "فرس",
+    "gelding": "خصي"
+  },
+  "age": "العمر",
+  "gender": "الجنس",
+  "color": "اللون",
+  "maxWeight": "الوزن الأقصى",
+  "availability": {
+    "available": "متاح",
+    "unavailable": "غير متاح"
+  },
+  "noHorses": "لا توجد خيول",
+  "selectHorse": "اختر {{name}}",
+  "viewDetails": "عرض التفاصيل",
+  "unsuitableWarning": "قد لا يكون هذا الحصان مناسبًا لمستوى خبرتك."
+}

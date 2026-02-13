@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Our Horses - MAM Center",
+    "description": "Meet our beautiful horses at MAM Center",
+    "keywords": "horses, riding, equestrian, Erbil, Kurdistan"
+  },
+  "title": "Our Horses",
+  "subtitle": "Meet our beautiful horses",
+  "filters": {
+    "availability": "Availability",
+    "all": "All",
+    "available": "Available",
+    "experience": "Experience Level",
+    "allLevels": "All Levels",
+    "showing": "Showing {{count}} horses"
+  },
+  "levels": {
+    "beginner": "Beginner",
+    "novice": "Novice",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "genders": {
+    "male": "Male",
+    "female": "Female",
+    "stallion": "Stallion",
+    "mare": "Mare",
+    "gelding": "Gelding"
+  },
+  "age": "Age",
+  "gender": "Gender",
+  "color": "Color",
+  "maxWeight": "Max Weight",
+  "availability": {
+    "available": "Available",
+    "unavailable": "Unavailable"
+  },
+  "noHorses": "No horses found",
+  "selectHorse": "Select {{name}}",
+  "viewDetails": "View Details",
+  "unsuitableWarning": "This horse may not be suitable for your experience level."
+}

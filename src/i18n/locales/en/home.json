@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "title": "Mam Center",
+    "subtitle": "Where Passion Meets Nature",
+    "cta": {
+      "academy": "Explore Academy",
+      "safari": "Book Safari"
+    }
+  },
+  "personas": {
+    "sectionTitle": "What Brings You Here?",
+    "sectionSubtitle": "Choose your path to get started",
+    "cards": {
+      "learner": {
+        "title": "I Want To Learn Riding",
+        "description": "Start your equestrian journey",
+        "cta": "Select"
+      },
+      "coffee": {
+        "title": "I Want Coffee & Nature",
+        "description": "Relax at Baran Coffee",
+        "cta": "Select"
+      },
+      "venue": {
+        "title": "I Need A Venue",
+        "description": "Corporate & wedding events",
+        "cta": "Select"
+      },
+      "photographer": {
+        "title": "I'm a Photographer",
+        "description": "Photography safari tours",
+        "cta": "Select"
+      },
+      "parent": {
+        "title": "I Have Kids to Enroll",
+        "description": "Kids programs & camps",
+        "cta": "Select"
+      }
+    }
+  },
+  "featured": {
+    "title": "Featured Programs",
+    "programs": {
+      "beginner": {
+        "title": "Beginner Riding",
+        "description": "Perfect for first-time riders, ages 5+",
+        "cta": "Learn More"
+      },
+      "jumping": {
+        "title": "Show Jumping",
+        "description": "Advanced training for competition",
+        "cta": "Learn More"
+      },
+      "camp": {
+        "title": "Kids Camp",
+        "description": "Summer programs for children",
+        "cta": "Learn More"
+      }
+    }
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "subtitle": "From a dream to Kurdistan's premier equestrian center",
+    "cta": "Discover Our Journey →"
+  }
+}

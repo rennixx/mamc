@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Book Your Experience - MAM Center",
+    "description": "Book your horse riding experience at MAM Center",
+    "keywords": "booking, horse riding, safari, academy, lessons, Erbil"
+  },
+  "header": {
+    "title": "Book Your Experience",
+    "subtitle": "Complete your booking in a few simple steps"
+  },
+  "progress": {
+    "step0": "Horses",
+    "step1": "Date & Time",
+    "step2": "Service",
+    "step3": "Details"
+  },
+  "step0": {
+    "title": "Choose Your Horses",
+    "riderCount": "How many riders?",
+    "errors": {
+      "selectHorses": "Please select a horse for each rider"
+    }
+  },
+  "step1": {
+    "title": "Choose Your Date & Time",
+    "errors": {
+      "selectDateTime": "Please select both a date and time to continue",
+      "dateNotAvailable": "This date is not available for booking",
+      "timeNotAvailable": "This time slot is not available"
+    }
+  },
+  "step2": {
+    "title": "What would you like to book?",
+    "services": {
+      "safari": "Horse Riding Safari",
+      "academy": "Riding Academy",
+      "private": "Private Lessons",
+      "event": "Special Event"
+    },
+    "errors": {
+      "selectService": "Please select a service"
+    }
+  },
+  "step3": {
+    "title": "Your Information",
+    "selectedHorses": "Selected Horses",
+    "fields": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "your.email@example.com"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "+964 750 123 4567"
+      },
+      "experienceLevel": {
+        "label": "Experience Level",
+        "options": {
+          "beginner": "Beginner (Never ridden)",
+          "novice": "Novice (A few times)",
+          "intermediate": "Intermediate (Comfortable)",
+          "advanced": "Advanced (Expert rider)"
+        }
+      },
+      "specialRequests": {
+        "label": "Special Requests (Optional)",
+        "placeholder": "Any dietary restrictions, accessibility needs, or special occasions?"
+      }
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email format",
+      "phoneRequired": "Phone number is required"
+    }
+  },
+  "actions": {
+    "back": "Back",
+    "continue": "Continue",
+    "confirmBooking": "Confirm Booking"
+  },
+  "success": {
+    "title": "Booking Confirmed!",
+    "message": "Thank you, {{name}}! Your booking request has been received.",
+    "reference": "Reference: {{id}}",
+    "contact": "We'll contact you at {{phone}} to confirm your booking."
+  }
+}

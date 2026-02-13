@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "احجز تجربتك - مركز مام",
+    "description": "احجز تجربة ركوب الخيل في مركز مام",
+    "keywords": "حجز، ركوب الخيل، رحلة سفاري، أكاديمية، دروس، أربيل"
+  },
+  "header": {
+    "title": "احجز تجربتك",
+    "subtitle": "أكمل حجزك في بضع خطوات بسيطة"
+  },
+  "progress": {
+    "step0": "الخيول",
+    "step1": "التاريخ والوقت",
+    "step2": "الخدمة",
+    "step3": "التفاصيل"
+  },
+  "step0": {
+    "title": "اختر خيولك",
+    "riderCount": "كم عدد الفرسان؟",
+    "errors": {
+      "selectHorses": "الرجاء اختيار حصان لكل فارس"
+    }
+  },
+  "step1": {
+    "title": "اختر التاريخ والوقت",
+    "errors": {
+      "selectDateTime": "الرجاء اختيار كل من التاريخ والوقت للمتابعة",
+      "dateNotAvailable": "هذا التاريخ غير متاح للحجز",
+      "timeNotAvailable": "هذا الموعد غير متاح"
+    }
+  },
+  "step2": {
+    "title": "ماذا تريد أن تحجز؟",
+    "services": {
+      "safari": "رحلة سفاري لركوب الخيل",
+      "academy": "أكاديمية ركوب الخيل",
+      "private": "دروس خاصة",
+      "event": "حدث خاص"
+    },
+    "errors": {
+      "selectService": "الرجاء اختيار خدمة"
+    }
+  },
+  "step3": {
+    "title": "معلوماتك",
+    "selectedHorses": "الخيول المحددة",
+    "fields": {
+      "name": {
+        "label": "الاسم الكامل",
+        "placeholder": "أدخل اسمك الكامل"
+      },
+      "email": {
+        "label": "عنوان البريد الإلكتروني",
+        "placeholder": "your.email@example.com"
+      },
+      "phone": {
+        "label": "رقم الهاتف",
+        "placeholder": "+964 750 123 4567"
+      },
+      "experienceLevel": {
+        "label": "مستوى الخبرة",
+        "options": {
+          "beginner": "مبتدئ (لم أركب من قبل)",
+          "novice": "مبتدئ (بضع مرات)",
+          "intermediate": "متوسط (مرتاح)",
+          "advanced": "متقدم (راكب خبير)"
+        }
+      },
+      "specialRequests": {
+        "label": "طلبات خاصة (اختياري)",
+        "placeholder": "أي قيود غذائية، احتياجات إمكانية الوصول، أو مناسبات خاصة؟"
+      }
+    },
+    "errors": {
+      "nameRequired": "الاسم مطلوب",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "تنسيق البريد الإلكتروني غير صالح",
+      "phoneRequired": "رقم الهاتف مطلوب"
+    }
+  },
+  "actions": {
+    "back": "رجوع",
+    "continue": "متابعة",
+    "confirmBooking": "تأكيد الحجز"
+  },
+  "success": {
+    "title": "تم تأكيد الحجز!",
+    "message": "شكراً لك، {{name}}! تم استلام طلب الحجز الخاص بك.",
+    "reference": "المرجع: {{id}}",
+    "contact": "سنتصل بك على {{phone}} لتأكيد حجزك."
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "hero": {
+    "title": "Baran Coffee",
+    "subtitle": "Your chill spot with mountain views"
+  },
+  "sections": {
+    "view": {
+      "title": "The View",
+      "subtitle": "Breathtaking scenery from every table"
+    },
+    "atmosphere": {
+      "title": "Plan Your Visit",
+      "subtitle": "Know the best times to drop by"
+    },
+    "menu": {
+      "title": "Our Menu",
+      "subtitle": "Explore our offerings • Payment on-site only"
+    }
+  },
+  "menu": {
+    "search": "Search menu...",
+    "categories": {
+      "all": "All",
+      "coffee": "Coffee",
+      "mocktails": "Mocktails",
+      "snacks": "Snacks",
+      "sweets": "Sweets"
+    },
+    "items": {
+      "kurdishDibekCoffee": {
+        "name": "Kurdish Dibek Coffee",
+        "description": "Traditional stone-ground"
+      },
+      "lavenderLatte": {
+        "name": "Lavender Latte",
+        "description": "Local honey & lavender"
+      },
+      "coldBrew": {
+        "name": "Cold Brew",
+        "description": "Mountain spring water"
+      },
+      "cardamomCappuccino": {
+        "name": "Cardamom Cappuccino",
+        "description": "Aromatic spice blend"
+      },
+      "turkishCoffee": {
+        "name": "Turkish Coffee",
+        "description": "Classic preparation"
+      },
+      "pomegranateSunset": {
+        "name": "Pomegranate Sunset",
+        "description": "Fresh mint & lime"
+      },
+      "mountainBerryFizz": {
+        "name": "Mountain Berry Fizz",
+        "description": "Wild berries & soda"
+      },
+      "honeyLemonade": {
+        "name": "Honey Lemonade",
+        "description": "Kurdistan mountain honey"
+      },
+      "roseWaterCooler": {
+        "name": "Rose Water Cooler",
+        "description": "Refreshing floral notes"
+      },
+      "kurdishCheesePlate": {
+        "name": "Kurdish Cheese Plate",
+        "description": "Local artisan cheeses with walnuts"
+      },
+      "flatbreadDips": {
+        "name": "Flatbread & Dips",
+        "description": "Hummus, baba ganoush, muhammara"
+      },
+      "fruitPlatter": {
+        "name": "Fruit Platter",
+        "description": "Seasonal local fruits"
+      },
+      "mixedNuts": {
+        "name": "Mixed Nuts",
+        "description": "Roasted almonds, pistachios, walnuts"
+      },
+      "baklavaAssortment": {
+        "name": "Baklava Assortment",
+        "description": "Pistachio, walnut, honey"
+      },
+      "kurdishKlecha": {
+        "name": "Kurdish Klecha",
+        "description": "Date-filled cookies"
+      },
+      "halva": {
+        "name": "Halva",
+        "description": "Traditional sesame sweet"
+      },
+      "carrotCake": {
+        "name": "Carrot Cake",
+        "description": "Homemade with cream cheese frosting"
+      }
+    },
+    "dietary": {
+      "V": "Vegan",
+      "GF": "Gluten-Free"
+    },
+    "legend": {
+      "note": "All prices shown are for reference. Payment on-site."
+    }
+  },
+  "gallery": {
+    "images": {
+      "sunrise": {
+        "caption": "Sunrise over the valley",
+        "location": "View from Table 7"
+      },
+      "sunset": {
+        "caption": "Mountain sunset panorama",
+        "location": "View from Terrace"
+      },
+      "mistyMorning": {
+        "caption": "Misty morning landscape",
+        "location": "View from Window Seats"
+      },
+      "goldenHour": {
+        "caption": "Golden hour meadow",
+        "location": "View from Patio"
+      },
+      "wildflowers": {
+        "caption": "Wildflower season",
+        "location": "View from Corner Table"
+      }
+    },
+    "controls": {
+      "previous": "Previous view",
+      "next": "Next view",
+      "pause": "Pause slideshow",
+      "play": "Resume slideshow"
+    },
+    "swipeHint": "Swipe to explore different views"
+  },
+  "atmosphere": {
+    "peak": "Peak Hours",
+    "peakTime": "12 PM - 3 PM, 6 PM - 9 PM",
+    "quiet": "Quiet Times",
+    "quietTime": "8 AM - 11 AM, 3 PM - 5 PM",
+    "indicators": {
+      "coffeeLovers": {
+        "label": "Coffee Lovers",
+        "value": "Specialty brews & local beans"
+      },
+      "nightOwls": {
+        "label": "Night Owls",
+        "value": "Open until 10 PM daily"
+      },
+      "dayVisitors": {
+        "label": "Day Visitors",
+        "value": "Best light 8 AM - 5 PM"
+      }
+    }
+  },
+  "contact": {
+    "title": "Visit Us",
+    "hours": "Hours",
+    "hoursValue": "Daily 8 AM - 10 PM",
+    "walkIns": "Walk-ins Only",
+    "walkInsValue": "No reservations needed",
+    "capacity": "Capacity",
+    "capacityValue": "~40 guests",
+    "directions": "Get Directions",
+    "call": "Call Us",
+    "seeHours": "See Hours"
+  },
+  "about": {
+    "title": "More Than Just Coffee",
+    "description": "Baran Coffee is your escape from the city—a place where mountain air meets quality coffee. Whether you're here for a productive work session or a peaceful break with friends, our outdoor seating offers stunning views that make every visit special."
+  }
+}

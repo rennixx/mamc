@@ -1,0 +1,20 @@
+{
+  "brandName": "Mam Center",
+  "welcome": "Welcome to Mam Equestrian Club",
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "footer": {
+    "tagline": "Premier equestrian club in Erbil offering horse riding, safari tours, and mountain cafe experiences.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "hours": "Hours",
+    "location": "Erbil, Kurdistan Region, Iraq",
+    "academy": "Academy:",
+    "safari": "Safari:",
+    "cafe": "Cafe:",
+    "academyHours": "Mon-Sat 8AM-8PM",
+    "safariHours": "Daily 7AM-7PM",
+    "cafeHours": "Daily 8AM-10PM",
+    "copyright": "All rights reserved."
+  }
+}

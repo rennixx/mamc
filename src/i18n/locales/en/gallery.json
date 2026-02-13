@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "title": "Gallery",
+    "subtitle": "Moments captured from our riding safaris, cafe life, and academy sessions"
+  },
+  "filters": {
+    "all": "All",
+    "safari": "Safari",
+    "lifestyle": "Lifestyle",
+    "academy": "Academy"
+  },
+  "placeholder": "Gallery images coming soon. Connect your camera or upload photos to populate this gallery."
+}

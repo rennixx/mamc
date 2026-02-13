@@ -1,0 +1,174 @@
+{
+  "hero": {
+    "title": "مقهى باران",
+    "subtitle": "مكانك الهادئ مع إطلالات جبلية"
+  },
+  "sections": {
+    "view": {
+      "title": "الإطلالة",
+      "subtitle": "مناظر خلابة من كل طاولة"
+    },
+    "atmosphere": {
+      "title": "خطط لزيارتك",
+      "subtitle": "اعرف أفضل الأوقات للزيارة"
+    },
+    "menu": {
+      "title": "قائمتنا",
+      "subtitle": "استكشف عروضنا • الدفع في الموقع فقط"
+    }
+  },
+  "menu": {
+    "search": "البحث في القائمە...",
+    "categories": {
+      "all": "الكل",
+      "coffee": "قهوە",
+      "mocktails": "مشروبات منعشە",
+      "snacks": "وجبات خفيفە",
+      "sweets": "حلويات"
+    },
+    "items": {
+      "kurdishDibekCoffee": {
+        "name": "قهوە ديبك كرديە",
+        "description": "مطحونە بالحجر بالطريقە التقليديە"
+      },
+      "lavenderLatte": {
+        "name": "لاتيه الخزامى",
+        "description": "عسل محلي وخزامى"
+      },
+      "coldBrew": {
+        "name": "قهوە باردە",
+        "description": "مياه نبع جبليە"
+      },
+      "cardamomCappuccino": {
+        "name": "كابوتشينو بالهيل",
+        "description": "مزيج توابل عطري"
+      },
+      "turkishCoffee": {
+        "name": "قهوە تركيە",
+        "description": "تحضير كلاسيكي"
+      },
+      "pomegranateSunset": {
+        "name": "غروب الرمان",
+        "description": "نعناع طازج وليمون"
+      },
+      "mountainBerryFizz": {
+        "name": "فيز توت الجبل",
+        "description": "توت بري وصودا"
+      },
+      "honeyLemonade": {
+        "name": "ليمونادە بالعسل",
+        "description": "عسل جبل كردستان"
+      },
+      "roseWaterCooler": {
+        "name": "منعش ماء الورد",
+        "description": "نكهات زهريە منعشە"
+      },
+      "kurdishCheesePlate": {
+        "name": "طبق الجبن الكردي",
+        "description": "أجبان حرفيە محليە مع الجوز"
+      },
+      "flatbreadDips": {
+        "name": "خبز مع الغموس",
+        "description": "حمص، بابا غنوج، محمرە"
+      },
+      "fruitPlatter": {
+        "name": "طبق الفواكه",
+        "description": "فواكه محليە موسميە"
+      },
+      "mixedNuts": {
+        "name": "مكسرات مشكلە",
+        "description": "لوز، فستق، جوز محمص"
+      },
+      "baklavaAssortment": {
+        "name": "تشكيلە بقلاوە",
+        "description": "فستق، جوز، عسل"
+      },
+      "kurdishKlecha": {
+        "name": "كليجە كرديە",
+        "description": "بسكويت محشو بالتمر"
+      },
+      "halva": {
+        "name": "حلاوە",
+        "description": "حلوى السمسم التقليديە"
+      },
+      "carrotCake": {
+        "name": "كعكە الجزر",
+        "description": "محضرە منزليًا مع كريمە الجبن"
+      }
+    },
+    "dietary": {
+      "V": "نباتي",
+      "GF": "خالي من الغلوتين"
+    },
+    "legend": {
+      "note": "جميع الأسعار للإشارە فقط. الدفع في الموقع."
+    }
+  },
+  "gallery": {
+    "images": {
+      "sunrise": {
+        "caption": "شروق الشمس فوق الوادي",
+        "location": "إلطلالە من الطاولە ١"
+      },
+      "sunset": {
+        "caption": "بانوراما غروب الجبل",
+        "location": "إلطلالە من التراس"
+      },
+      "mistyMorning": {
+        "caption": "منظر صباحي ضبابي",
+        "location": "إلطلالە من المقاعد المطلە"
+      },
+      "goldenHour": {
+        "caption": "مرج الساعە الذهبيە",
+        "location": "إلطلالە من الفناء"
+      },
+      "wildflowers": {
+        "caption": "موسم الزهور البريە",
+        "location": "إلطلالە من الطاولە الزاويە"
+      }
+    },
+    "controls": {
+      "previous": "المنظر السابق",
+      "next": "المنظر التالي",
+      "pause": "إيقاف العرض",
+      "play": "استئناف العرض"
+    },
+    "swipeHint": "اسحب لاستكشاف المناظر المختلفە"
+  },
+  "atmosphere": {
+    "peak": "ساعات الذروە",
+    "peakTime": "١٢ ظ - ٣ م، ٦ م - ٩ م",
+    "quiet": "أوقات هادئە",
+    "quietTime": "٨ ص - ١١ ظ، ٣ م - ٥ م",
+    "indicators": {
+      "coffeeLovers": {
+        "label": "عشاق القهوە",
+        "value": "مشروبات متخصصە وحبوب محليە"
+      },
+      "nightOwls": {
+        "label": "محبي السهر",
+        "value": "مفتوح حتى ١٠ م يوميًا"
+      },
+      "dayVisitors": {
+        "label": "زوار النهار",
+        "value": "أفضل إضاءە ٨ ص - ٥ م"
+      }
+    }
+  },
+  "contact": {
+    "title": "زرنا",
+    "hours": "الساعات",
+    "hoursValue": "يوميًا ٨ ص - ١٠ م",
+    "walkIns": "زيارات مباشرە فقط",
+    "walkInsValue": "لا حاجە للحجز",
+    "capacity": "السعە",
+    "capacityValue": "~٤٠ ضيف",
+    "directions": "احصل على الاتجاهات",
+    "call": "اتصل بنا",
+    "seeHours": "انظر الساعات"
+  },
+  "about": {
+    "title": "أكثر من مجرد قهوة",
+    "description": "مقهى باران هو هروبك من المدينة—مكان يلتقي فيه هواء الجبل بالقهوة عالية الجودة. سواء كنت هنا لجلسة عمل منتجة أو استراحة هادئة مع الأصدقاء، فإن جلوسنا الخارجي يوفر مناظر خلابة تجعل كل زيارة مميزة."
+  }
+}
