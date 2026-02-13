@@ -16,13 +16,12 @@ export function Header() {
   const toggleTheme = useAppStore((s) => s.toggleTheme)
 
   const navLinks = [
-    { href: '/academy', label: t('academy', 'Academy') },
-    { href: '/safari', label: t('safari', 'Safari') },
+    { href: '/services', label: t('services', 'Services') },
     { href: '/horses', label: t('horses', 'Horses') },
-    { href: '/about', label: t('about', 'About') },
-    { href: '/contact', label: t('contact', 'Contact') },
-    { href: '/coffee', label: t('coffee', 'Coffee') },
     { href: '/gallery', label: t('gallery', 'Gallery') },
+    { href: '/about', label: t('about', 'About') },
+    { href: '/team', label: t('team', 'Team') },
+    { href: '/contact', label: t('contact', 'Contact') },
   ]
 
   const languages = [

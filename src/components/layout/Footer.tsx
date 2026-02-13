@@ -27,10 +27,11 @@ export function Footer() {
               {t('quickLinks', 'Quick Links')}
             </h4>
             <div className="flex flex-col gap-2">
-              <Link href="/academy" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Academy</Link>
-              <Link href="/safari" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Safari</Link>
-              <Link href="/lifestyle" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Lifestyle</Link>
+              <Link href="/services" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Services</Link>
+              <Link href="/horses" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Horses</Link>
               <Link href="/gallery" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Gallery</Link>
+              <Link href="/about" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">About</Link>
+              <Link href="/contact" className="text-cream-200 hover:text-gold-400 text-sm font-sans transition-colors">Contact</Link>
             </div>
           </div>
 
