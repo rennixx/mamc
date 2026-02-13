@@ -65,7 +65,7 @@ export default function BookingPage() {
     switch (step) {
       case 0: return !!form.service
       case 1: return !!form.date && !!form.time
-      case 2: return !!form.name && !!form.email && !!form.phone && !!form.experienceLevel
+      case 2: return !!form.name && !!form.phone && !!form.experienceLevel
       default: return true
     }
   }, [step, form])
@@ -248,8 +248,8 @@ export default function BookingPage() {
                     <input id="bk-name" name="name" type="text" value={form.name} onChange={handleChange} className="form-input" required />
                   </div>
                   <div>
-                    <label htmlFor="bk-email" className="form-label">Email *</label>
-                    <input id="bk-email" name="email" type="email" value={form.email} onChange={handleChange} className="form-input" required />
+                    <label htmlFor="bk-email" className="form-label">Email</label>
+                    <input id="bk-email" name="email" type="email" value={form.email} onChange={handleChange} className="form-input" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
