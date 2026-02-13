@@ -36,27 +36,27 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cream-50 to-cream-100 dark:from-charcoal-900 dark:to-charcoal-800 p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="glass-card rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-charcoal-900 dark:text-cream-50 font-display">
+            <h1 className="text-3xl font-bold text-cream-100 font-display">
               Mam Center
             </h1>
-            <p className="text-charcoal-500 dark:text-charcoal-400 mt-2">
+            <p className="text-cream-300 mt-2">
               Admin Login
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="bg-red-50 dark:bg-red-900/20 text-red-500 p-3 rounded-xl text-sm text-center">
+              <div className="bg-red-500/10 text-red-500 p-3 rounded-xl text-sm text-center">
                 {error}
               </div>
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-charcoal-700 dark:text-charcoal-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-cream-200 mb-2">
                 Email
               </label>
               <input
@@ -70,7 +70,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-charcoal-700 dark:text-charcoal-300 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-cream-200 mb-2">
                 Password
               </label>
               <input
@@ -86,7 +86,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-gold-500 hover:bg-gold-600 text-charcoal-900 font-semibold rounded-xl transition-colors disabled:opacity-50"
+              className="w-full py-3 px-4 bg-gold-500 hover:bg-gold-400 text-forest-900 font-semibold rounded-xl transition-colors disabled:opacity-50"
             >
               {loading ? '...' : 'Sign In'}
             </button>
