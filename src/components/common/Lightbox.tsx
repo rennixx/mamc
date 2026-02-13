@@ -42,7 +42,7 @@ export const Lightbox = ({
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm">
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 glass-card p-3 hover:bg-white/20 transition-colors z-10"
+        className="absolute top-4 right-4 glass-card p-3 hover:bg-cream-400/20 transition-colors z-10"
         aria-label="Close lightbox"
       >
         <X className="w-6 h-6 text-cream-100" />
@@ -50,7 +50,7 @@ export const Lightbox = ({
 
       <button
         onClick={onPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 glass-card p-4 hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute left-4 top-1/2 -translate-y-1/2 glass-card p-4 hover:bg-cream-400/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Previous image"
         disabled={currentIndex === 0}
       >
@@ -59,7 +59,7 @@ export const Lightbox = ({
 
       <button
         onClick={onNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 glass-card p-4 hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute right-4 top-1/2 -translate-y-1/2 glass-card p-4 hover:bg-cream-400/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Next image"
         disabled={currentIndex === images.length - 1}
       >

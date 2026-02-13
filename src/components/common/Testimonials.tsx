@@ -88,7 +88,7 @@ export const Testimonials = ({ title, subtitle }: TestimonialsProps) => {
         <div className="relative">
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 glass-card p-3 hover:bg-white/20 transition-colors z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 glass-card p-3 hover:bg-cream-400/20 transition-colors z-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-6 h-6 text-cream-100" />
@@ -96,7 +96,7 @@ export const Testimonials = ({ title, subtitle }: TestimonialsProps) => {
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 glass-card p-3 hover:bg-white/20 transition-colors z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 glass-card p-3 hover:bg-cream-400/20 transition-colors z-10"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6 text-cream-100" />

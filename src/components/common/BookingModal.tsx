@@ -171,7 +171,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
       <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-forest-900 border border-gold-400/20 shadow-luxury-lg">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 p-2 hover:bg-white/10 transition-colors z-10"
+          className="absolute top-4 right-4 p-2 hover:bg-cream-400/10 transition-colors z-10"
           aria-label="Close"
         >
           <X className="w-6 h-6 text-cream-100" />
@@ -232,7 +232,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                           className={`px-4 py-2 font-sans font-semibold transition-colors ${
                             formData.groupSize === num
                               ? 'bg-gold-400 text-forest-900'
-                              : 'glass text-cream-100 hover:bg-white/10'
+                              : 'glass text-cream-100 hover:bg-cream-400/10'
                           }`}
                         >
                           {num}
@@ -276,7 +276,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                         className={`p-6 text-left transition-all ${
                           formData.service === service.id
                             ? 'bg-gold-400 text-forest-900 border-gold-400'
-                            : 'glass-card text-cream-100 hover:bg-white/10'
+                            : 'glass-card text-cream-100 hover:bg-cream-400/10'
                         }`}
                       >
                         <div className="text-3xl mb-3">{service.icon}</div>
@@ -385,7 +385,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             {currentStep > 1 && (
               <button
                 onClick={handleBack}
-                className="flex items-center gap-2 px-6 py-3 glass-card text-cream-100 font-sans font-semibold hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 px-6 py-3 glass-card text-cream-100 font-sans font-semibold hover:bg-cream-400/10 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" /> Back
               </button>

@@ -47,7 +47,7 @@ export const FAQ = ({
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left hover:bg-white/5 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left hover:bg-cream-400/5 transition-colors"
               >
                 <span className="font-sans font-bold text-cream-100 text-lg">
                   {item.question}

@@ -42,7 +42,7 @@ export function AdminSidebar() {
       <aside
         className={`
           fixed lg:static inset-y-0 left-0 z-50 w-64
-          bg-forest-900/95 backdrop-blur-lg border-r border-white/10
+          bg-forest-900/95 backdrop-blur-lg border-r border-cream-400/20
           transform transition-transform lg:translate-x-0
           ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
@@ -67,7 +67,7 @@ export function AdminSidebar() {
                   transition-colors
                   ${isActive(link.href)
                     ? 'bg-gold-500/20 text-gold-400 font-semibold'
-                    : 'text-cream-200 hover:bg-white/5 hover:text-cream-100'}
+                    : 'text-cream-200 hover:bg-cream-400/5 hover:text-cream-100'}
                 `}
               >
                 <link.icon className="w-5 h-5" />
@@ -77,7 +77,7 @@ export function AdminSidebar() {
           </nav>
 
           {/* Footer */}
-          <div className="border-t border-white/10 pt-4 mt-4">
+          <div className="border-t border-cream-400/20 pt-4 mt-4">
             <Link
               href="/"
               className="flex items-center gap-2 px-3 py-2 text-cream-300 hover:text-cream-100 font-sans text-sm transition-colors"

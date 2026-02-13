@@ -24,7 +24,7 @@ export const GoogleMaps = ({ embedUrl, title }: GoogleMapsProps) => {
           href="https://maps.google.com/?q=36.191884621340066,43.98118538641222"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 glass hover:bg-white/10 text-cream-100 font-sans font-semibold transition-colors"
+          className="flex items-center gap-2 px-4 py-2 glass hover:bg-cream-400/10 text-cream-100 font-sans font-semibold transition-colors"
         >
           <Navigation className="w-4 h-4" />
           <span>{t('maps.getDirections')}</span>

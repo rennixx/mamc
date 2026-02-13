@@ -142,13 +142,13 @@ export const BookingCalendar = ({
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
-          <button onClick={previousMonth} className="glass p-2 hover:bg-white/10 transition-colors" aria-label="Previous month">
+          <button onClick={previousMonth} className="glass p-2 hover:bg-cream-400/10 transition-colors" aria-label="Previous month">
             <ChevronLeft className="w-5 h-5 text-cream-100" />
           </button>
           <h4 className="text-xl font-sans font-bold text-cream-100">
             {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
           </h4>
-          <button onClick={nextMonth} className="glass p-2 hover:bg-white/10 transition-colors" aria-label="Next month">
+          <button onClick={nextMonth} className="glass p-2 hover:bg-cream-400/10 transition-colors" aria-label="Next month">
             <ChevronRight className="w-5 h-5 text-cream-100" />
           </button>
         </div>
@@ -177,7 +177,7 @@ export const BookingCalendar = ({
                 disabled={disabled}
                 className={`
                   aspect-square flex items-center justify-center font-sans text-sm transition-all relative
-                  ${disabled ? 'text-cream-400/30 cursor-not-allowed' : 'text-cream-100 hover:bg-white/10 cursor-pointer'}
+                  ${disabled ? 'text-cream-400/30 cursor-not-allowed' : 'text-cream-100 hover:bg-cream-400/10 cursor-pointer'}
                   ${selected ? 'bg-gold-500 text-forest-900 font-bold' : ''}
                   ${today && !selected ? 'border border-gold-400' : ''}
                   ${!disabled && hasLimitedSlots ? 'bg-yellow-500/10 border border-yellow-400/30' : ''}
@@ -214,7 +214,7 @@ export const BookingCalendar = ({
                     ${slot.booked ? 'bg-red-500/10 text-red-400/70 cursor-not-allowed border border-red-400/30' : ''}
                     ${!slot.available && !slot.booked ? 'bg-cream-400/10 text-cream-400/50 cursor-not-allowed' : ''}
                     ${selectedTime === slot.time ? 'bg-gold-500 text-forest-900 cursor-default' : ''}
-                    ${slot.available && selectedTime !== slot.time && canSelectTime ? 'glass hover:bg-white/10 text-cream-100 cursor-pointer' : ''}
+                    ${slot.available && selectedTime !== slot.time && canSelectTime ? 'glass hover:bg-cream-400/10 text-cream-100 cursor-pointer' : ''}
                   `}
                 >
                   {slot.label}

@@ -8,7 +8,7 @@ export function Footer() {
   const { t } = useTranslation('common')
 
   return (
-    <footer className="bg-forest-900 border-t border-white/10 py-12">
+    <footer className="bg-forest-900 border-t border-cream-400/20 py-12">
       <div className="container-breathable">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-white/10 text-center">
+        <div className="mt-8 pt-6 border-t border-cream-400/20 text-center">
           <p className="text-cream-300 text-sm font-sans">
             © {new Date().getFullYear()} Mam Center. All rights reserved.
           </p>

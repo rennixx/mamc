@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useMobileMenu, useLanguage } from '@/hooks/useApp'
 import { useAppStore } from '@/store'
 
@@ -12,6 +12,8 @@ export function Header() {
   const pathname = usePathname()
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useMobileMenu()
   const { language, setLanguage } = useLanguage()
+  const theme = useAppStore((s) => s.theme)
+  const toggleTheme = useAppStore((s) => s.toggleTheme)
 
   const navLinks = [
     { href: '/academy', label: t('academy', 'Academy') },
@@ -59,7 +61,7 @@ export function Header() {
           {/* Desktop Right Side */}
           <div className="hidden lg:flex items-center gap-3">
             {/* Language Switcher */}
-            <div className="flex rounded-lg overflow-hidden border border-white/10">
+            <div className="flex rounded-lg overflow-hidden border border-cream-400/20">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -70,6 +72,15 @@ export function Header() {
                 </button>
               ))}
             </div>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-cream-400/10 transition-colors"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5 text-cream-100" /> : <Moon className="w-5 h-5 text-cream-100" />}
+            </button>
 
             {/* Book Now CTA */}
             <Link
@@ -120,7 +131,7 @@ export function Header() {
               {t('bookNow', 'Book Now')}
             </Link>
 
-            <div className="flex rounded-lg overflow-hidden border border-white/10 mt-4">
+            <div className="flex rounded-lg overflow-hidden border border-cream-400/20 mt-4">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -131,6 +142,14 @@ export function Header() {
                 </button>
               ))}
             </div>
+
+            <button
+              onClick={toggleTheme}
+              className="mt-4 p-3 rounded-lg hover:bg-cream-400/10 transition-colors"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <Sun className="w-6 h-6 text-cream-100" /> : <Moon className="w-6 h-6 text-cream-100" />}
+            </button>
           </div>
         )}
       </nav>

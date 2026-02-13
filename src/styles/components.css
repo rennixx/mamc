@@ -1,19 +1,23 @@
 @layer components {
   /* Glass cards */
   .glass-card {
-    @apply bg-white/8 backdrop-blur-md border border-white/15 shadow-lg;
+    background: var(--glass-bg, rgba(0, 0, 0, 0.03));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border, rgba(0, 0, 0, 0.06));
+    @apply shadow-lg;
   }
 
   .admin-glass-card {
-    background: rgba(15, 23, 42, 0.6);
+    background: var(--admin-card-bg, rgba(0, 0, 0, 0.03));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--admin-card-border, rgba(0, 0, 0, 0.06));
+    box-shadow: 0 8px 32px 0 var(--admin-card-shadow, rgba(0, 0, 0, 0.05));
   }
 
   .glass-nav {
-    @apply bg-forest-900/80 backdrop-blur-md border-b border-white/10;
+    @apply bg-forest-900/80 backdrop-blur-md border-b border-cream-400/20;
   }
 
   .section-spacing {
@@ -25,12 +29,12 @@
   }
 
   .nav-link {
-    @apply relative font-sans font-medium text-sm text-cream-100
-           hover:text-gold-400 transition-colors;
+    @apply relative font-sans font-medium text-sm text-cream-300
+           hover:text-cream-100 transition-colors;
   }
 
   .nav-link::after {
-    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-100
            group-hover:w-full transition-all duration-300;
     content: '';
   }
@@ -45,7 +49,7 @@
   }
 
   .lang-button-inactive {
-    @apply text-cream-100 hover:bg-white/10;
+    @apply text-cream-300 hover:bg-cream-400/10;
   }
 
   .form-input {
@@ -78,18 +82,33 @@
   }
 
   .shadow-tactile {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .shadow-tactile-hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
   }
 
   .shadow-luxury {
-    box-shadow: 0 10px 40px rgba(36, 59, 83, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   }
 
   .shadow-luxury-lg {
-    box-shadow: 0 20px 60px rgba(36, 59, 83, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   }
+}
+
+/* Dark mode overrides for glass components */
+.dark .admin-glass-card {
+  --admin-card-bg: rgba(255, 255, 255, 0.05);
+  --admin-card-border: rgba(255, 255, 255, 0.1);
+  --admin-card-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.dark .shadow-tactile {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark .shadow-luxury {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
