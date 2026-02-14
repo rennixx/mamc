@@ -1,18 +1,8 @@
-import { auth } from '@/lib/auth'
-import { NextResponse } from 'next/server'
+import NextAuth from 'next-auth'
+import { authConfig } from '@/lib/auth.config'
 
-export default auth((req) => {
-  const isAdmin = req.nextUrl.pathname.startsWith('/admin')
-  const isLoggedIn = !!req.auth?.user
-
-  if (isAdmin && !isLoggedIn) {
-    const loginUrl = new URL('/login', req.nextUrl.origin)
-    loginUrl.searchParams.set('callbackUrl', req.nextUrl.pathname)
-    return NextResponse.redirect(loginUrl)
-  }
-
-  return NextResponse.next()
-})
+// Use the edge-compatible config (no PrismaAdapter / no Node.js deps)
+export default NextAuth(authConfig).auth
 
 export const config = {
   matcher: ['/admin/:path*'],
