@@ -209,7 +209,7 @@ export default function ContactPage() {
               {/* Google Maps */}
               <div className="glass-card rounded-2xl overflow-hidden">
                 <GoogleMapsEmbed
-                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''}
                   height={300}
                   width="100%"
                   mode="place"
