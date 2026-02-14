@@ -7,8 +7,10 @@ import { useState } from 'react'
 import { ArrowRight, Users, Trophy, Shield, Heart, Truck, TreePine, ChevronLeft, ChevronRight, PawPrint, Award, Coffee } from 'lucide-react'
 
 export default function HomePage() {
-  const { t } = useTranslation('home')
+  const { t, i18n } = useTranslation('home')
   const [currentSlide, setCurrentSlide] = useState(0)
+
+  const isRTL = i18n.dir() === 'rtl'
 
   const stats = [
     { icon: Trophy, labelKey: 'experience.stats.years', descKey: 'experience.stats.yearsDesc' },
@@ -83,7 +85,7 @@ export default function HomePage() {
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                style={{ transform: `translateX(${isRTL ? '' : '-'}${currentSlide * 100}%)` }}
               >
                 {stats.map((stat, index) => (
                   <div key={index} className="w-full flex-shrink-0">
