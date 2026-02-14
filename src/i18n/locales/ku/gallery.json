@@ -1,53 +1,53 @@
 {
   "hero": {
     "title": "گەلەری",
-    "subtitle": "ساتەکانی تۆمارکراو لە مام سەنتەر"
+    "subtitle": "چیرۆکەکان بە وێنە لە سەنتەری مام"
   },
   "album": {
-    "images": "وێنە",
-    "backToAlbums": "گەڕانەوە بۆ ئەلبوومەکان"
+    "images": "وێنەکان",
+    "backToAlbums": "گەڕانەوە بۆ ئەلبومەکان"
   },
   "albums": {
     "training": {
-      "title": "خولەکانی ڕاهێنان",
-      "description": "ڕاهێنانی ئەسپسواری و فروسایی پیشەیی"
+      "title": "وانەکانی ڕاهێنان",
+      "description": "ڕاهێنانی پیشەیی ئەسپسواری"
     },
     "jumping": {
-      "title": "بازی نیشاندان",
-      "description": "پاڵەوانێتی و بۆنەکان"
+      "title": "بازدانی ئەسپ",
+      "description": "پێشبڕکێ و چالاکییەکان"
     },
     "horses": {
       "title": "ئەسپەکانمان",
-      "description": "ئەسپە جوانەکانمان بناسە"
+      "description": "ئەسپە جوانەکانمان ببینە"
     },
     "facility": {
-      "title": "ئامرازگاکانی یانەکە",
-      "description": "ئامرازگاکانی پلەی جیهانی بەدەربهێناوە"
+      "title": "دامەزراوەکانی یانە",
+      "description": "گەشتێک بەناو دامەزراوە جیهانییەکانماندا"
     },
     "safari": {
-      "title": "سەفاری ئەسپسواری",
-      "description": "سەفەر لەسەر ئەسپ"
+      "title": "سەفاری بە ئەسپ",
+      "description": "سەرکێشی لەسەر پشتی ئەسپ"
     }
   },
   "images": {
     "equestrianTraining": "ڕاهێنانی ئەسپسواری",
-    "showJumping": "بازی نیشاندان",
-    "showJumpingCompetition": "کێبڕکێی بازی نیشاندان",
-    "showJumpingEvent": "بۆنەی بازی نیشاندان",
-    "ridingTraining": "ڕاهێنانی سواری",
-    "horsePortrait": "پۆرترەی ئەسپ",
-    "stableFacility": "ئامرازگای ئاخور",
+    "showJumping": "بازدانی ئەسپ",
+    "showJumpingCompetition": "پێشبڕکێی بازدان",
+    "showJumpingEvent": "چالاکی بازدان",
+    "ridingTraining": "ڕاهێنانی سواربوون",
+    "horsePortrait": "وێنەی ئەسپ",
+    "stableFacility": "دامەزراوەی تەویلە",
     "clubEntrance": "دەروازەی یانە",
-    "ridingArena": "یەداخەی ئەسپسواری",
-    "stableInterior": "ناوەوەی ئاخور",
-    "indoorArena": "یەداخەی ناوەوە",
-    "horseLesson": "وانەی ئەسپسواری",
-    "ridingSafari": "سەفاری ئەسپسواری",
-    "privateTraining": "ڕاهێنانی تایبەتی"
+    "ridingArena": "گۆڕەپانی سواربوون",
+    "stableInterior": "ناوەوەی تەویلە",
+    "indoorArena": "گۆڕەپانی داخراو",
+    "horseLesson": "وانەی ئەسپ",
+    "ridingSafari": "سەفاری بە ئەسپ",
+    "privateTraining": "ڕاهێنانی تایبەت"
   },
   "lightbox": {
-    "close": "داخستنی لایت بۆکس",
+    "close": "داخستن",
     "previous": "وێنەی پێشوو",
-    "next": "وێنەی دواتر"
+    "next": "وێنەی داهاتوو"
   }
 }
