@@ -18,7 +18,7 @@ export default function HomePage() {
   ]
 
   return (
-    <>
+    <div className="-mt-24">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <Image
@@ -146,6 +146,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }

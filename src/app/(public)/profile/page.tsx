@@ -157,7 +157,7 @@ export default function ProfilePage() {
   if (!profile) return null
 
   return (
-    <div className="min-h-screen py-8 px-4">
+    <div className="min-h-screen pb-8 px-4">
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Profile Card */}
         <div className="glass-card rounded-2xl p-6">

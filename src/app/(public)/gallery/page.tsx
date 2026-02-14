@@ -51,7 +51,7 @@ export default function GalleryPage() {
   }, [filteredImages.length])
 
   return (
-    <div className="pt-24">
+    <div>
       {/* Hero */}
       <section className="section-spacing">
         <div className="container-breathable text-center">

@@ -109,7 +109,7 @@ export default function BookingPage() {
 
   if (submitted) {
     return (
-      <div className="pt-24 min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="glass-card rounded-2xl p-12 text-center max-w-md mx-auto">
           <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
           <h2 className="text-2xl font-serif font-bold text-cream-100 mb-3">{t('success.heading')}</h2>
@@ -122,7 +122,7 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="pt-24 min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <section className="w-full max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-cream-100 mb-4 text-center">
             {t('hero.title')}

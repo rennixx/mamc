@@ -40,7 +40,7 @@ export default function HorsesPage() {
       : horses.filter((h) => h.suitableFor.includes(filter as Horse['suitableFor'][number]))
 
   return (
-    <div className="pt-24">
+    <div>
       {/* Hero */}
       <section className="section-spacing">
         <div className="container-breathable text-center">

@@ -18,7 +18,7 @@ export default function ServicesPage() {
   const { t } = useTranslation('services')
 
   return (
-    <div className="pt-24">
+    <div>
       {/* Hero */}
       <section className="section-spacing">
         <div className="container-breathable text-center">

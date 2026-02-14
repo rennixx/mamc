@@ -19,7 +19,7 @@ export default function TeamPage() {
   const { t } = useTranslation('team')
 
   return (
-    <div className="pt-24">
+    <div>
       {/* Hero */}
       <section className="section-spacing">
         <div className="container-breathable text-center">

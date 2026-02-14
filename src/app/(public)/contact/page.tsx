@@ -52,7 +52,7 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="pt-24">
+    <div>
       {/* Hero */}
       <section className="section-spacing">
         <div className="container-breathable text-center">
