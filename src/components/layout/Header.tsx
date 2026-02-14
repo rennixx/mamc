@@ -156,7 +156,7 @@ export function Header() {
                       className="w-full flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-400/10 text-sm border-t border-cream-400/10"
                     >
                       <LogOut className="w-4 h-4" />
-                      {tAuth('logout', 'Sign Out')}
+                      {t('signOut', 'Sign Out')}
                     </button>
                   </div>
                 )}
@@ -166,7 +166,7 @@ export function Header() {
                 href="/login"
                 className="px-4 py-2 text-cream-100 hover:text-gold-400 font-sans text-sm transition-colors"
               >
-                {tAuth('login', 'Sign In')}
+                {tAuth('login.signIn', 'Sign In')}
               </Link>
             )}
 
@@ -231,7 +231,7 @@ export function Header() {
                   onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
                   className="text-lg font-sans text-red-400 hover:text-red-300 transition-colors"
                 >
-                  {tAuth('logout', 'Sign Out')}
+                  {t('signOut', 'Sign Out')}
                 </button>
               </>
             ) : (
@@ -240,7 +240,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors"
               >
-                {tAuth('login', 'Sign In')}
+                {tAuth('login.signIn', 'Sign In')}
               </Link>
             )}
 
