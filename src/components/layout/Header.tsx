@@ -64,11 +64,11 @@ export function Header() {
           {/* Logo */}
           <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
             <Image
-              src="/icons/logo.png"
+              src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
               alt="Mam Center"
               width={120}
               height={48}
-              className="h-10 w-auto object-contain brightness-0 dark:invert"
+              className="h-10 w-auto object-contain"
               priority
             />
           </Link>
