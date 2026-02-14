@@ -127,19 +127,19 @@ export function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="bg-forest-900 border-t border-cream-400/20 py-10 md:py-14"
+      className="bg-forest-900 border-t border-cream-400/20 py-8 sm:py-10 md:py-14"
     >
-      <div className="container-breathable px-4 md:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+      <div className="container-breathable px-4 sm:px-5 md:px-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
           {/* Brand */}
           <div
             style={getSectionStyle(0)}
-            className="glass rounded-lg p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
+            className="glass rounded-lg p-3.5 sm:p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
           >
-            <h3 className="text-lg md:text-xl font-serif font-bold text-gold-400 mb-2 md:mb-3">
+            <h3 className="text-base sm:text-lg md:text-xl font-serif font-bold text-gold-400 mb-2 md:mb-3">
               Mam Center
             </h3>
-            <p className="text-cream-200 font-sans text-xs md:text-sm">
+            <p className="text-cream-200 font-sans text-[11px] sm:text-xs md:text-sm">
               {t('tagline')}
             </p>
           </div>
@@ -147,9 +147,9 @@ export function Footer() {
           {/* Quick Links */}
           <div
             style={getSectionStyle(1)}
-            className="glass rounded-lg p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
+            className="glass rounded-lg p-3.5 sm:p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
           >
-            <h4 className="text-cream-100 font-sans font-semibold mb-3 text-sm md:text-base">
+            <h4 className="text-cream-100 font-sans font-semibold mb-2.5 sm:mb-3 text-xs sm:text-sm md:text-base">
               {t('quickLinks')}
             </h4>
             <div className="flex flex-col gap-1.5 items-start text-left">
@@ -164,22 +164,22 @@ export function Footer() {
           {/* Contact Info */}
           <div
             style={getSectionStyle(2)}
-            className="glass rounded-lg p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
+            className="glass rounded-lg p-3.5 sm:p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
           >
-            <h4 className="text-cream-100 font-sans font-semibold mb-3 text-sm md:text-base">
+            <h4 className="text-cream-100 font-sans font-semibold mb-2.5 sm:mb-3 text-xs sm:text-sm md:text-base">
               {t('contactInfo')}
             </h4>
-            <div className="flex flex-col gap-2 text-cream-200 text-xs md:text-sm font-sans">
-              <div className="flex items-center gap-2 group">
-                <Phone className="w-4 h-4 text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+            <div className="flex flex-col gap-1.5 sm:gap-2 text-cream-200 text-[11px] sm:text-xs md:text-sm font-sans">
+              <div className="flex items-center gap-1.5 sm:gap-2 group">
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                 <span className="break-all">{t('phone')}</span>
               </div>
-              <div className="flex items-center gap-2 group">
-                <Mail className="w-4 h-4 text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+              <div className="flex items-center gap-1.5 sm:gap-2 group">
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                 <span className="break-all">{t('email')}</span>
               </div>
-              <div className="flex items-center gap-2 group">
-                <MapPin className="w-4 h-4 text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+              <div className="flex items-center gap-1.5 sm:gap-2 group">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                 <span className="break-all">{t('location')}</span>
               </div>
             </div>
@@ -188,12 +188,12 @@ export function Footer() {
           {/* Newsletter */}
           <div
             style={getSectionStyle(3)}
-            className="glass rounded-lg p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
+            className="glass rounded-lg p-3.5 sm:p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
           >
-            <h4 className="text-cream-100 font-sans font-semibold mb-2 text-sm md:text-base">
+            <h4 className="text-cream-100 font-sans font-semibold mb-2 sm:mb-2.5 text-xs sm:text-sm md:text-base">
               {t('newsletter.title')}
             </h4>
-            <p className="text-cream-300 text-xs mb-3 font-sans">
+            <p className="text-cream-300 text-[11px] sm:text-xs mb-2.5 sm:mb-3 font-sans">
               {t('newsletter.description')}
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-2">
@@ -206,17 +206,17 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="w-full px-3 py-2 rounded-md bg-gold-400 text-forest-900 text-xs font-sans font-semibold hover:bg-gold-300 active:translate-y-0.5 transition-all duration-300"
+                className="w-full px-3 py-2 rounded-md bg-gold-400 text-forest-900 text-xs font-sans font-semibold hover:bg-gold-300 active:scale-[0.98] transition-all duration-300"
               >
                 {t('newsletter.button')}
               </button>
               {submitStatus === 'success' && (
-                <p className="text-green-400 text-xs animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <p className="text-green-400 text-[11px] sm:text-xs animate-in fade-in slide-in-from-bottom-2 duration-300">
                   {t('newsletter.success')}
                 </p>
               )}
               {submitStatus === 'error' && (
-                <p className="text-red-400 text-xs animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <p className="text-red-400 text-[11px] sm:text-xs animate-in fade-in slide-in-from-bottom-2 duration-300">
                   {t('newsletter.error')}
                 </p>
               )}
@@ -226,12 +226,12 @@ export function Footer() {
           {/* Social + Hours */}
           <div
             style={getSectionStyle(4)}
-            className="glass rounded-lg p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
+            className="glass rounded-lg p-3.5 sm:p-4 md:p-5 transition-all duration-300 hover:bg-white/5"
           >
-            <h4 className="text-cream-100 font-sans font-semibold mb-3 text-sm md:text-base">
+            <h4 className="text-cream-100 font-sans font-semibold mb-2.5 sm:mb-3 text-xs sm:text-sm md:text-base">
               {t('social.followUs')}
             </h4>
-            <div className="flex gap-3 mb-4">
+            <div className="flex gap-2.5 sm:gap-3 mb-3 sm:mb-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={href}
@@ -239,16 +239,16 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-forest-800 border border-cream-400/20 flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-gold-400 hover:text-forest-900 hover:scale-110 transition-all duration-300 group"
+                  className="w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-forest-800 border border-cream-400/20 flex items-center justify-center text-gold-400 hover:text-gold-300 hover:bg-gold-400 hover:text-forest-900 hover:scale-110 active:scale-105 transition-all duration-300 group"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
-            <h5 className="text-cream-100 font-sans font-semibold mb-2 text-xs">
+            <h5 className="text-cream-100 font-sans font-semibold mb-1.5 sm:mb-2 text-[11px] sm:text-xs">
               {t('hours')}
             </h5>
-            <div className="text-cream-200 text-xs font-sans space-y-1">
+            <div className="text-cream-200 text-[11px] sm:text-xs font-sans space-y-0.5 sm:space-y-1">
               <p>{t('businessHours.weekdays')}</p>
               <p>{t('businessHours.weekends')}</p>
             </div>
@@ -261,23 +261,23 @@ export function Footer() {
             opacity: isVisible ? 1 : 0,
             transition: 'opacity 500ms ease 500ms',
           }}
-          className="mt-8 md:mt-10 pt-5 md:pt-6 border-t border-cream-400/20"
+          className="mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-5 md:pt-6 border-t border-cream-400/20"
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4">
-            <p className="text-cream-300 text-xs md:text-sm font-sans">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 text-center">
+            <p className="text-cream-300 text-[11px] sm:text-xs md:text-sm font-sans">
               {t('copyright', { year: new Date().getFullYear() })}
             </p>
             <span className="hidden md:inline text-cream-400/50">•</span>
-            <div className="flex items-center gap-2">
-              <span className="text-cream-400/70 text-xs font-sans">{t('madeBy')}</span>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="text-cream-400/70 text-[11px] sm:text-xs font-sans self-center">{t('madeBy')}</span>
               <a
                 href="https://www.instagram.com/icyrendev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="opacity-60 hover:opacity-100 transition-opacity"
+                className="opacity-60 hover:opacity-100 transition-opacity active:opacity-80 self-center flex items-center"
               >
-                <Signature className="h-7 md:h-8" />
+                <Signature className="h-5 sm:h-6 md:h-7 lg:h-8" />
               </a>
             </div>
           </div>
@@ -292,7 +292,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="footer-link text-cream-200 hover:text-gold-400 text-xs md:text-sm font-sans transition-colors touch-manipulation relative after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-px after:bg-gold-400 after:transition-all after:duration-300 hover:after:w-full"
+      className="footer-link text-cream-200 hover:text-gold-400 text-[11px] sm:text-xs md:text-sm font-sans transition-colors py-0.5 -mx-1 px-1 rounded hover:bg-white/5 active:bg-white/10 touch-manipulation relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:right-1 after:w-0 after:h-px after:bg-gold-400 after:transition-all after:duration-300 hover:after:w-full after:hover:right-1"
     >
       {label}
     </Link>
