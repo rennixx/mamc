@@ -1,5 +1,6 @@
 {
   "title": "Admin Panel",
+  "logout": "Logout",
   "backToSite": "Back to Website",
   "sidebar": {
     "dashboard": "Dashboard",

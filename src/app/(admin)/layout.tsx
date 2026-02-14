@@ -30,26 +30,19 @@ export default async function AdminLayout({
   // Server-side auth check (backup to proxy)
   const adminUser = await verifyAdminToken()
 
-  // DEBUG: Log to see if layout check is working
-  console.log('[ADMIN LAYOUT] Admin user:', adminUser)
-
   if (!adminUser) {
-    console.log('[ADMIN LAYOUT] No admin user, redirecting to /admin/login')
     redirect('/admin/login')
   }
 
   if (adminUser.role !== 'ADMIN' && adminUser.role !== 'STAFF') {
-    console.log('[ADMIN LAYOUT] Invalid role:', adminUser.role)
     redirect('/admin/login')
   }
-
-  console.log('[ADMIN LAYOUT] Access granted for', adminUser.email)
 
   return (
     <div className="min-h-screen flex bg-forest-800">
       <AdminSidebar />
       <div className="flex-1 flex flex-col">
-        <AdminHeader />
+        <AdminHeader adminEmail={adminUser.email} adminName={adminUser.name} adminRole={adminUser.role} />
         <main className="flex-1 p-6">{children}</main>
       </div>
     </div>
