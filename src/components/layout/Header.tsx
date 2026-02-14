@@ -296,12 +296,12 @@ export function Header() {
 
         {/* Mobile header bar with dropdown menu */}
         <nav
-          className="block lg:hidden w-full"
+          className={`block lg:hidden w-full transition-all duration-300 ${isMobileMenuOpen ? 'bg-forest-900' : ''}`}
           style={{ paddingTop: 'max(1rem, env(safe-area-inset-top))' }}
         >
           {/* Header bar - turns black when menu opens */}
           <div
-            className={`flex items-center justify-between px-4 py-3 transition-all duration-300 ${isMobileMenuOpen ? 'bg-forest-900 border-b border-white/20' : ''}`}
+            className={`flex items-center justify-between px-4 py-3 transition-all duration-300 ${isMobileMenuOpen ? 'border-b border-white/20' : ''}`}
             style={isMobileMenuOpen ? { borderWidth: '0 0 1.5px 0' } : undefined}
           >
               {/* Logo */}
