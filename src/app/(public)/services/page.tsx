@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
-import { Users, Trophy, Shield, Truck, TreePine, Heart, ArrowRight } from 'lucide-react'
+import { Users, Trophy, Shield, Truck, TreePine, Heart, ArrowRight, Coffee } from 'lucide-react'
 
 const serviceKeys = [
   { icon: Users, key: 'beginners', image: '/images/services/horse-lesson.jpg' },
@@ -12,6 +12,7 @@ const serviceKeys = [
   { icon: Truck, key: 'transportation', image: '/images/horses/horse-1.jpg' },
   { icon: TreePine, key: 'safari', image: '/images/services/riding-safari.jpg' },
   { icon: Heart, key: 'socialResponsibility', image: '/images/facility/entrance.jpg' },
+  { icon: Coffee, key: 'baranCoffee', image: '/images/facility/entrance.jpg' },
 ]
 
 export default function ServicesPage() {

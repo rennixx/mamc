@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
-import { ArrowRight, Users, Trophy, Shield, Heart, Truck, TreePine, ChevronLeft, ChevronRight, PawPrint, Award } from 'lucide-react'
+import { ArrowRight, Users, Trophy, Shield, Heart, Truck, TreePine, ChevronLeft, ChevronRight, PawPrint, Award, Coffee } from 'lucide-react'
 
 export default function HomePage() {
   const { t } = useTranslation('home')
@@ -24,6 +24,7 @@ export default function HomePage() {
     { icon: Truck, titleKey: 'services.transportation.title', descKey: 'services.transportation.desc' },
     { icon: TreePine, titleKey: 'services.safari.title', descKey: 'services.safari.desc' },
     { icon: Heart, titleKey: 'services.socialResponsibility.title', descKey: 'services.socialResponsibility.desc' },
+    { icon: Coffee, titleKey: 'services.baranCoffee.title', descKey: 'services.baranCoffee.desc' },
   ]
 
   return (
