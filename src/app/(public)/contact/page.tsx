@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { submitContactMessage } from '@/services/contactService'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from 'lucide-react'
+import { GoogleMapsEmbed } from '@next/third-parties/google'
 
 const subjectKeys = [
   'generalInquiry', 'booking', 'ridingLessons', 'stableRental',
@@ -205,15 +206,15 @@ export default function ContactPage() {
                 </div>
               ))}
 
-              {/* Google Maps Mini Map */}
+              {/* Google Maps */}
               <div className="glass-card rounded-2xl overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps?q=36.1918056,43.9812155&output=embed&z=17"
-                  className="w-full aspect-[4/3] border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mam Center Location"
+                <GoogleMapsEmbed
+                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+                  height={300}
+                  width="100%"
+                  mode="place"
+                  q="Mam+horse+riding+center"
+                  place_id="0x40072355434d428d:0x6f830bbb98fb7add"
                 />
               </div>
             </div>
