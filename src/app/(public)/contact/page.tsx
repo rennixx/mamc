@@ -208,7 +208,7 @@ export default function ContactPage() {
               {/* Google Maps Mini Map */}
               <div className="glass-card rounded-2xl overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps?q=36.19338,43.9811066&output=embed"
+                  src="https://www.google.com/maps?q=36.1918056,43.9812155&output=embed&z=17"
                   className="w-full aspect-[4/3] border-0"
                   allowFullScreen
                   loading="lazy"
