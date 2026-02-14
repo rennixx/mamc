@@ -367,7 +367,7 @@ export function Header() {
                     </Link>
                     <button
                       onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-red-400 rounded-lg hover:bg-red-400/10 transition-all"
+                      className="w-full flex items-center gap-3 px-4 py-3 text-red-400 rounded-lg hover:bg-red-400/10 transition-all border border-red-400/20"
                     >
                       <LogOut className="w-5 h-5" />
                       {t('signOut', 'Sign Out')}
@@ -397,7 +397,7 @@ export function Header() {
                 <div className="space-y-2">
                   <button
                     onClick={toggleTheme}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
+                    className="w-full flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all border border-white/30"
                     aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                   >
                     {theme === 'dark' ? <Sun className="w-5 h-5 opacity-60" /> : <Moon className="w-5 h-5 opacity-60" />}
