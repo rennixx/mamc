@@ -270,7 +270,15 @@ export function Footer() {
             <span className="hidden md:inline text-cream-400/50">•</span>
             <div className="flex items-center gap-2">
               <span className="text-cream-400/70 text-xs font-sans">Made By</span>
-              <Signature className="h-7 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+              <a
+                href="https://www.instagram.com/icyrendev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="opacity-60 hover:opacity-100 transition-opacity"
+              >
+                <Signature className="h-7 md:h-8" />
+              </a>
             </div>
           </div>
         </div>
