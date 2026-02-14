@@ -74,3 +74,17 @@ export async function releaseSlot(date: string, time: string, bookingId: string)
   })
   if (!res.ok) throw new Error('Failed to release slot')
 }
+
+export async function getCalendarRange(startDate: string, endDate: string): Promise<CalendarDay[]> {
+  const res = await fetch(`${API_BASE}?start=${startDate}&end=${endDate}`)
+  if (!res.ok) return []
+  const json: ApiResponse<CalendarDay[]> = await res.json()
+  return json.data ?? []
+}
+
+export async function getBookedSlots(date: string): Promise<BookedSlot[]> {
+  const res = await fetch(`${API_BASE}/slots?date=${date}`)
+  if (!res.ok) return []
+  const json: ApiResponse<{ data: BookedSlot[] }> = await res.json()
+  return Array.isArray(json.data) ? json.data : []
+}

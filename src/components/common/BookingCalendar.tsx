@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 import { useState, useEffect, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { calendarService } from '@/services'
+import * as calendarService from '@/services/calendarService'
 
 interface BookingCalendarProps {
   onDateSelect?: (date: Date) => void
@@ -46,9 +46,9 @@ export const BookingCalendar = ({
       const days = await calendarService.getCalendarRange(startDate, endDate)
       const configs: Record<string, Record<string, unknown>> = {}
       if (Array.isArray(days)) {
-        days.forEach((day: Record<string, unknown>) => {
+        days.forEach((day) => {
           const dateStr = new Date(day.date as string).toISOString().split('T')[0]
-          configs[dateStr] = day
+          configs[dateStr] = day as unknown as Record<string, unknown>
         })
       }
       setDateConfigs(configs)
@@ -69,7 +69,7 @@ export const BookingCalendar = ({
       .getBookedSlots(dateStr)
       .then((slots) => {
         if (Array.isArray(slots)) {
-          setBookedSlots(slots.map((s: Record<string, unknown>) => s.time as string))
+          setBookedSlots(slots.map((s) => s.time as string))
         }
       })
       .catch(console.error)

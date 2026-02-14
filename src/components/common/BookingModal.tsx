@@ -14,8 +14,8 @@ import {
 import { useState, useEffect } from 'react'
 import { BookingCalendar } from './BookingCalendar'
 import { HorseSelector } from './HorseSelector'
-import { bookingService } from '@/services'
-import { getUserLocation } from '@/services/ipGeolocation'
+import * as bookingService from '@/services/bookingService'
+import { getIpLocation } from '@/services/ipGeolocation'
 
 interface BookingModalProps {
   isOpen: boolean
@@ -118,9 +118,9 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const handleSubmit = async () => {
     if (validateStep(4) && formData.date && formData.time) {
       try {
-        const location = await getUserLocation()
-        await bookingService.create({
-          service: formData.service,
+        const location = await getIpLocation()
+        await bookingService.createBooking({
+          service: formData.service as 'SAFARI' | 'ACADEMY' | 'PRIVATE' | 'EVENT',
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -129,6 +129,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           specialRequests: formData.specialRequests,
           date: formData.date.toISOString().split('T')[0],
           time: formData.time,
+          status: 'PENDING',
           horseIds: formData.horseIds,
           location: location || undefined,
         })

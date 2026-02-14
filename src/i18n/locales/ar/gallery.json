@@ -1,13 +1,35 @@
 {
   "hero": {
     "title": "المعرض",
-    "subtitle": "لحظات ملتقطة من رحلات الركوب، حياة المقهى، وجلسات الأكاديمية"
+    "subtitle": "لحظات مميزة من مام سنتر"
   },
-  "filters": {
+  "categories": {
     "all": "الكل",
-    "safari": "رحلة السفاري",
-    "lifestyle": "نمط الحياة",
-    "academy": "الأكاديمية"
+    "training": "التدريب",
+    "jumping": "القفز",
+    "horses": "الأحصنة",
+    "facility": "المرافق",
+    "safari": "السفاري"
   },
-  "placeholder": "صور المعرض قادمة قريبًا. قم بتوصيل الكاميرا أو تحميل الصور لملء هذا المعرض."
+  "images": {
+    "equestrianTraining": "تدريب الفروسية",
+    "showJumping": "القفز الاستعراضي",
+    "showJumpingCompetition": "مسابقة القفز الاستعراضي",
+    "showJumpingEvent": "حدث القفز الاستعراضي",
+    "ridingTraining": "تدريب الركوب",
+    "horsePortrait": "صورة حصان",
+    "stableFacility": "مرفق الإسطبل",
+    "clubEntrance": "مدخل النادي",
+    "ridingArena": "حلبة الركوب",
+    "stableInterior": "داخل الإسطبل",
+    "indoorArena": "الحلبة الداخلية",
+    "horseLesson": "درس فروسية",
+    "ridingSafari": "سفاري ركوب",
+    "privateTraining": "تدريب خاص"
+  },
+  "lightbox": {
+    "close": "إغلاق العرض",
+    "previous": "الصورة السابقة",
+    "next": "الصورة التالية"
+  }
 }

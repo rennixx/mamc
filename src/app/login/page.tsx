@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 
-export default function LoginPage() {
+function LoginForm() {
   const { t } = useTranslation('common')
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -94,5 +94,13 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-cream-300">Loading...</div></div>}>
+      <LoginForm />
+    </Suspense>
   )
 }

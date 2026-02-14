@@ -1,0 +1,44 @@
+{
+  "badge": "Our People",
+  "hero": {
+    "title": "Team Mam Loyalty",
+    "subtitle": "The dedicated professionals behind Mam Center — united by a shared love for horses and commitment to excellence."
+  },
+  "members": {
+    "ahmad": {
+      "name": "Ahmad Kareem",
+      "role": "Founder & Head Trainer",
+      "description": "With over 15 years of equestrian experience, Ahmad founded Mam Center with a vision to bring world-class horse riding to the region."
+    },
+    "sara": {
+      "name": "Sara Mohammed",
+      "role": "Senior Riding Instructor",
+      "description": "A certified equestrian instructor specializing in dressage and show jumping, Sara brings passion and precision to every lesson."
+    },
+    "omar": {
+      "name": "Omar Hassan",
+      "role": "Horse Care Manager",
+      "description": "Omar oversees the health and well-being of all horses at the center, ensuring they receive the best nutrition and veterinary care."
+    },
+    "lana": {
+      "name": "Lana Ali",
+      "role": "Youth Program Coordinator",
+      "description": "Lana designs and leads our youth riding programs, making horse riding accessible and fun for children of all ages."
+    },
+    "karwan": {
+      "name": "Karwan Jamal",
+      "role": "Safari & Trail Guide",
+      "description": "An experienced trail guide, Karwan leads our desert safari and nature rides, creating unforgettable outdoor experiences."
+    },
+    "dina": {
+      "name": "Dina Rashid",
+      "role": "Operations Manager",
+      "description": "Dina keeps everything running smoothly — from bookings and scheduling to facility management and customer relations."
+    }
+  },
+  "cta": {
+    "heading": "Want to Join Our Team?",
+    "text": "We're always looking for passionate equestrians and dedicated professionals to grow with us.",
+    "button": "Get in Touch"
+  }
+}

@@ -1,12 +1,9 @@
 {
-  "home": "Home",
-  "academy": "Academy",
-  "safari": "Safari",
-  "lifestyle": "Lifestyle",
-  "gallery": "Gallery",
+  "services": "Services",
   "horses": "Horses",
+  "gallery": "Gallery",
   "about": "About",
+  "team": "Team",
   "contact": "Contact",
-  "coffee": "Coffee",
   "bookNow": "Book Now"
 }

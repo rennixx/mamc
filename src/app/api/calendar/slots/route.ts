@@ -13,7 +13,6 @@ export async function GET(request: NextRequest) {
 
     const bookedSlots = await db.bookedSlot.findMany({
       where: { date: new Date(date) },
-      include: { booking: true },
       orderBy: { time: 'asc' },
     })
 

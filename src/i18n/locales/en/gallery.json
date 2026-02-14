@@ -1,13 +1,35 @@
 {
   "hero": {
     "title": "Gallery",
-    "subtitle": "Moments captured from our riding safaris, cafe life, and academy sessions"
+    "subtitle": "Moments captured at Mam Center"
   },
-  "filters": {
+  "categories": {
     "all": "All",
-    "safari": "Safari",
-    "lifestyle": "Lifestyle",
-    "academy": "Academy"
+    "training": "Training",
+    "jumping": "Jumping",
+    "horses": "Horses",
+    "facility": "Facility",
+    "safari": "Safari"
   },
-  "placeholder": "Gallery images coming soon. Connect your camera or upload photos to populate this gallery."
+  "images": {
+    "equestrianTraining": "Equestrian Training",
+    "showJumping": "Show Jumping",
+    "showJumpingCompetition": "Show Jumping Competition",
+    "showJumpingEvent": "Show Jumping Event",
+    "ridingTraining": "Riding Training",
+    "horsePortrait": "Horse Portrait",
+    "stableFacility": "Stable Facility",
+    "clubEntrance": "Club Entrance",
+    "ridingArena": "Riding Arena",
+    "stableInterior": "Stable Interior",
+    "indoorArena": "Indoor Arena",
+    "horseLesson": "Horse Lesson",
+    "ridingSafari": "Riding Safari",
+    "privateTraining": "Private Training"
+  },
+  "lightbox": {
+    "close": "Close lightbox",
+    "previous": "Previous image",
+    "next": "Next image"
+  }
 }

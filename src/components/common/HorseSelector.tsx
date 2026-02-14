@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { horseService } from '@/services'
+import * as horseService from '@/services/horseService'
 import { HorseCard } from './HorseCard'
 import type { Horse } from '@/types'
 
@@ -25,7 +25,7 @@ export const HorseSelector = ({
   const [horses, setHorses] = useState<Horse[]>([])
 
   useEffect(() => {
-    horseService.getAll()
+    horseService.getAllHorses()
       .then((res) => {
         const available = (res as Horse[]).filter((h) => h.available)
         setHorses(available)

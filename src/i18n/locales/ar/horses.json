@@ -1,42 +1,21 @@
 {
-  "meta": {
-    "title": "خيولنا - مركز مام",
-    "description": "تعرف على خيولنا الجميلة في مركز مام",
-    "keywords": "خيول، ركوب، فروسي، أربيل، كردستان"
+  "hero": {
+    "title": "أحصنتنا",
+    "subtitle": "تعرف على أحصنة مام سنتر المميزة"
   },
-  "title": "خيولنا",
-  "subtitle": "تعرف على خيولنا الجميلة",
-  "filters": {
-    "availability": "التوفر",
-    "all": "الكل",
-    "available": "متاح",
-    "experience": "مستوى الخبرة",
-    "allLevels": "جميع المستويات",
-    "showing": "عرض {{count}} خيول"
-  },
-  "levels": {
+  "filter": {
+    "all": "جميع الأحصنة",
     "beginner": "مبتدئ",
-    "novice": "قليل الخبرة",
+    "novice": "مستجد",
     "intermediate": "متوسط",
     "advanced": "متقدم"
   },
-  "genders": {
-    "male": "ذكر",
-    "female": "أنثى",
-    "stallion": "حصان عربي",
-    "mare": "فرس",
-    "gelding": "خصي"
-  },
-  "age": "العمر",
-  "gender": "الجنس",
-  "color": "اللون",
-  "maxWeight": "الوزن الأقصى",
-  "availability": {
+  "status": {
     "available": "متاح",
     "unavailable": "غير متاح"
   },
-  "noHorses": "لا توجد خيول",
-  "selectHorse": "اختر {{name}}",
-  "viewDetails": "عرض التفاصيل",
-  "unsuitableWarning": "قد لا يكون هذا الحصان مناسبًا لمستوى خبرتك."
+  "empty": {
+    "noHorses": "لا توجد أحصنة متاحة حالياً.",
+    "noMatch": "لا توجد أحصنة تطابق الفلتر المحدد."
+  }
 }

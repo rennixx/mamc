@@ -1,92 +1,66 @@
 {
-  "meta": {
-    "title": "Book Your Experience - MAM Center",
-    "description": "Book your horse riding experience at MAM Center",
-    "keywords": "booking, horse riding, safari, academy, lessons, Erbil"
-  },
-  "header": {
+  "hero": {
     "title": "Book Your Experience",
-    "subtitle": "Complete your booking in a few simple steps"
+    "subtitle": "Reserve your spot at Mam Center"
   },
-  "progress": {
-    "step0": "Horses",
-    "step1": "Date & Time",
-    "step2": "Service",
-    "step3": "Details"
+  "steps": {
+    "service": "Service",
+    "dateTime": "Date & Time",
+    "details": "Details",
+    "confirm": "Confirm"
   },
-  "step0": {
-    "title": "Choose Your Horses",
-    "riderCount": "How many riders?",
-    "errors": {
-      "selectHorses": "Please select a horse for each rider"
-    }
+  "serviceSelect": {
+    "heading": "Select a Service"
   },
-  "step1": {
-    "title": "Choose Your Date & Time",
-    "errors": {
-      "selectDateTime": "Please select both a date and time to continue",
-      "dateNotAvailable": "This date is not available for booking",
-      "timeNotAvailable": "This time slot is not available"
-    }
+  "services": {
+    "ridingLessons": "Riding Lessons",
+    "horseSafari": "Horse Safari",
+    "privateTraining": "Private Training",
+    "stableRental": "Stable Rental / Event"
   },
-  "step2": {
-    "title": "What would you like to book?",
-    "services": {
-      "safari": "Horse Riding Safari",
-      "academy": "Riding Academy",
-      "private": "Private Lessons",
-      "event": "Special Event"
-    },
-    "errors": {
-      "selectService": "Please select a service"
-    }
+  "dateTime": {
+    "heading": "Choose Date & Time",
+    "date": "Date",
+    "timeSlot": "Time Slot"
   },
-  "step3": {
-    "title": "Your Information",
-    "selectedHorses": "Selected Horses",
-    "fields": {
-      "name": {
-        "label": "Full Name",
-        "placeholder": "Enter your full name"
-      },
-      "email": {
-        "label": "Email Address",
-        "placeholder": "your.email@example.com"
-      },
-      "phone": {
-        "label": "Phone Number",
-        "placeholder": "+964 750 123 4567"
-      },
-      "experienceLevel": {
-        "label": "Experience Level",
-        "options": {
-          "beginner": "Beginner (Never ridden)",
-          "novice": "Novice (A few times)",
-          "intermediate": "Intermediate (Comfortable)",
-          "advanced": "Advanced (Expert rider)"
-        }
-      },
-      "specialRequests": {
-        "label": "Special Requests (Optional)",
-        "placeholder": "Any dietary restrictions, accessibility needs, or special occasions?"
-      }
-    },
-    "errors": {
-      "nameRequired": "Name is required",
-      "emailRequired": "Email is required",
-      "emailInvalid": "Invalid email format",
-      "phoneRequired": "Phone number is required"
-    }
+  "details": {
+    "heading": "Your Details",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "experienceLevel": "Experience Level",
+    "selectLevel": "Select level",
+    "groupSize": "Group Size",
+    "specialRequests": "Special Requests"
   },
-  "actions": {
+  "experienceLevels": {
+    "beginner": "Beginner",
+    "novice": "Novice",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "confirmSection": {
+    "heading": "Confirm Your Booking",
+    "service": "Service",
+    "date": "Date",
+    "time": "Time",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "experience": "Experience",
+    "groupSize": "Group Size",
+    "specialRequests": "Special Requests"
+  },
+  "nav": {
     "back": "Back",
-    "continue": "Continue",
+    "next": "Next",
     "confirmBooking": "Confirm Booking"
   },
   "success": {
-    "title": "Booking Confirmed!",
-    "message": "Thank you, {{name}}! Your booking request has been received.",
-    "reference": "Reference: {{id}}",
-    "contact": "We'll contact you at {{phone}} to confirm your booking."
+    "heading": "Booking Confirmed!",
+    "text": "We've received your booking request. We'll contact you shortly to confirm the details."
+  },
+  "error": {
+    "submitFailed": "Failed to submit booking. Please try again."
   }
 }

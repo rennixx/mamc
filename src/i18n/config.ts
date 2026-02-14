@@ -8,68 +8,56 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import enCommon from './locales/en/common.json'
 import enNav from './locales/en/nav.json'
 import enHome from './locales/en/home.json'
-import enSafari from './locales/en/safari.json'
-import enLifestyle from './locales/en/lifestyle.json'
-import enAcademy from './locales/en/academy.json'
+import enServices from './locales/en/services.json'
 import enGallery from './locales/en/gallery.json'
-import enCoffee from './locales/en/coffee.json'
 import enContact from './locales/en/contact.json'
-import enComponents from './locales/en/components.json'
 import enBooking from './locales/en/booking.json'
 import enAdmin from './locales/en/admin.json'
 import enHorses from './locales/en/horses.json'
 import enAbout from './locales/en/about.json'
+import enTeam from './locales/en/team.json'
 
 // Arabic translations
 import arCommon from './locales/ar/common.json'
 import arNav from './locales/ar/nav.json'
 import arHome from './locales/ar/home.json'
-import arSafari from './locales/ar/safari.json'
-import arLifestyle from './locales/ar/lifestyle.json'
-import arAcademy from './locales/ar/academy.json'
+import arServices from './locales/ar/services.json'
 import arGallery from './locales/ar/gallery.json'
-import arCoffee from './locales/ar/coffee.json'
 import arContact from './locales/ar/contact.json'
-import arComponents from './locales/ar/components.json'
 import arBooking from './locales/ar/booking.json'
 import arAdmin from './locales/ar/admin.json'
 import arHorses from './locales/ar/horses.json'
 import arAbout from './locales/ar/about.json'
+import arTeam from './locales/ar/team.json'
 
 // Kurdish translations
 import kuCommon from './locales/ku/common.json'
 import kuNav from './locales/ku/nav.json'
 import kuHome from './locales/ku/home.json'
-import kuSafari from './locales/ku/safari.json'
-import kuLifestyle from './locales/ku/lifestyle.json'
-import kuAcademy from './locales/ku/academy.json'
+import kuServices from './locales/ku/services.json'
 import kuGallery from './locales/ku/gallery.json'
-import kuCoffee from './locales/ku/coffee.json'
 import kuContact from './locales/ku/contact.json'
-import kuComponents from './locales/ku/components.json'
 import kuBooking from './locales/ku/booking.json'
 import kuAdmin from './locales/ku/admin.json'
 import kuHorses from './locales/ku/horses.json'
 import kuAbout from './locales/ku/about.json'
+import kuTeam from './locales/ku/team.json'
 
 const resources = {
   en: {
-    common: enCommon, nav: enNav, home: enHome, safari: enSafari,
-    lifestyle: enLifestyle, academy: enAcademy, gallery: enGallery,
-    coffee: enCoffee, contact: enContact, components: enComponents,
-    booking: enBooking, admin: enAdmin, horses: enHorses, about: enAbout,
+    common: enCommon, nav: enNav, home: enHome, services: enServices,
+    gallery: enGallery, contact: enContact, booking: enBooking,
+    admin: enAdmin, horses: enHorses, about: enAbout, team: enTeam,
   },
   ar: {
-    common: arCommon, nav: arNav, home: arHome, safari: arSafari,
-    lifestyle: arLifestyle, academy: arAcademy, gallery: arGallery,
-    coffee: arCoffee, contact: arContact, components: arComponents,
-    booking: arBooking, admin: arAdmin, horses: arHorses, about: arAbout,
+    common: arCommon, nav: arNav, home: arHome, services: arServices,
+    gallery: arGallery, contact: arContact, booking: arBooking,
+    admin: arAdmin, horses: arHorses, about: arAbout, team: arTeam,
   },
   ku: {
-    common: kuCommon, nav: kuNav, home: kuHome, safari: kuSafari,
-    lifestyle: kuLifestyle, academy: kuAcademy, gallery: kuGallery,
-    coffee: kuCoffee, contact: kuContact, components: kuComponents,
-    booking: kuBooking, admin: kuAdmin, horses: kuHorses, about: kuAbout,
+    common: kuCommon, nav: kuNav, home: kuHome, services: kuServices,
+    gallery: kuGallery, contact: kuContact, booking: kuBooking,
+    admin: kuAdmin, horses: kuHorses, about: kuAbout, team: kuTeam,
   },
 }
 
@@ -82,9 +70,8 @@ i18n
     lng: 'ku',
     defaultNS: 'common',
     ns: [
-      'common', 'nav', 'admin', 'booking', 'components', 'horses',
-      'home', 'safari', 'lifestyle', 'academy', 'gallery', 'coffee',
-      'contact', 'about',
+      'common', 'nav', 'admin', 'booking', 'horses',
+      'home', 'services', 'gallery', 'contact', 'about', 'team',
     ],
     interpolation: { escapeValue: false },
     detection: {

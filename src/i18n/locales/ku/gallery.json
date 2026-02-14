@@ -1,13 +1,35 @@
 {
   "hero": {
     "title": "گەلەری",
-    "subtitle": "ساتەکان لە سەفەری سواری، ژیانی کافێ و وانەکانی ئەکادیمی"
+    "subtitle": "ساتەکانی تۆمارکراو لە مام سەنتەر"
   },
-  "filters": {
+  "categories": {
     "all": "هەموو",
-    "safari": "سەفەر",
-    "lifestyle": "شێوازی ژیان",
-    "academy": "ئەکادیمی"
+    "training": "ڕاهێنان",
+    "jumping": "باز",
+    "horses": "ئەسپەکان",
+    "facility": "ئامرازگا",
+    "safari": "سەفاری"
   },
-  "placeholder": "وێنەکانی گەلەری بەزووانە دێن. کامێراکەت بەستە یان وێنە بار بکە بۆ پڕکردنەوەی گەلەری."
+  "images": {
+    "equestrianTraining": "ڕاهێنانی ئەسپسواری",
+    "showJumping": "بازی نمایشی",
+    "showJumpingCompetition": "کێبڕکێی بازی نمایشی",
+    "showJumpingEvent": "بۆنەی بازی نمایشی",
+    "ridingTraining": "ڕاهێنانی سواری",
+    "horsePortrait": "وێنەی ئەسپ",
+    "stableFacility": "ئامرازگای ئاخوڕ",
+    "clubEntrance": "دەروازەی یانە",
+    "ridingArena": "گۆڕەپانی ئەسپسواری",
+    "stableInterior": "ناوەوەی ئاخوڕ",
+    "indoorArena": "گۆڕەپانی ناوەوە",
+    "horseLesson": "وانەی ئەسپسواری",
+    "ridingSafari": "سەفاری ئەسپسواری",
+    "privateTraining": "ڕاهێنانی تایبەتی"
+  },
+  "lightbox": {
+    "close": "داخستنی لایتبۆکس",
+    "previous": "وێنەی پێشوو",
+    "next": "وێنەی دواتر"
+  }
 }

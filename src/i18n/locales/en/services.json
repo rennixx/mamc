@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "title": "Our Services",
+    "subtitle": "Premium equestrian services for horse lovers of all levels"
+  },
+  "beginners": {
+    "title": "Horse Riding for Beginners",
+    "description": "Our structured lessons are designed to build confidence, safety, and foundational riding skills under the guidance of certified instructors."
+  },
+  "jumping": {
+    "title": "Jumping Level Training",
+    "description": "We provide advanced training programs for riders aiming to refine their jumping techniques and pursue competitive goals."
+  },
+  "stableRental": {
+    "title": "Daily Rent of the Stable",
+    "description": "The club allows renting the stable for people, families, groups of companies, institutions and friends for your private or public events also renting horses for your special events."
+  },
+  "transportation": {
+    "title": "Horse Transportation",
+    "description": "Our reliable and secure transportation services ensure your horse arrives safely and on time, whether locally or regionally."
+  },
+  "safari": {
+    "title": "Horse Riding Safari",
+    "description": "Discover the natural beauty of Kurdistan on horseback with our exclusive Horse Riding Safaris. Whether you prefer a peaceful solo experience or an adventurous group ride, we offer both private and group safaris tailored to your pace and comfort. Ride through scenic landscapes, guided by our professional team, and enjoy a truly unforgettable equestrian journey."
+  },
+  "socialResponsibility": {
+    "title": "Social Responsibility",
+    "description": "Sensing our humanitarian role towards our society and our country, we have the honor to welcome some dear groups and provide them with some support, such as people of determination, people with special needs and children of martyrs, and to participate in national holidays and events as available, provided that this does not conflict with our goals and the public interest."
+  },
+  "cta": {
+    "heading": "Join us at Mam Center",
+    "text": "Where passion meets professionalism in every stride.",
+    "button": "Book Your Experience"
+  }
+}

@@ -1,5 +1,5 @@
 export { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking, getBookingStats } from './bookingService'
 export { getAllHorses, getAvailableHorses, getHorseById, createHorse, updateHorse, deleteHorse, toggleHorseAvailability } from './horseService'
-export { getDayConfig, isDateAvailable, getAvailableSlots, blockDate, unblockDate, setDateConfig, bookTimeSlot, releaseSlot } from './calendarService'
+export { getDayConfig, isDateAvailable, getAvailableSlots, blockDate, unblockDate, setDateConfig, bookTimeSlot, releaseSlot, getCalendarRange, getBookedSlots } from './calendarService'
 export { submitContactMessage, getAllMessages, markMessageRead } from './contactService'
 export { getIpLocation, getBrowserLocationInfo } from './ipGeolocation'
