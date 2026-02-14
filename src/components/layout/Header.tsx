@@ -68,7 +68,7 @@ export function Header() {
               alt="Mam Center"
               width={120}
               height={48}
-              className="h-10 w-auto object-contain"
+              className={`object-contain w-auto ${theme === 'dark' ? 'h-12' : 'h-10'}`}
               priority
             />
           </Link>
