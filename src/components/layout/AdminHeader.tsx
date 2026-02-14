@@ -12,6 +12,8 @@ interface AdminHeaderProps {
   adminRole: string
 }
 
+const RTL_LANGUAGES = ['ar', 'ku']
+
 export function AdminHeader({ adminEmail, adminName, adminRole }: AdminHeaderProps) {
   const { t } = useTranslation('admin')
   const { toggleMobileMenu } = useMobileMenu()
@@ -19,6 +21,8 @@ export function AdminHeader({ adminEmail, adminName, adminRole }: AdminHeaderPro
   const theme = useAppStore((s) => s.theme)
   const toggleTheme = useAppStore((s) => s.toggleTheme)
   const [showUserMenu, setShowUserMenu] = useState(false)
+
+  const isRTL = RTL_LANGUAGES.includes(language)
 
   const languages = [
     { code: 'en' as const, label: 'EN' },
@@ -39,7 +43,7 @@ export function AdminHeader({ adminEmail, adminName, adminRole }: AdminHeaderPro
   }
 
   return (
-    <header className="h-16 border-b border-cream-400/20 flex items-center justify-between px-6">
+    <header className="h-16 border-b border-cream-400/20 flex items-center justify-between px-6" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Mobile menu toggle */}
       <button
         className="lg:hidden text-cream-100 p-2"
@@ -94,7 +98,7 @@ export function AdminHeader({ adminEmail, adminName, adminRole }: AdminHeaderPro
             <div className="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center">
               <User className="w-4 h-4 text-forest-900" />
             </div>
-            <div className="hidden md:block text-left">
+            <div className={`hidden md:block ${isRTL ? 'text-right' : 'text-left'}`}>
               <p className="text-sm font-medium text-cream-100">{adminName || 'Admin'}</p>
               <p className="text-xs text-cream-400">{adminRole}</p>
             </div>
@@ -102,11 +106,11 @@ export function AdminHeader({ adminEmail, adminName, adminRole }: AdminHeaderPro
 
           {/* Dropdown Menu */}
           {showUserMenu && (
-            <div className="absolute right-0 mt-2 w-56 rounded-lg bg-forest-900 border border-cream-400/20 shadow-lg z-50">
+            <div className={`${isRTL ? 'left-0' : 'right-0'} absolute mt-2 w-56 rounded-lg bg-forest-900 border border-cream-400/20 shadow-lg z-50`}>
               <div className="px-4 py-3 border-b border-cream-400/10">
-                <p className="text-sm font-medium text-cream-100">{adminName || 'Admin'}</p>
-                <p className="text-xs text-cream-400 truncate">{adminEmail}</p>
-                <div className="flex items-center gap-1 mt-1">
+                <p className={`text-sm font-medium text-cream-100 ${isRTL ? 'text-right' : 'text-left'}`}>{adminName || 'Admin'}</p>
+                <p className={`text-xs text-cream-400 truncate ${isRTL ? 'text-right' : 'text-left'}`}>{adminEmail}</p>
+                <div className={`flex items-center gap-1 mt-1 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Shield className="w-3 h-3 text-gold-400" />
                   <p className="text-xs text-gold-400">{adminRole}</p>
                 </div>
@@ -114,7 +118,7 @@ export function AdminHeader({ adminEmail, adminName, adminRole }: AdminHeaderPro
               <div className="py-1">
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-2 w-full px-4 py-2 text-sm text-cream-200 hover:text-cream-100 hover:bg-cream-400/10 transition-colors"
+                  className={`flex items-center gap-2 w-full px-4 py-2 text-sm text-cream-200 hover:text-cream-100 hover:bg-cream-400/10 transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   <LogOut className="w-4 h-4" />
                   {t('logout') || 'Logout'}
