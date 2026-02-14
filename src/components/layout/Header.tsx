@@ -197,9 +197,9 @@ export function Header() {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-0 bg-forest-900/95 backdrop-blur-lg z-50 flex flex-col items-center justify-center gap-6">
+          <div className="lg:hidden fixed inset-0 top-0 bg-forest-900/95 backdrop-blur-md z-50 flex flex-col items-center justify-center gap-6 p-6 overflow-y-auto">
             <button
-              className="absolute top-6 right-6 text-cream-100 p-2"
+              className="absolute top-4 right-4 text-cream-100 p-3 touch-manipulation"
               onClick={closeMobileMenu}
               aria-label="Close menu"
             >
@@ -211,7 +211,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMobileMenu}
-                className={`text-2xl font-sans ${pathname === link.href ? 'text-gold-400' : 'text-cream-100'} hover:text-gold-400 transition-colors`}
+                className={`text-2xl font-sans py-3 px-6 rounded-xl ${pathname === link.href ? 'text-gold-400 bg-gold-400/10' : 'text-cream-100'} hover:text-gold-400 transition-colors touch-manipulation`}
               >
                 {link.label}
               </Link>
@@ -223,7 +223,7 @@ export function Header() {
                 <Link
                   href="/profile"
                   onClick={closeMobileMenu}
-                  className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors flex items-center gap-2"
+                  className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors flex items-center gap-2 py-3 px-6 rounded-xl touch-manipulation"
                 >
                   <User className="w-5 h-5" />
                   {tAuth('profile.title', 'My Profile')}
@@ -233,7 +233,7 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
-                  className="text-lg font-sans text-red-400 hover:text-red-300 transition-colors"
+                  className="text-lg font-sans text-red-400 hover:text-red-300 transition-colors py-3 px-6 rounded-xl touch-manipulation"
                 >
                   {t('signOut', 'Sign Out')}
                 </button>
@@ -242,7 +242,7 @@ export function Header() {
               <Link
                 href="/login"
                 onClick={closeMobileMenu}
-                className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors"
+                className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors py-3 px-6 rounded-xl touch-manipulation"
               >
                 {tAuth('login.signIn', 'Sign In')}
               </Link>
@@ -251,7 +251,7 @@ export function Header() {
             <Link
               href="/booking"
               onClick={closeMobileMenu}
-              className="mt-4 px-8 py-3 bg-gold-500 text-forest-900 font-sans font-bold rounded-lg"
+              className="w-full max-w-xs mt-4 px-8 py-4 bg-gold-500 text-forest-900 font-sans font-bold rounded-xl text-center text-lg touch-manipulation"
             >
               {t('bookNow', 'Book Now')}
             </Link>
@@ -261,7 +261,7 @@ export function Header() {
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`lang-button ${language === lang.code ? 'lang-button-active' : 'lang-button-inactive'}`}
+                  className={`px-6 py-3 min-w-[60px] text-base font-semibold touch-manipulation ${language === lang.code ? 'bg-gold-500 text-forest-900' : 'text-cream-300 hover:bg-cream-400/10'}`}
                 >
                   {lang.label}
                 </button>
@@ -270,10 +270,10 @@ export function Header() {
 
             <button
               onClick={toggleTheme}
-              className="mt-4 p-3 rounded-lg hover:bg-cream-400/10 transition-colors"
+              className="mt-4 p-4 rounded-xl hover:bg-cream-400/10 transition-colors touch-manipulation"
               aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              {theme === 'dark' ? <Sun className="w-6 h-6 text-cream-100" /> : <Moon className="w-6 h-6 text-cream-100" />}
+              {theme === 'dark' ? <Sun className="w-7 h-7 text-cream-100" /> : <Moon className="w-7 h-7 text-cream-100" />}
             </button>
           </div>
         )}

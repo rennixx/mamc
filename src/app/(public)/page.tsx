@@ -18,9 +18,9 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="-mt-24">
+    <div className="-mt-20 md:-mt-24">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[calc(100vh-6rem)] md:min-h-screen flex items-center justify-center overflow-hidden">
         <Image
           src="/images/horses/equestrian-training.jpg"
           alt="Mam Center Equestrian Club"
@@ -29,31 +29,31 @@ export default function HomePage() {
           priority
         />
         <div className="absolute inset-0 bg-black/50 dark:bg-black/70" />
-        <div className="relative text-center z-10 px-6">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 tracking-tight">
+        <div className="relative text-center z-10 px-4 md:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-4 md:mb-6 tracking-tight">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 font-sans mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 font-sans mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <Link
               href="/booking"
-              className="px-10 py-4 bg-white text-black font-sans font-bold rounded-xl hover:bg-white/90 transition-all shadow-luxury text-lg"
+              className="w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 bg-white text-black font-sans font-bold rounded-xl hover:bg-white/90 transition-all shadow-luxury text-base md:text-lg touch-manipulation"
             >
               {t('hero.bookNow')}
             </Link>
             <Link
               href="/services"
-              className="px-10 py-4 border-2 border-white text-white font-sans font-bold rounded-xl hover:bg-white/10 transition-all text-lg"
+              className="w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 border-2 border-white text-white font-sans font-bold rounded-xl hover:bg-white/10 transition-all text-base md:text-lg touch-manipulation"
             >
               {t('hero.ourServices')}
             </Link>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        {/* Scroll indicator - hidden on mobile */}
+        <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
             <div className="w-1.5 h-3 bg-white/70 rounded-full" />
           </div>

@@ -168,39 +168,39 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-forest-900 border border-gold-400/20 shadow-luxury-lg">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/70 backdrop-blur-sm">
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-forest-900 border border-gold-400/20 shadow-luxury-lg rounded-xl">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 p-2 hover:bg-cream-400/10 transition-colors z-10"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 sm:p-3 hover:bg-cream-400/10 transition-colors z-10 touch-manipulation"
           aria-label="Close"
         >
           <X className="w-6 h-6 text-cream-100" />
         </button>
 
         {/* Header */}
-        <div className="p-8 border-b border-cream-400/20">
-          <h2 className="text-3xl font-serif font-bold text-cream-100 mb-2">
+        <div className="p-4 sm:p-6 md:p-8 border-b border-cream-400/20">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-cream-100 mb-2">
             Book Your Experience
           </h2>
-          <p className="text-cream-300 font-sans">
+          <p className="text-sm sm:text-base text-cream-300 font-sans">
             Complete your booking in a few simple steps
           </p>
-          <div className="flex items-center gap-2 mt-6">
+          <div className="flex items-center gap-1 sm:gap-2 mt-4 sm:mt-6">
             {[1, 2, 3, 4].map((step) => (
               <div key={step} className="flex items-center flex-1">
                 <div
-                  className={`flex items-center justify-center w-8 h-8 font-sans font-bold transition-colors ${
+                  className={`flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 font-sans font-bold transition-colors ${
                     currentStep >= step
                       ? 'bg-gold-400 text-forest-900'
                       : 'bg-cream-400/20 text-cream-400'
                   }`}
                 >
-                  {currentStep > step ? <Check className="w-5 h-5" /> : step}
+                  {currentStep > step ? <Check className="w-3 h-3 sm:w-5 sm:h-5" /> : step}
                 </div>
                 {step < 4 && (
                   <div
-                    className={`flex-1 h-1 mx-2 ${
+                    className={`flex-1 h-1 mx-1 sm:mx-2 ${
                       currentStep > step ? 'bg-gold-400' : 'bg-cream-400/20'
                     }`}
                   />
@@ -208,7 +208,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               </div>
             ))}
           </div>
-          <div className="flex justify-between mt-2 text-sm font-sans text-cream-300">
+          <div className="flex justify-between mt-2 text-xs sm:text-sm font-sans text-cream-300">
             <span className={currentStep === 1 ? 'text-gold-400 font-semibold' : ''}>Horses</span>
             <span className={currentStep === 2 ? 'text-gold-400 font-semibold' : ''}>Date & Time</span>
             <span className={currentStep === 3 ? 'text-gold-400 font-semibold' : ''}>Service</span>
@@ -217,7 +217,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
         </div>
 
         {/* Content */}
-        <div className="p-8">
+        <div className="p-4 sm:p-6 md:p-8">
           {!isSubmitted ? (
             <>
               {currentStep === 1 && (
@@ -382,29 +382,29 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
 
         {/* Footer */}
         {!isSubmitted && (
-          <div className="p-8 border-t border-cream-400/20 flex justify-between gap-4">
+          <div className="p-4 sm:p-6 md:p-8 border-t border-cream-400/20 flex justify-between gap-2 sm:gap-4">
             {currentStep > 1 && (
               <button
                 onClick={handleBack}
-                className="flex items-center gap-2 px-6 py-3 glass-card text-cream-100 font-sans font-semibold hover:bg-cream-400/10 transition-colors"
+                className="flex items-center gap-2 px-4 sm:px-6 py-3 glass-card text-cream-100 font-sans font-semibold hover:bg-cream-400/10 transition-colors touch-manipulation"
               >
-                <ChevronLeft className="w-5 h-5" /> Back
+                <ChevronLeft className="w-5 h-5" /> <span className="hidden sm:inline">Back</span>
               </button>
             )}
             <div className="flex-1" />
             {currentStep < 4 ? (
               <button
                 onClick={handleNext}
-                className="flex items-center gap-2 px-6 py-3 bg-gold-400 hover:bg-gold-500 text-forest-900 font-sans font-bold transition-colors"
+                className="flex items-center gap-2 px-4 sm:px-6 py-3 bg-gold-400 hover:bg-gold-500 text-forest-900 font-sans font-bold transition-colors touch-manipulation"
               >
-                Continue <ChevronRight className="w-5 h-5" />
+                <span className="hidden sm:inline">Continue</span> <ChevronRight className="w-5 h-5" />
               </button>
             ) : (
               <button
                 onClick={handleSubmit}
-                className="flex items-center gap-2 px-6 py-3 bg-gold-400 hover:bg-gold-500 text-forest-900 font-sans font-bold transition-colors"
+                className="flex items-center gap-2 px-4 sm:px-6 py-3 bg-gold-400 hover:bg-gold-500 text-forest-900 font-sans font-bold transition-colors touch-manipulation"
               >
-                <Calendar className="w-5 h-5" /> Confirm Booking
+                <Calendar className="w-5 h-5" /> <span className="hidden sm:inline">Confirm Booking</span>
               </button>
             )}
           </div>

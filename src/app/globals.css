@@ -379,3 +379,74 @@ textarea:focus-visible {
   --color-link-hover: #fafafa;
   --color-link-visited: #737373;
 }
+
+/* Mobile Optimizations */
+@layer base {
+  /* Touch-friendly tap targets (minimum 44x44px for iOS/Android) */
+  .touch-manipulation {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+
+  /* Safe area for mobile devices with notches */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  /* Better mobile typography */
+  @media (max-width: 768px) {
+    h1 {
+      @apply text-3xl md:text-5xl;
+    }
+    h2 {
+      @apply text-2xl md:text-4xl;
+    }
+    h3 {
+      @apply text-xl md:text-2xl;
+    }
+  }
+
+  /* Mobile-safe button sizes */
+  @media (max-width: 640px) {
+    button, a {
+      @apply min-h-[44px];
+    }
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  /* Smooth scrolling with momentum on iOS */
+  @supports (-webkit-overflow-scrolling: touch) {
+    body {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  /* Fix input font size on iOS (prevents auto-zoom) */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  textarea {
+    @apply text-base;
+  }
+
+  /* Better image handling on mobile */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Prevent text selection on UI elements */
+  .no-select {
+    @apply select-none;
+  }
+}

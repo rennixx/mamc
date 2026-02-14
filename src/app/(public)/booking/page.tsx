@@ -123,21 +123,21 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <section className="w-full max-w-3xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-cream-100 mb-4 text-center">
+      <section className="w-full max-w-3xl mx-auto px-4 md:px-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-cream-100 mb-4 text-center">
             {t('hero.title')}
           </h1>
-          <p className="text-lg text-cream-200 font-sans text-center mb-12">
+          <p className="text-base md:text-lg text-cream-200 font-sans text-center mb-8 md:mb-12">
             {t('hero.subtitle')}
           </p>
 
           {/* Step Indicator */}
-          <div className="flex items-center justify-center mb-12">
+          <div className="flex items-center justify-center mb-8 md:mb-12 overflow-x-auto py-2">
             {stepKeys.map((key, i) => (
-              <div key={key} className="flex items-center">
+              <div key={key} className="flex items-center flex-shrink-0">
                 <div className="flex flex-col items-center">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center font-sans font-bold text-sm transition-all ${
+                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-sans font-bold text-xs sm:text-sm transition-all ${
                       i <= step
                         ? 'bg-gold-500 text-forest-900'
                         : 'bg-cream-400/10 text-cream-300'
@@ -145,13 +145,13 @@ export default function BookingPage() {
                   >
                     {i < step ? '✓' : i + 1}
                   </div>
-                  <span className="text-xs font-sans text-cream-300 mt-2 hidden sm:block">
+                  <span className="text-xs font-sans text-cream-300 mt-1 sm:mt-2 hidden md:block">
                     {t(key)}
                   </span>
                 </div>
                 {i < stepKeys.length - 1 && (
                   <div
-                    className={`w-20 sm:w-32 h-0.5 mx-3 ${
+                    className={`w-12 sm:w-20 md:w-32 h-0.5 mx-1 sm:mx-3 ${
                       i < step ? 'bg-gold-500' : 'bg-cream-400/10'
                     }`}
                   />
@@ -166,7 +166,7 @@ export default function BookingPage() {
             </div>
           )}
 
-          <div className="glass-card rounded-2xl p-8">
+          <div className="glass-card rounded-2xl p-4 md:p-6 lg:p-8">
             {/* Step 0: Service */}
             {step === 0 && (
               <div className="space-y-4">
@@ -343,13 +343,13 @@ export default function BookingPage() {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between mt-8 pt-6 border-t border-cream-400/10">
+            <div className="flex justify-between mt-6 md:mt-8 pt-4 md:pt-6 border-t border-cream-400/10 gap-2">
               {step > 0 ? (
                 <button
                   onClick={() => setStep((s) => s - 1)}
-                  className="flex items-center gap-2 px-6 py-3 text-cream-200 font-sans font-semibold hover:text-cream-100 transition-colors"
+                  className="flex items-center gap-2 px-4 md:px-6 py-3 text-cream-200 font-sans font-semibold hover:text-cream-100 transition-colors touch-manipulation"
                 >
-                  <ChevronLeft className="w-5 h-5" /> {t('nav.back')}
+                  <ChevronLeft className="w-5 h-5" /> <span className="hidden sm:inline">{t('nav.back')}</span>
                 </button>
               ) : (
                 <div />
@@ -359,17 +359,17 @@ export default function BookingPage() {
                 <button
                   onClick={() => setStep((s) => s + 1)}
                   disabled={!canProceed()}
-                  className="flex items-center gap-2 px-8 py-3 bg-gold-500 text-forest-900 font-sans font-bold rounded-xl hover:bg-gold-400 transition-colors disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 md:px-8 py-3 bg-gold-500 text-forest-900 font-sans font-bold rounded-xl hover:bg-gold-400 transition-colors disabled:opacity-50 touch-manipulation"
                 >
-                  {t('nav.next')} <ChevronRight className="w-5 h-5" />
+                  <span className="hidden sm:inline">{t('nav.next')}</span> <ChevronRight className="w-5 h-5" />
                 </button>
               ) : (
                 <button
                   onClick={handleSubmit}
                   disabled={submitting}
-                  className="flex items-center gap-2 px-8 py-3 bg-gold-500 text-forest-900 font-sans font-bold rounded-xl hover:bg-gold-400 transition-colors disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 md:px-8 py-3 bg-gold-500 text-forest-900 font-sans font-bold rounded-xl hover:bg-gold-400 transition-colors disabled:opacity-50 touch-manipulation"
                 >
-                  {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : t('nav.confirmBooking')}
+                  {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <span className="hidden sm:inline">{t('nav.confirmBooking')}</span>}
                 </button>
               )}
             </div>
