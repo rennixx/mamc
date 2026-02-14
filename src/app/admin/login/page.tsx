@@ -21,30 +21,18 @@ function AdminLoginForm() {
     setError('')
 
     try {
-      // Get CSRF token first
-      const csrfRes = await fetch('/api/admin-auth/csrf')
-      const { csrfToken } = await csrfRes.json()
-
-      // Call admin auth callback directly
-      const res = await fetch('/api/admin-auth/callback/admin-credentials', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          csrfToken,
-          email,
-          password,
-          redirect: 'false',
-          callbackUrl,
-        }),
+      const res = await fetch('/api/admin-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
       })
 
       const data = await res.json()
 
       if (data.error || !res.ok) {
-        setError('Invalid email or password')
+        setError(data.error || 'Invalid email or password')
         setLoading(false)
       } else {
-        // Login successful - redirect to admin dashboard
         router.push(callbackUrl)
         router.refresh()
       }
