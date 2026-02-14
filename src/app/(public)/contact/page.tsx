@@ -205,16 +205,16 @@ export default function ContactPage() {
                 </div>
               ))}
 
-              {/* Map Placeholder */}
+              {/* Google Maps Mini Map */}
               <div className="glass-card rounded-2xl overflow-hidden">
-                <div className="aspect-[4/3] bg-cream-400/5 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <MapPin className="w-8 h-8 text-cream-300 mx-auto mb-2" />
-                    <p className="text-cream-300 font-sans text-sm">
-                      {t('mapPlaceholder')}
-                    </p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps?q=36.19338,43.9811066&output=embed"
+                  className="w-full aspect-[4/3] border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mam Center Location"
+                />
               </div>
             </div>
           </div>
