@@ -1,4 +1,18 @@
 {
+  "experience": {
+    "heading": "15 Years of Excellence",
+    "subheading": "Trusted by over 1 million riders",
+    "stats": {
+      "years": "15+ Years",
+      "yearsDesc": "Of Experience",
+      "riders": "1M+ Riders",
+      "ridersDesc": "Served with Excellence",
+      "horses": "50+ Horses",
+      "horsesDesc": "Well Trained",
+      "trainers": "20+ Trainers",
+      "trainersDesc": "Certified Experts"
+    }
+  },
   "hero": {
     "title": "Mam Center",
     "subtitle": "Where passion meets professionalism in every stride",

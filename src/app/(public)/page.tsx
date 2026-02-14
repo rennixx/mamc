@@ -3,10 +3,19 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import { ArrowRight, Users, Trophy, Shield, Heart, Truck, TreePine } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowRight, Users, Trophy, Shield, Heart, Truck, TreePine, ChevronLeft, ChevronRight, PawPrint, Award } from 'lucide-react'
 
 export default function HomePage() {
   const { t } = useTranslation('home')
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const stats = [
+    { icon: Trophy, labelKey: 'experience.stats.years', descKey: 'experience.stats.yearsDesc' },
+    { icon: Users, labelKey: 'experience.stats.riders', descKey: 'experience.stats.ridersDesc' },
+    { icon: PawPrint, labelKey: 'experience.stats.horses', descKey: 'experience.stats.horsesDesc' },
+    { icon: Award, labelKey: 'experience.stats.trainers', descKey: 'experience.stats.trainersDesc' },
+  ]
 
   const services = [
     { icon: Users, titleKey: 'services.beginners.title', descKey: 'services.beginners.desc' },
@@ -56,6 +65,70 @@ export default function HomePage() {
         <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
             <div className="w-1.5 h-3 bg-white/70 rounded-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section - Carousel */}
+      <section className="section-spacing border-t border-cream-400/10">
+        <div className="container-breathable">
+          <h2 className="section-heading">{t('experience.heading')}</h2>
+          <p className="section-subheading">
+            {t('experience.subheading')}
+          </p>
+
+          {/* Carousel Container */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {stats.map((stat, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="glass-card rounded-2xl p-12 md:p-16 text-center">
+                      <stat.icon className="w-16 h-16 md:w-20 md:h-20 text-gold-400 mx-auto mb-6" />
+                      <div className="text-5xl md:text-7xl font-serif font-bold text-cream-100 mb-4">
+                        {t(stat.labelKey)}
+                      </div>
+                      <p className="text-lg md:text-xl text-cream-200 font-sans">
+                        {t(stat.descKey)}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Controls */}
+            <button
+              onClick={() => setCurrentSlide((s) => s === 0 ? stats.length - 1 : s - 1)}
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold-500 text-forest-900 flex items-center justify-center hover:bg-gold-400 transition-colors z-10"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+            <button
+              onClick={() => setCurrentSlide((s) => (s + 1) % stats.length)}
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold-500 text-forest-900 flex items-center justify-center hover:bg-gold-400 transition-colors z-10"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {stats.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
+                    index === currentSlide ? 'bg-gold-500' : 'bg-cream-400/30'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
