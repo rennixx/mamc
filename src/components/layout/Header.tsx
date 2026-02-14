@@ -123,12 +123,10 @@ export function Header() {
                   <span className="text-cream-100 text-sm font-medium max-w-[100px] truncate">
                     {user.name || user.email?.split('@')[0]}
                   </span>
-                  {typeof user.points === 'number' && (
-                    <span className="flex items-center gap-1 text-gold-400 text-xs font-bold">
-                      <Star className="w-3 h-3" />
-                      {user.points}
-                    </span>
-                  )}
+                  <span className="flex items-center gap-1 text-gold-400 text-xs font-bold">
+                    <Star className="w-3 h-3" />
+                    {user.points ?? 0}
+                  </span>
                   <ChevronDown className={`w-3 h-3 text-cream-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
 
@@ -229,11 +227,9 @@ export function Header() {
                 >
                   <User className="w-5 h-5" />
                   {tAuth('profile.title', 'My Profile')}
-                  {typeof user.points === 'number' && (
-                    <span className="flex items-center gap-1 text-gold-400 text-sm">
-                      <Star className="w-3 h-3" />{user.points}
-                    </span>
-                  )}
+                  <span className="flex items-center gap-1 text-gold-400 text-sm">
+                    <Star className="w-3 h-3" />{user.points ?? 0}
+                  </span>
                 </Link>
                 <button
                   onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
