@@ -194,21 +194,21 @@ export default function ProfilePage() {
             <div className="flex gap-2">
               {editing ? (
                 <>
-                  <button onClick={handleSaveProfile} className="p-2 rounded-lg bg-green-500/20 text-green-400 hover:bg-green-500/30">
+                  <button onClick={handleSaveProfile} className="w-9 h-9 flex items-center justify-center rounded-full bg-green-500/20 text-green-400 hover:bg-green-500/30">
                     <Save className="w-4 h-4" />
                   </button>
-                  <button onClick={() => setEditing(false)} className="p-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30">
+                  <button onClick={() => setEditing(false)} className="w-9 h-9 flex items-center justify-center rounded-full bg-red-500/20 text-red-400 hover:bg-red-500/30">
                     <X className="w-4 h-4" />
                   </button>
                 </>
               ) : (
-                <button onClick={() => setEditing(true)} className="p-2 rounded-lg bg-white/5 text-cream-400 hover:bg-white/10">
+                <button onClick={() => setEditing(true)} className="w-9 h-9 flex items-center justify-center rounded-full bg-white/5 text-cream-400 hover:bg-white/10">
                   <Edit3 className="w-4 h-4" />
                 </button>
               )}
               <button
                 onClick={() => signOut({ callbackUrl: '/' })}
-                className="p-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-red-500/10 text-red-400 hover:bg-red-500/20"
               >
                 <LogOut className="w-4 h-4" />
               </button>
