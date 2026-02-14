@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import { Menu, X, Sun, Moon, Star, User, LogOut, Gift, ChevronDown } from 'lucide-react'
@@ -61,8 +62,15 @@ export function Header() {
       <nav className="glass-nav max-w-6xl mx-auto mt-4 rounded-2xl px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-xl font-serif font-bold text-gold-400" onClick={closeMobileMenu}>
-            Mam Center
+          <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
+            <Image
+              src="/icons/logo.png"
+              alt="Mam Center"
+              width={120}
+              height={48}
+              className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
