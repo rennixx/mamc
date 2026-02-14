@@ -206,7 +206,7 @@ export default function ContactPage() {
                 </div>
               ))}
 
-              {/* Google Maps */}
+              {/* Google Maps mam */}
               <div className="glass-card rounded-2xl overflow-hidden">
                 <GoogleMapsEmbed
                   apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''}
