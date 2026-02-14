@@ -134,145 +134,163 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="glass-nav max-w-6xl mx-auto mt-4 rounded-2xl px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
-            <Image
-              src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
-              alt="Mam Center"
-              width={120}
-              height={48}
-              className={`object-contain w-auto ${theme === 'dark' ? 'h-12' : 'h-10'}`}
-              priority
-            />
-          </Link>
+      <>
+        {/* Desktop / large header (full container) */}
+        <nav className="hidden lg:block glass-nav max-w-6xl mx-auto mt-4 rounded-2xl px-6 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
+              <Image
+                src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
+                alt="Mam Center"
+                width={120}
+                height={48}
+                className={`object-contain w-auto ${theme === 'dark' ? 'h-12' : 'h-10'}`}
+                priority
+              />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`nav-link ${pathname === link.href ? 'text-gold-400' : ''}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Desktop Right Side */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Language Switcher */}
-            <div className="flex rounded-lg overflow-hidden border border-cream-400/20">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className={`lang-button ${language === lang.code ? 'lang-button-active' : 'lang-button-inactive'}`}
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link ${pathname === link.href ? 'text-gold-400' : ''}`}
                 >
-                  {lang.label}
-                </button>
+                  {link.label}
+                </Link>
               ))}
             </div>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-cream-400/10 transition-colors"
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {theme === 'dark' ? <Sun className="w-5 h-5 text-cream-100" /> : <Moon className="w-5 h-5 text-cream-100" />}
-            </button>
-
-            {/* Auth Section */}
-            {isLoggedIn ? (
-              <div className="relative" ref={userMenuRef}>
-                <button
-                  onClick={() => setUserMenuOpen(!userMenuOpen)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cream-400/10 transition-colors"
-                >
-                  <div className="w-7 h-7 rounded-full bg-gold-500/20 flex items-center justify-center">
-                    <User className="w-4 h-4 text-gold-400" />
-                  </div>
-                  <span className="text-cream-100 text-sm font-medium max-w-[100px] truncate">
-                    {user.name || user.email?.split('@')[0]}
-                  </span>
-                  <span className="flex items-center gap-1 text-gold-400 text-xs font-bold">
-                    <Star className="w-3 h-3" />
-                    {user.points ?? 0}
-                  </span>
-                  <ChevronDown className={`w-3 h-3 text-cream-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {userMenuOpen && (
-                  <div className="absolute end-0 top-full mt-2 w-48 glass-card rounded-xl py-2 shadow-lg">
-                    <Link
-                      href="/profile"
-                      onClick={() => setUserMenuOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm"
-                    >
-                      <User className="w-4 h-4" />
-                      {tAuth('profile.title', 'My Profile')}
-                    </Link>
-                    <Link
-                      href="/rewards"
-                      onClick={() => setUserMenuOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm"
-                    >
-                      <Gift className="w-4 h-4" />
-                      {t('rewards', 'Rewards')}
-                    </Link>
-                    {(user.role === 'ADMIN' || user.role === 'STAFF') && (
-                      <Link
-                        href="/admin"
-                        onClick={() => setUserMenuOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm border-t border-cream-400/10"
-                      >
-                        {tAuth('profile.title', 'Admin Panel')}
-                      </Link>
-                    )}
-                    <button
-                      onClick={() => { setUserMenuOpen(false); signOut({ callbackUrl: '/' }) }}
-                      className="w-full flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-400/10 text-sm border-t border-cream-400/10"
-                    >
-                      <LogOut className="w-4 h-4" />
-                      {t('signOut', 'Sign Out')}
-                    </button>
-                  </div>
-                )}
+            {/* Desktop Right Side */}
+            <div className="hidden lg:flex items-center gap-3">
+              {/* Language Switcher */}
+              <div className="flex rounded-lg overflow-hidden border border-cream-400/20">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`lang-button ${language === lang.code ? 'lang-button-active' : 'lang-button-inactive'}`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
               </div>
-            ) : (
-              <Link
-                href="/login"
-                className="px-4 py-2 text-cream-100 hover:text-gold-400 font-sans text-sm transition-colors"
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg hover:bg-cream-400/10 transition-colors"
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
               >
-                {tAuth('login.signIn', 'Sign In')}
+                {theme === 'dark' ? <Sun className="w-5 h-5 text-cream-100" /> : <Moon className="w-5 h-5 text-cream-100" />}
+              </button>
+
+              {/* Auth Section */}
+              {isLoggedIn ? (
+                <div className="relative" ref={userMenuRef}>
+                  <button
+                    onClick={() => setUserMenuOpen(!userMenuOpen)}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cream-400/10 transition-colors"
+                  >
+                    <div className="w-7 h-7 rounded-full bg-gold-500/20 flex items-center justify-center">
+                      <User className="w-4 h-4 text-gold-400" />
+                    </div>
+                    <span className="text-cream-100 text-sm font-medium max-w-[100px] truncate">
+                      {user.name || user.email?.split('@')[0]}
+                    </span>
+                    <span className="flex items-center gap-1 text-gold-400 text-xs font-bold">
+                      <Star className="w-3 h-3" />
+                      {user.points ?? 0}
+                    </span>
+                    <ChevronDown className={`w-3 h-3 text-cream-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {userMenuOpen && (
+                    <div className="absolute end-0 top-full mt-2 w-48 glass-card rounded-xl py-2 shadow-lg">
+                      <Link
+                        href="/profile"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm"
+                      >
+                        <User className="w-4 h-4" />
+                        {tAuth('profile.title', 'My Profile')}
+                      </Link>
+                      <Link
+                        href="/rewards"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm"
+                      >
+                        <Gift className="w-4 h-4" />
+                        {t('rewards', 'Rewards')}
+                      </Link>
+                      {(user.role === 'ADMIN' || user.role === 'STAFF') && (
+                        <Link
+                          href="/admin"
+                          onClick={() => setUserMenuOpen(false)}
+                          className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm border-t border-cream-400/10"
+                        >
+                          {tAuth('profile.title', 'Admin Panel')}
+                        </Link>
+                      )}
+                      <button
+                        onClick={() => { setUserMenuOpen(false); signOut({ callbackUrl: '/' }) }}
+                        className="w-full flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-400/10 text-sm border-t border-cream-400/10"
+                      >
+                        <LogOut className="w-4 h-4" />
+                        {t('signOut', 'Sign Out')}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  href="/login"
+                  className="px-4 py-2 text-cream-100 hover:text-gold-400 font-sans text-sm transition-colors"
+                >
+                  {tAuth('login.signIn', 'Sign In')}
+                </Link>
+              )}
+
+              {/* Book Now CTA */}
+              <Link
+                href="/booking"
+                className="px-5 py-2 bg-gold-500 text-forest-900 font-sans font-bold text-sm rounded-lg hover:bg-gold-400 transition-colors shadow-tactile"
+              >
+                {t('bookNow', 'Book Now')}
               </Link>
-            )}
-
-            {/* Book Now CTA */}
-            <Link
-              href="/booking"
-              className="px-5 py-2 bg-gold-500 text-forest-900 font-sans font-bold text-sm rounded-lg hover:bg-gold-400 transition-colors shadow-tactile"
-            >
-              {t('bookNow', 'Book Now')}
-            </Link>
+            </div>
           </div>
+        </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden text-cream-100 p-2"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        {/* Mobile slim top bar (no container) */}
+        <nav className="block lg:hidden w-full px-4 py-3">
+          <div className="flex items-center justify-between">
+            <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
+              <Image
+                src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
+                alt="Mam Center"
+                width={100}
+                height={36}
+                className="object-contain w-auto h-8"
+                priority
+              />
+            </Link>
 
-        {/* Mobile Menu Overlay */}
+            <button
+              className="text-cream-100 p-2"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </nav>
+      </>
+
         {typeof document !== 'undefined' && mobileMounted && createPortal(
           <>
             {/* Backdrop */}
@@ -291,16 +309,28 @@ export function Header() {
               className={`lg:hidden fixed top-0 right-0 z-60 h-full w-full sm:w-[85%] max-w-sm bg-forest-900/95 backdrop-blur-md shadow-xl transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
               <div className="relative h-full flex flex-col p-6 overflow-y-auto" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
-                <button
-                  ref={closeMobileButtonRef}
-                  className="absolute top-4 right-4 text-cream-100 p-3 touch-manipulation"
-                  onClick={closeMobileMenu}
-                  aria-label="Close menu"
-                >
-                  <X className="w-8 h-8" />
-                </button>
+                <div className="flex items-center justify-between w-full">
+                  <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
+                    <Image
+                      src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
+                      alt="Mam Center"
+                      width={100}
+                      height={36}
+                      className="object-contain w-auto h-8"
+                      priority
+                    />
+                  </Link>
+                  <button
+                    ref={closeMobileButtonRef}
+                    className="text-cream-100 p-3 touch-manipulation"
+                    onClick={closeMobileMenu}
+                    aria-label="Close menu"
+                  >
+                    <X className="w-8 h-8" />
+                  </button>
+                </div>
 
-                <nav className="mt-8 flex flex-col gap-3">
+                <nav className="mt-6 flex flex-col gap-3">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -379,7 +409,6 @@ export function Header() {
           </>,
           document.body
         )}
-      </nav>
-    </header>
+      </header>
   )
 }
