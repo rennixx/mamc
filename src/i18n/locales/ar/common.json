@@ -17,5 +17,20 @@
   "copyright": "© {{year}} مام سنتر. جميع الحقوق محفوظة.",
   "phone": "+964 770 000 0000",
   "email": "info@mamcenter.com",
-  "location": "أربيل، إقليم كردستان"
+  "location": "أربيل، إقليم كردستان",
+  "newsletter": {
+    "title": "ابق على اطلاع",
+    "description": "اشترك للحصول على الأخبار والتحديثات",
+    "placeholder": "عنوان بريدك الإلكتروني",
+    "button": "اشترك",
+    "success": "شكراً لاشتراكك!",
+    "error": "الرجاء إدخال بريد إلكتروني صحيح"
+  },
+  "social": {
+    "followUs": "تابعنا",
+    "instagram": "إنستغرام",
+    "facebook": "فيسبوك",
+    "twitter": "تويتر",
+    "youtube": "يوتيوب"
+  }
 }

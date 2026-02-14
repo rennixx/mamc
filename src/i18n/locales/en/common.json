@@ -17,5 +17,20 @@
   "copyright": "© {{year}} Mam Center. All rights reserved.",
   "phone": "+964 770 000 0000",
   "email": "info@mamcenter.com",
-  "location": "Erbil, Kurdistan"
+  "location": "Erbil, Kurdistan",
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Subscribe for news and updates",
+    "placeholder": "Your email address",
+    "button": "Subscribe",
+    "success": "Thank you for subscribing!",
+    "error": "Please enter a valid email"
+  },
+  "social": {
+    "followUs": "Follow Us",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "youtube": "YouTube"
+  }
 }
