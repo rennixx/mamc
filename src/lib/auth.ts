@@ -92,35 +92,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const email = credentials.email as string
         const password = credentials.password as string
 
-        // Check admin env vars first
-        const adminEmail = process.env.ADMIN_EMAIL
-        const adminPassword = process.env.ADMIN_PASSWORD
-
-        if (email === adminEmail && password === adminPassword) {
-          let user = await db.user.findUnique({
-            where: { email: adminEmail },
-          })
-
-          if (!user) {
-            user = await db.user.create({
-              data: {
-                email: adminEmail,
-                name: 'Admin',
-                role: 'ADMIN',
-              },
-            })
-          }
-
-          return {
-            id: user.id,
-            email: user.email,
-            name: user.name,
-            role: user.role,
-            phone: user.phone,
-            points: user.points,
-          }
-        }
-
         // Check DB user with hashed password
         const user = await db.user.findUnique({
           where: { email },
@@ -131,6 +102,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const isValid = await compare(password, user.password)
         if (!isValid) return null
 
+        // Note: Admin users should use /admin/login, not the regular login
+        // This ensures separation between user and admin authentication
         return {
           id: user.id,
           email: user.email,

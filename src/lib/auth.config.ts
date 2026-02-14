@@ -1,7 +1,8 @@
 import type { NextAuthConfig } from 'next-auth'
 
 /**
- * Edge-compatible auth config (no Node.js dependencies).
+ * Edge-compatible auth config for USER routes only.
+ * Admin routes are protected by proxy.ts with separate JWT.
  * Used by middleware for session checks only.
  * The full config with PrismaAdapter lives in auth.ts.
  */
@@ -13,16 +14,10 @@ export const authConfig: NextAuthConfig = {
   callbacks: {
     async authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user
-      const isAdmin = nextUrl.pathname.startsWith('/admin')
       const isProfile = nextUrl.pathname.startsWith('/profile')
 
-      if (isAdmin) {
-        if (!isLoggedIn) return false
-        const role = (auth?.user as { role?: string })?.role
-        if (role !== 'ADMIN' && role !== 'STAFF') return false
-        return true
-      }
-
+      // Note: Admin routes are protected by proxy.ts, not here
+      // Only protect user profile routes
       if (isProfile && !isLoggedIn) {
         return false
       }
