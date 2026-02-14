@@ -288,7 +288,7 @@ export function Header() {
 
               {/* Menu Button with animated hamburger */}
               <button
-                className="text-cream-100 p-2 min-w-[44px] min-h-[44px] rounded-lg hover:bg-cream-400/10 transition-colors touch-manipulation"
+                className="text-cream-100 p-3 min-w-[48px] h-12 flex items-center justify-center rounded-lg hover:bg-cream-400/10 transition-colors touch-manipulation"
                 onClick={toggleMobileMenu}
                 aria-label="Toggle menu"
                 aria-expanded={isMobileMenuOpen}
