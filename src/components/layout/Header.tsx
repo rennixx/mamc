@@ -270,8 +270,7 @@ export function Header() {
           style={{ paddingTop: 'max(1rem, env(safe-area-inset-top))' }}
         >
           {/* Header bar */}
-          <div className="glass-nav">
-            <div className="flex items-center justify-between px-4 py-3">
+          <div className="flex items-center justify-between px-4 py-3">
               {/* Logo */}
               <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
                 <Image
@@ -320,7 +319,6 @@ export function Header() {
                   />
                 </div>
               </button>
-            </div>
           </div>
 
           {/* Dropdown menu panel */}
