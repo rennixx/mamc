@@ -269,8 +269,11 @@ export function Header() {
           className="block lg:hidden w-full"
           style={{ paddingTop: 'max(1rem, env(safe-area-inset-top))' }}
         >
-          {/* Header bar */}
-          <div className="flex items-center justify-between px-4 py-3">
+          {/* Header bar - turns black when menu opens */}
+          <div
+            className={`flex items-center justify-between px-4 py-3 transition-all duration-300 ${isMobileMenuOpen ? 'bg-forest-900 border-b border-white/20' : ''}`}
+            style={isMobileMenuOpen ? { borderWidth: '0 0 1.5px 0' } : undefined}
+          >
               {/* Logo */}
               <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
                 <Image
@@ -327,8 +330,8 @@ export function Header() {
             ref={overlayRef}
             role="dialog"
             aria-modal="true"
-            className={`overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] bg-forest-900 border border-white/20 ${isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'}`}
-            style={{ maxHeight: isMobileMenuOpen ? '80vh' : '0px', borderWidth: '1.5px' }}
+            className={`overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] bg-forest-900 border-x border-b border-white/20 ${isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'}`}
+            style={{ maxHeight: isMobileMenuOpen ? '80vh' : '0px', borderWidth: '0 1.5px 1.5px 1.5px' }}
           >
             {/* Menu content */}
             <div className="p-4 pb-8 space-y-4">
