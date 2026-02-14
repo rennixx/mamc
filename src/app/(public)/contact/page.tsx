@@ -214,7 +214,7 @@ export default function ContactPage() {
                   width="100%"
                   mode="place"
                   q="Mam+horse+riding+center"
-                  place_id="0x40072355434d428d:0x6f830bbb98fb7add"
+                  id="0x40072355434d428d:0x6f830bbb98fb7add"
                 />
               </div>
             </div>
