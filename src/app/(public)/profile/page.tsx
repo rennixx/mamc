@@ -216,7 +216,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <div className="bg-white/5 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-gold-400">{profile.points}</div>
               <div className="text-cream-400 text-xs mt-1">{t('profile.points')}</div>
