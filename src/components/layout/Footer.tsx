@@ -26,7 +26,7 @@ export function Footer() {
             <h4 className="text-cream-100 font-sans font-semibold mb-2 md:mb-3 text-sm md:text-base">
               {t('quickLinks')}
             </h4>
-            <div className="flex flex-col gap-1.5 md:gap-2">
+            <div className="flex flex-col gap-1 md:gap-1 items-start text-left">
               <Link href="/services" className="text-cream-200 hover:text-gold-400 text-xs md:text-sm font-sans transition-colors touch-manipulation">{t('links.services')}</Link>
               <Link href="/horses" className="text-cream-200 hover:text-gold-400 text-xs md:text-sm font-sans transition-colors touch-manipulation">{t('links.horses')}</Link>
               <Link href="/gallery" className="text-cream-200 hover:text-gold-400 text-xs md:text-sm font-sans transition-colors touch-manipulation">{t('links.gallery')}</Link>
