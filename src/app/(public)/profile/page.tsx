@@ -236,7 +236,7 @@ export default function ProfilePage() {
             <div className="bg-gold-500/5 border border-gold-500/20 rounded-xl p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-cream-400 text-xs mb-1">{t('profile.referralCode')}</p>
+                  <p className="text-cream-200 text-xs mb-1">{t('profile.referralCode')}</p>
                   <p className="text-gold-400 font-mono text-lg font-bold">{profile.referralCode}</p>
                 </div>
                 <button
@@ -247,7 +247,7 @@ export default function ProfilePage() {
                   {copied ? t('profile.copied') : t('profile.copyCode')}
                 </button>
               </div>
-              <p className="text-cream-400/60 text-xs mt-2">
+              <p className="text-cream-200/60 text-xs mt-2">
                 {t('profile.shareReferral')}
               </p>
             </div>

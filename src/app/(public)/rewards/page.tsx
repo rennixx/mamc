@@ -160,7 +160,7 @@ export default function RewardsPage() {
                       {getLocalizedTitle(reward)}
                     </h3>
                     {getLocalizedDescription(reward) && (
-                      <p className="text-cream-400 text-sm mb-4 line-clamp-2">
+                      <p className="text-cream-200 text-sm mb-4 line-clamp-2">
                         {getLocalizedDescription(reward)}
                       </p>
                     )}
