@@ -3,13 +3,31 @@
     "title": "Gallery",
     "subtitle": "Moments captured at Mam Center"
   },
-  "categories": {
-    "all": "All",
-    "training": "Training",
-    "jumping": "Jumping",
-    "horses": "Horses",
-    "facility": "Facility",
-    "safari": "Safari"
+  "album": {
+    "images": "images",
+    "backToAlbums": "Back to Albums"
+  },
+  "albums": {
+    "training": {
+      "title": "Training Sessions",
+      "description": "Professional riding and equestrian training"
+    },
+    "jumping": {
+      "title": "Show Jumping",
+      "description": "Competitions and events"
+    },
+    "horses": {
+      "title": "Our Horses",
+      "description": "Meet our beautiful horses"
+    },
+    "facility": {
+      "title": "Club Facilities",
+      "description": "Explore our world-class facilities"
+    },
+    "safari": {
+      "title": "Riding Safari",
+      "description": "Adventure on horseback"
+    }
   },
   "images": {
     "equestrianTraining": "Equestrian Training",

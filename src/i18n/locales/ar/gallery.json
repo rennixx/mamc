@@ -3,13 +3,31 @@
     "title": "المعرض",
     "subtitle": "لحظات مميزة من مام سنتر"
   },
-  "categories": {
-    "all": "الكل",
-    "training": "التدريب",
-    "jumping": "القفز",
-    "horses": "الأحصنة",
-    "facility": "المرافق",
-    "safari": "السفاري"
+  "album": {
+    "images": "صور",
+    "backToAlbums": "العودة للألبومات"
+  },
+  "albums": {
+    "training": {
+      "title": "جلسات التدريب",
+      "description": "تدريب الفروسية والركوب الاحترافي"
+    },
+    "jumping": {
+      "title": "القفز الاستعراضي",
+      "description": "المسابقات والفعاليات"
+    },
+    "horses": {
+      "title": "أحصنتنا",
+      "description": "تعرف على أحصنتنا الجميلة"
+    },
+    "facility": {
+      "title": "مرافق النادي",
+      "description": "استكشف مرافقنا عالمية المستوى"
+    },
+    "safari": {
+      "title": "سفاري الركوب",
+      "description": "مغامرة على ظهور الخيل"
+    }
   },
   "images": {
     "equestrianTraining": "تدريب الفروسية",

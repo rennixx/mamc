@@ -3,52 +3,100 @@
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { useState, useCallback } from 'react'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, ArrowLeft, Images } from 'lucide-react'
 
-const galleryImages = [
-  { src: '/images/horses/equestrian-training.jpg', altKey: 'images.equestrianTraining', category: 'training' },
-  { src: '/images/horses/show-jumping-1.jpg', altKey: 'images.showJumping', category: 'jumping' },
-  { src: '/images/horses/show-jumping-2.jpg', altKey: 'images.showJumpingCompetition', category: 'jumping' },
-  { src: '/images/horses/show-jumping-3.jpg', altKey: 'images.showJumpingEvent', category: 'jumping' },
-  { src: '/images/horses/riding-training.jpg', altKey: 'images.ridingTraining', category: 'training' },
-  { src: '/images/horses/horse-1.jpg', altKey: 'images.horsePortrait', category: 'horses' },
-  { src: '/images/horses/horse-2.jpg', altKey: 'images.horsePortrait', category: 'horses' },
-  { src: '/images/horses/stable-facility.jpg', altKey: 'images.stableFacility', category: 'facility' },
-  { src: '/images/facility/entrance.jpg', altKey: 'images.clubEntrance', category: 'facility' },
-  { src: '/images/facility/riding-arena.png', altKey: 'images.ridingArena', category: 'facility' },
-  { src: '/images/facility/stable-interior.png', altKey: 'images.stableInterior', category: 'facility' },
-  { src: '/images/facility/indoor-arena.png', altKey: 'images.indoorArena', category: 'facility' },
-  { src: '/images/services/horse-lesson.jpg', altKey: 'images.horseLesson', category: 'training' },
-  { src: '/images/services/riding-safari.jpg', altKey: 'images.ridingSafari', category: 'safari' },
-  { src: '/images/services/private-training.jpg', altKey: 'images.privateTraining', category: 'training' },
+type GalleryImage = {
+  src: string
+  altKey: string
+}
+
+type Album = {
+  id: string
+  titleKey: string
+  descriptionKey: string
+  coverImage: string
+  images: GalleryImage[]
+}
+
+const albums: Album[] = [
+  {
+    id: 'training',
+    titleKey: 'albums.training.title',
+    descriptionKey: 'albums.training.description',
+    coverImage: '/images/horses/equestrian-training.jpg',
+    images: [
+      { src: '/images/horses/equestrian-training.jpg', altKey: 'images.equestrianTraining' },
+      { src: '/images/horses/riding-training.jpg', altKey: 'images.ridingTraining' },
+      { src: '/images/services/horse-lesson.jpg', altKey: 'images.horseLesson' },
+      { src: '/images/services/private-training.jpg', altKey: 'images.privateTraining' },
+    ],
+  },
+  {
+    id: 'jumping',
+    titleKey: 'albums.jumping.title',
+    descriptionKey: 'albums.jumping.description',
+    coverImage: '/images/horses/show-jumping-1.jpg',
+    images: [
+      { src: '/images/horses/show-jumping-1.jpg', altKey: 'images.showJumping' },
+      { src: '/images/horses/show-jumping-2.jpg', altKey: 'images.showJumpingCompetition' },
+      { src: '/images/horses/show-jumping-3.jpg', altKey: 'images.showJumpingEvent' },
+    ],
+  },
+  {
+    id: 'horses',
+    titleKey: 'albums.horses.title',
+    descriptionKey: 'albums.horses.description',
+    coverImage: '/images/horses/horse-1.jpg',
+    images: [
+      { src: '/images/horses/horse-1.jpg', altKey: 'images.horsePortrait' },
+      { src: '/images/horses/horse-2.jpg', altKey: 'images.horsePortrait' },
+    ],
+  },
+  {
+    id: 'facility',
+    titleKey: 'albums.facility.title',
+    descriptionKey: 'albums.facility.description',
+    coverImage: '/images/facility/entrance.jpg',
+    images: [
+      { src: '/images/facility/entrance.jpg', altKey: 'images.clubEntrance' },
+      { src: '/images/facility/riding-arena.png', altKey: 'images.ridingArena' },
+      { src: '/images/facility/stable-interior.png', altKey: 'images.stableInterior' },
+      { src: '/images/facility/indoor-arena.png', altKey: 'images.indoorArena' },
+      { src: '/images/horses/stable-facility.jpg', altKey: 'images.stableFacility' },
+    ],
+  },
+  {
+    id: 'safari',
+    titleKey: 'albums.safari.title',
+    descriptionKey: 'albums.safari.description',
+    coverImage: '/images/services/riding-safari.jpg',
+    images: [
+      { src: '/images/services/riding-safari.jpg', altKey: 'images.ridingSafari' },
+    ],
+  },
 ]
-
-const categoryKeys = ['all', 'training', 'jumping', 'horses', 'facility', 'safari'] as const
 
 export default function GalleryPage() {
   const { t } = useTranslation('gallery')
-  const [activeCategory, setActiveCategory] = useState<string>('all')
+  const [activeAlbum, setActiveAlbum] = useState<Album | null>(null)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
-
-  const filteredImages =
-    activeCategory === 'all'
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeCategory)
 
   const openLightbox = useCallback((index: number) => setLightboxIndex(index), [])
   const closeLightbox = useCallback(() => setLightboxIndex(null), [])
 
   const goNext = useCallback(() => {
+    if (!activeAlbum) return
     setLightboxIndex((prev) =>
-      prev !== null ? (prev + 1) % filteredImages.length : null
+      prev !== null ? (prev + 1) % activeAlbum.images.length : null
     )
-  }, [filteredImages.length])
+  }, [activeAlbum])
 
   const goPrev = useCallback(() => {
+    if (!activeAlbum) return
     setLightboxIndex((prev) =>
-      prev !== null ? (prev - 1 + filteredImages.length) % filteredImages.length : null
+      prev !== null ? (prev - 1 + activeAlbum.images.length) % activeAlbum.images.length : null
     )
-  }, [filteredImages.length])
+  }, [activeAlbum])
 
   return (
     <div>
@@ -64,56 +112,101 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="pb-8">
-        <div className="container-breathable">
-          <div className="flex flex-wrap justify-center gap-2">
-            {categoryKeys.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full font-sans text-sm font-semibold transition-all capitalize ${
-                  activeCategory === cat
-                    ? 'bg-gold-500 text-forest-900 shadow-tactile'
-                    : 'bg-cream-400/10 text-cream-200 hover:bg-cream-400/20'
-                }`}
-              >
-                {t(`categories.${cat}`)}
-              </button>
-            ))}
+      {/* Albums View */}
+      {!activeAlbum ? (
+        <section className="pb-20">
+          <div className="container-breathable">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {albums.map((album) => (
+                <button
+                  key={album.id}
+                  onClick={() => setActiveAlbum(album)}
+                  className="group text-left"
+                >
+                  <div className="glass-card rounded-2xl overflow-hidden">
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={album.coverImage}
+                        alt={t(album.titleKey)}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-2 text-white/80 text-sm mb-2">
+                          <Images className="w-4 h-4" />
+                          <span>{album.images.length} {t('album.images')}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-serif font-bold text-cream-100 mb-2">
+                        {t(album.titleKey)}
+                      </h3>
+                      <p className="text-cream-200 font-sans text-sm">
+                        {t(album.descriptionKey)}
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        /* Album Detail View */
+        <section className="pb-20">
+          <div className="container-breathable">
+            {/* Back Button */}
+            <button
+              onClick={() => {
+                setActiveAlbum(null)
+                setLightboxIndex(null)
+              }}
+              className="flex items-center gap-2 text-gold-400 hover:text-gold-300 font-sans text-sm mb-6 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              {t('album.backToAlbums')}
+            </button>
 
-      {/* Gallery Grid */}
-      <section className="pb-20">
-        <div className="container-breathable">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredImages.map((img, index) => (
-              <button
-                key={img.src}
-                onClick={() => openLightbox(index)}
-                className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer"
-              >
-                <Image
-                  src={img.src}
-                  alt={t(img.altKey)}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end">
-                  <span className="text-white font-sans text-sm p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    {t(img.altKey)}
-                  </span>
-                </div>
-              </button>
-            ))}
+            {/* Album Header */}
+            <div className="mb-8">
+              <h2 className="text-3xl font-serif font-bold text-cream-100 mb-2">
+                {t(activeAlbum.titleKey)}
+              </h2>
+              <p className="text-cream-200 font-sans">
+                {t(activeAlbum.descriptionKey)}
+              </p>
+            </div>
+
+            {/* Images Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {activeAlbum.images.map((img, index) => (
+                <button
+                  key={img.src}
+                  onClick={() => openLightbox(index)}
+                  className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer"
+                >
+                  <Image
+                    src={img.src}
+                    alt={t(img.altKey)}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end">
+                    <span className="text-white font-sans text-sm p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      {t(img.altKey)}
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Lightbox */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && activeAlbum && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
           onClick={closeLightbox}
@@ -147,15 +240,15 @@ export default function GalleryPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={filteredImages[lightboxIndex].src}
-              alt={t(filteredImages[lightboxIndex].altKey)}
+              src={activeAlbum.images[lightboxIndex].src}
+              alt={t(activeAlbum.images[lightboxIndex].altKey)}
               fill
               className="object-contain"
             />
           </div>
 
           <div className="absolute bottom-6 text-center text-white/70 font-sans text-sm">
-            {t(filteredImages[lightboxIndex].altKey)} — {lightboxIndex + 1} / {filteredImages.length}
+            {t(activeAlbum.images[lightboxIndex].altKey)} — {lightboxIndex + 1} / {activeAlbum.images.length}
           </div>
         </div>
       )}
