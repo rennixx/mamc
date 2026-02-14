@@ -6,8 +6,13 @@
   "steps": {
     "service": "Service",
     "dateTime": "Date & Time",
+    "horses": "Select Horses",
     "details": "Details",
     "confirm": "Confirm"
+  },
+  "horseSelect": {
+    "heading": "Select Your Horses",
+    "riderCount": "Number of Riders"
   },
   "serviceSelect": {
     "heading": "Select a Service"

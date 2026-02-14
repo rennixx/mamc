@@ -7,12 +7,13 @@ import { getAllHorses } from '@/services/horseService'
 import { createBooking } from '@/services/bookingService'
 import { getIpLocation } from '@/services/ipGeolocation'
 import type { Horse } from '@/types'
+import { HorseSelector } from '@/components/common/HorseSelector'
 import {
   ChevronRight, ChevronLeft, CheckCircle, Loader2,
   User, Calendar, Clock, Users, MessageSquare
 } from 'lucide-react'
 
-const stepKeys = ['steps.dateTime', 'steps.service', 'steps.details', 'steps.confirm'] as const
+const stepKeys = ['steps.dateTime', 'steps.horses', 'steps.service', 'steps.details', 'steps.confirm'] as const
 
 const serviceOptions = [
   { value: 'ACADEMY', labelKey: 'services.ridingLessons' },
@@ -40,6 +41,8 @@ export default function BookingPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [riderCount, setRiderCount] = useState(1)
+  const [selectedHorses, setSelectedHorses] = useState<string[]>([''])
 
   const [form, setForm] = useState({
     service: '',
@@ -62,14 +65,24 @@ export default function BookingPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
+  const handleHorseSelect = (riderIndex: number, horseId: string) => {
+    setSelectedHorses((prev) => {
+      const newSelection = [...prev]
+      newSelection[riderIndex] = horseId
+      return newSelection
+    })
+    setForm((p) => ({ ...p, horseIds: selectedHorses.filter(Boolean) }))
+  }
+
   const canProceed = useCallback(() => {
     switch (step) {
       case 0: return !!form.date && !!form.time
-      case 1: return !!form.service
-      case 2: return !!form.name && !!form.phone && !!form.experienceLevel
+      case 1: return selectedHorses.filter(Boolean).length === riderCount
+      case 2: return !!form.service
+      case 3: return !!form.name && !!form.phone && !!form.experienceLevel
       default: return true
     }
-  }, [step, form])
+  }, [step, form, selectedHorses, riderCount])
 
   const handleSubmit = async () => {
     setSubmitting(true)
@@ -132,12 +145,12 @@ export default function BookingPage() {
           </p>
 
           {/* Step Indicator */}
-          <div className="flex items-center justify-center mb-8 md:mb-12 overflow-x-auto py-2">
+          <div className="flex items-center justify-center mb-8 md:mb-12 py-2">
             {stepKeys.map((key, i) => (
               <div key={key} className="flex items-center flex-shrink-0">
                 <div className="flex flex-col items-center">
                   <div
-                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-sans font-bold text-xs sm:text-sm transition-all ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-sans font-bold text-xs sm:text-sm transition-all ${
                       i <= step
                         ? 'bg-gold-500 text-forest-900'
                         : 'bg-cream-400/10 text-cream-300'
@@ -145,13 +158,13 @@ export default function BookingPage() {
                   >
                     {i < step ? '✓' : i + 1}
                   </div>
-                  <span className="text-xs font-sans text-cream-300 mt-1 sm:mt-2 hidden md:block">
+                  <span className="text-[10px] sm:text-xs font-sans text-cream-300 mt-0.5 sm:mt-1 md:mt-2 hidden sm:block">
                     {t(key)}
                   </span>
                 </div>
                 {i < stepKeys.length - 1 && (
                   <div
-                    className={`w-12 sm:w-20 md:w-32 h-0.5 mx-1 sm:mx-3 ${
+                    className={`w-4 sm:w-8 md:w-16 lg:w-32 h-0.5 mx-0.5 sm:mx-1 md:mx-3 ${
                       i < step ? 'bg-gold-500' : 'bg-cream-400/10'
                     }`}
                   />
@@ -211,8 +224,46 @@ export default function BookingPage() {
               </div>
             )}
 
-            {/* Step 1: Service */}
+            {/* Step 1: Select Horses */}
             {step === 1 && (
+              <div className="space-y-6">
+                <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
+                  {t('horseSelect.heading')}
+                </h2>
+                <div>
+                  <label htmlFor="rider-count" className="form-label">
+                    <Users className="w-4 h-4" /> {t('horseSelect.riderCount')}
+                  </label>
+                  <input
+                    id="rider-count"
+                    name="riderCount"
+                    type="number"
+                    min={1}
+                    max={10}
+                    value={riderCount}
+                    onChange={(e) => {
+                      const count = Math.max(1, Math.min(10, parseInt(e.target.value) || 1))
+                      setRiderCount(count)
+                      setSelectedHorses((prev) => {
+                        const newSelection = [...prev]
+                        while (newSelection.length < count) newSelection.push('')
+                        return newSelection.slice(0, count)
+                      })
+                    }}
+                    className="form-input"
+                  />
+                </div>
+                <HorseSelector
+                  riderCount={riderCount}
+                  selectedHorses={selectedHorses}
+                  onHorseSelect={handleHorseSelect}
+                  showWarningFor={form.experienceLevel as any}
+                />
+              </div>
+            )}
+
+            {/* Step 2: Service */}
+            {step === 2 && (
               <div className="space-y-4">
                 <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
                   {t('serviceSelect.heading')}
@@ -235,8 +286,8 @@ export default function BookingPage() {
               </div>
             )}
 
-            {/* Step 2: Personal Details */}
-            {step === 2 && (
+            {/* Step 3: Personal Details */}
+            {step === 3 && (
               <div className="space-y-5">
                 <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
                   {t('details.heading')}
@@ -285,8 +336,8 @@ export default function BookingPage() {
               </div>
             )}
 
-            {/* Step 3: Confirm */}
-            {step === 3 && (
+            {/* Step 4: Confirm */}
+            {step === 4 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
                   {t('confirmSection.heading')}

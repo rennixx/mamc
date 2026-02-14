@@ -6,8 +6,13 @@
   "steps": {
     "service": "خزمەتگوزاری",
     "dateTime": "بەروار و کات",
+    "horses": "هەڵبژاردنی ئەسپەکان",
     "details": "وردەکارییەکان",
     "confirm": "دڵنیاکردنەوە"
+  },
+  "horseSelect": {
+    "heading": "ئەسپەکانت هەڵبژێرە",
+    "riderCount": "ژمارەی سوارەکان"
   },
   "serviceSelect": {
     "heading": "خزمەتگوزارییەک هەڵبژێرە"

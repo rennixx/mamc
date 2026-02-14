@@ -6,8 +6,13 @@
   "steps": {
     "service": "الخدمة",
     "dateTime": "التاريخ والوقت",
+    "horses": "اختيار الخيول",
     "details": "التفاصيل",
     "confirm": "التأكيد"
+  },
+  "horseSelect": {
+    "heading": "اختر خيولك",
+    "riderCount": "عدد الفرسان"
   },
   "serviceSelect": {
     "heading": "اختر خدمة"
