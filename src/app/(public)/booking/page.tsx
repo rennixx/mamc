@@ -12,7 +12,7 @@ import {
   User, Calendar, Clock, Users, MessageSquare
 } from 'lucide-react'
 
-const stepKeys = ['steps.service', 'steps.dateTime', 'steps.details', 'steps.confirm'] as const
+const stepKeys = ['steps.dateTime', 'steps.service', 'steps.details', 'steps.confirm'] as const
 
 const serviceOptions = [
   { value: 'ACADEMY', labelKey: 'services.ridingLessons' },
@@ -64,8 +64,8 @@ export default function BookingPage() {
 
   const canProceed = useCallback(() => {
     switch (step) {
-      case 0: return !!form.service
-      case 1: return !!form.date && !!form.time
+      case 0: return !!form.date && !!form.time
+      case 1: return !!form.service
       case 2: return !!form.name && !!form.phone && !!form.experienceLevel
       default: return true
     }
@@ -167,32 +167,8 @@ export default function BookingPage() {
           )}
 
           <div className="glass-card rounded-2xl p-4 md:p-6 lg:p-8">
-            {/* Step 0: Service */}
+            {/* Step 0: Date & Time */}
             {step === 0 && (
-              <div className="space-y-4">
-                <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
-                  {t('serviceSelect.heading')}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {serviceOptions.map((svc) => (
-                    <button
-                      key={svc.value}
-                      onClick={() => setForm((p) => ({ ...p, service: svc.value }))}
-                      className={`p-5 rounded-xl text-left font-sans transition-all border-2 ${
-                        form.service === svc.value
-                          ? 'border-gold-400 bg-gold-500/10 text-cream-100'
-                          : 'border-cream-400/10 text-cream-200 hover:border-cream-400/30'
-                      }`}
-                    >
-                      <span className="font-semibold">{t(svc.labelKey)}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Step 1: Date & Time */}
-            {step === 1 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
                   {t('dateTime.heading')}
@@ -231,6 +207,30 @@ export default function BookingPage() {
                       </button>
                     ))}
                   </div>
+                </div>
+              </div>
+            )}
+
+            {/* Step 1: Service */}
+            {step === 1 && (
+              <div className="space-y-4">
+                <h2 className="text-xl font-serif font-bold text-cream-100 mb-6">
+                  {t('serviceSelect.heading')}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {serviceOptions.map((svc) => (
+                    <button
+                      key={svc.value}
+                      onClick={() => setForm((p) => ({ ...p, service: svc.value }))}
+                      className={`p-5 rounded-xl text-left font-sans transition-all border-2 ${
+                        form.service === svc.value
+                          ? 'border-gold-400 bg-gold-500/10 text-cream-100'
+                          : 'border-cream-400/10 text-cream-200 hover:border-cream-400/30'
+                      }`}
+                    >
+                      <span className="font-semibold">{t(svc.labelKey)}</span>
+                    </button>
+                  ))}
                 </div>
               </div>
             )}
