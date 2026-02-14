@@ -264,197 +264,162 @@ export function Header() {
           </div>
         </nav>
 
-        {/* Mobile header bar */}
+        {/* Mobile header bar with dropdown menu */}
         <nav
-          className="block lg:hidden w-full glass-nav"
+          className="block lg:hidden w-full"
           style={{ paddingTop: 'max(1rem, env(safe-area-inset-top))' }}
         >
-          <div className="flex items-center justify-between px-4 py-3">
-            {/* Logo */}
-            <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
-              <Image
-                src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
-                alt="Mam Center"
-                width={100}
-                height={36}
-                className="object-contain w-auto h-8"
-                priority
-              />
-            </Link>
+          {/* Header bar */}
+          <div className="glass-nav">
+            <div className="flex items-center justify-between px-4 py-3">
+              {/* Logo */}
+              <Link href="/" onClick={closeMobileMenu} className="flex-shrink-0">
+                <Image
+                  src={theme === 'dark' ? '/icons/logo-white.png' : '/icons/logo.png'}
+                  alt="Mam Center"
+                  width={100}
+                  height={36}
+                  className="object-contain w-auto h-8"
+                  priority
+                />
+              </Link>
 
-            {/* Menu Button with animated hamburger */}
-            <button
-              className="text-cream-100 p-2 min-w-[44px] min-h-[44px] rounded-lg hover:bg-cream-400/10 transition-colors touch-manipulation"
-              onClick={toggleMobileMenu}
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <div className="relative w-6 h-6">
-                {/* Top line - rotates to form X */}
-                <span
-                  className="absolute left-0 w-6 h-0.5 bg-current rounded-full transition-all duration-300 ease-in-out"
-                  style={{
-                    top: '7px',
-                    transform: isMobileMenuOpen ? 'rotate(45deg) translate(6px, 6px)' : 'rotate(0deg)'
-                  }}
-                />
-                {/* Middle line - fades out */}
-                <span
-                  className="absolute left-0 w-6 h-0.5 bg-current rounded-full transition-all duration-300 ease-in-out"
-                  style={{
-                    top: '11px',
-                    opacity: isMobileMenuOpen ? 0 : 1
-                  }}
-                />
-                {/* Bottom line - rotates to form X */}
-                <span
-                  className="absolute left-0 w-6 h-0.5 bg-current rounded-full transition-all duration-300 ease-in-out"
-                  style={{
-                    top: '15px',
-                    transform: isMobileMenuOpen ? 'rotate(-45deg) translate(6px, -6px)' : 'rotate(0deg)'
-                  }}
-                />
+              {/* Menu Button with animated hamburger */}
+              <button
+                className="text-cream-100 p-2 min-w-[44px] min-h-[44px] rounded-lg hover:bg-cream-400/10 transition-colors touch-manipulation"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle menu"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+              >
+                <div className="relative w-6 h-6 flex items-center justify-center">
+                  {/* Top line */}
+                  <span
+                    className="absolute w-6 h-0.5 bg-current rounded-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                    style={{
+                      transform: isMobileMenuOpen
+                        ? 'rotate(45deg)'
+                        : 'translateY(-6px)',
+                    }}
+                  />
+                  {/* Middle line - fades out */}
+                  <span
+                    className="absolute w-6 h-0.5 bg-current rounded-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                    style={{
+                      opacity: isMobileMenuOpen ? 0 : 1,
+                    }}
+                  />
+                  {/* Bottom line */}
+                  <span
+                    className="absolute w-6 h-0.5 bg-current rounded-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                    style={{
+                      transform: isMobileMenuOpen
+                        ? 'rotate(-45deg)'
+                        : 'translateY(6px)',
+                    }}
+                  />
+                </div>
+              </button>
+            </div>
+          </div>
+
+          {/* Dropdown menu panel */}
+          <div
+            id="mobile-menu"
+            ref={overlayRef}
+            role="dialog"
+            aria-modal="true"
+            className={`overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] bg-forest-900 border border-white/20 ${isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'}`}
+            style={{ maxHeight: isMobileMenuOpen ? '80vh' : '0px', borderWidth: '1.5px' }}
+          >
+            {/* Menu content */}
+            <div className="p-4 pb-8 space-y-4">
+              {/* Navigation */}
+              <nav>
+                <div className="space-y-1">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={closeMobileMenu}
+                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${pathname === link.href ? 'text-gold-400 bg-gold-400/10' : 'text-cream-100 hover:bg-cream-400/5'}`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </nav>
+
+              {/* Divider */}
+              <div className="border-t border-cream-400/10 pt-4 space-y-4">
+                {/* Account section */}
+                {isLoggedIn ? (
+                  <>
+                    <Link
+                      href="/profile"
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
+                    >
+                      <User className="w-5 h-5 opacity-60" />
+                      <span className="flex-1">{tAuth('profile.title', 'My Profile')}</span>
+                      <span className="text-gold-400 text-sm font-semibold">{user.points ?? 0} pts</span>
+                    </Link>
+                    <button
+                      onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
+                      className="w-full flex items-center gap-3 px-4 py-3 text-red-400 rounded-lg hover:bg-red-400/10 transition-all"
+                    >
+                      <LogOut className="w-5 h-5" />
+                      {t('signOut', 'Sign Out')}
+                    </button>
+                  </>
+                ) : (
+                  <Link
+                    href="/login"
+                    onClick={closeMobileMenu}
+                    className="flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
+                  >
+                    <User className="w-5 h-5 opacity-60" />
+                    {tAuth('login.signIn', 'Sign In')}
+                  </Link>
+                )}
+
+                {/* Book Now */}
+                <Link
+                  href="/booking"
+                  onClick={closeMobileMenu}
+                  className="block w-full py-4 px-6 bg-gold-500 text-forest-900 font-bold text-center rounded-lg hover:bg-gold-400 transition-colors"
+                >
+                  {t('bookNow', 'Book Now')}
+                </Link>
+
+                {/* Settings */}
+                <div className="space-y-2">
+                  <button
+                    onClick={toggleTheme}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
+                    aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                  >
+                    {theme === 'dark' ? <Sun className="w-5 h-5 opacity-60" /> : <Moon className="w-5 h-5 opacity-60" />}
+                    <span className="flex-1 text-left">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+                  </button>
+
+                  <div className="flex gap-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className={`flex-1 px-3 py-2 text-sm font-medium rounded-lg transition-all ${language === lang.code ? 'bg-gold-500 text-forest-900' : 'text-cream-300 hover:bg-cream-400/10'}`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </button>
+            </div>
           </div>
         </nav>
       </>
-
-        {typeof document !== 'undefined' && mobileMounted && createPortal(
-          <>
-            {/* Backdrop */}
-            <div
-              onClick={() => { if (!ignoreBackdrop) closeMobileMenu() }}
-              className={`lg:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'} ${ignoreBackdrop ? 'pointer-events-none' : ''}`}
-              aria-hidden={isMobileMenuOpen ? 'false' : 'true'}
-            />
-
-            {/* Slide-in panel */}
-            <aside
-              id="mobile-menu"
-              ref={overlayRef}
-              role="dialog"
-              aria-modal="true"
-              className={`lg:hidden fixed inset-y-0 right-0 z-60 h-full w-full sm:w-[400px] bg-forest-900 shadow-2xl transition-all duration-300 ease-out ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
-            >
-              <div className="relative h-full flex flex-col" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
-                {/* Header with close button */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-cream-400/10">
-                  <span className="text-cream-100 text-sm font-medium opacity-60">Menu</span>
-                  <button
-                    ref={closeMobileButtonRef}
-                    className="text-cream-100 p-2 -mr-2 touch-manipulation opacity-60 hover:opacity-100 transition-opacity"
-                    onClick={closeMobileMenu}
-                    aria-label="Close menu"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
-
-                {/* Scrollable content */}
-                <div className="flex-1 overflow-y-auto">
-                  {/* Main Navigation */}
-                  <nav className="px-4 py-6">
-                    <p className="text-xs font-semibold text-cream-400/60 uppercase tracking-wider mb-3 px-2">Navigation</p>
-                    <div className="space-y-1">
-                      {navLinks.map((link) => (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          onClick={closeMobileMenu}
-                          className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${pathname === link.href ? 'text-gold-400 bg-gold-400/10' : 'text-cream-100 hover:bg-cream-400/5'}`}
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </nav>
-
-                  {/* Actions Section */}
-                  <div className="px-4 py-6 border-t border-cream-400/10">
-                    <p className="text-xs font-semibold text-cream-400/60 uppercase tracking-wider mb-3 px-2">Account</p>
-                    <div className="space-y-1">
-                      {isLoggedIn ? (
-                        <>
-                          <Link
-                            href="/profile"
-                            onClick={closeMobileMenu}
-                            className="flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
-                          >
-                            <User className="w-5 h-5 opacity-60" />
-                            <span className="flex-1">{tAuth('profile.title', 'My Profile')}</span>
-                            <span className="text-gold-400 text-sm font-semibold">{user.points ?? 0} pts</span>
-                          </Link>
-                          <button
-                            onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
-                            className="w-full flex items-center gap-3 px-4 py-3 text-red-400 rounded-lg hover:bg-red-400/10 transition-all"
-                          >
-                            <LogOut className="w-5 h-5" />
-                            {t('signOut', 'Sign Out')}
-                          </button>
-                        </>
-                      ) : (
-                        <Link
-                          href="/login"
-                          onClick={closeMobileMenu}
-                          className="flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
-                        >
-                          <User className="w-5 h-5 opacity-60" />
-                          {tAuth('login.signIn', 'Sign In')}
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Settings Section */}
-                  <div className="px-4 py-6 border-t border-cream-400/10">
-                    <p className="text-xs font-semibold text-cream-400/60 uppercase tracking-wider mb-3 px-2">Settings</p>
-                    <div className="space-y-1">
-                      {/* Theme Toggle */}
-                      <button
-                        onClick={toggleTheme}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-cream-100 rounded-lg hover:bg-cream-400/5 transition-all"
-                        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                      >
-                        {theme === 'dark' ? <Sun className="w-5 h-5 opacity-60" /> : <Moon className="w-5 h-5 opacity-60" />}
-                        <span className="flex-1 text-left">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-                      </button>
-
-                      {/* Language Switcher */}
-                      <div className="px-4 py-2">
-                        <p className="text-xs text-cream-400/60 mb-2">Language</p>
-                        <div className="flex gap-2">
-                          {languages.map((lang) => (
-                            <button
-                              key={lang.code}
-                              onClick={() => handleLanguageChange(lang.code)}
-                              className={`flex-1 px-3 py-2 text-sm font-medium rounded-lg transition-all ${language === lang.code ? 'bg-gold-500 text-forest-900' : 'text-cream-300 hover:bg-cream-400/10'}`}
-                            >
-                              {lang.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Book Now CTA */}
-                  <div className="px-4 py-6 border-t border-cream-400/10">
-                    <Link
-                      href="/booking"
-                      onClick={closeMobileMenu}
-                      className="block w-full py-4 px-6 bg-gold-500 text-forest-900 font-bold text-center rounded-lg hover:bg-gold-400 transition-colors"
-                    >
-                      {t('bookNow', 'Book Now')}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </>,
-          document.body
-        )}
       </header>
   )
 }
