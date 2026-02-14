@@ -86,12 +86,12 @@ export default function HomePage() {
               >
                 {stats.map((stat, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <div className="glass-card rounded-2xl p-12 md:p-16 text-center">
-                      <stat.icon className="w-16 h-16 md:w-20 md:h-20 text-gold-400 mx-auto mb-6" />
-                      <div className="text-5xl md:text-7xl font-serif font-bold text-cream-100 mb-4">
+                    <div className="glass-card rounded-2xl p-6 sm:p-8 md:p-12 lg:p-16 text-center">
+                      <stat.icon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-20 text-gold-400 mx-auto mb-4 sm:mb-6" />
+                      <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-cream-100 mb-3 sm:mb-4">
                         {t(stat.labelKey)}
                       </div>
-                      <p className="text-lg md:text-xl text-cream-200 font-sans">
+                      <p className="text-base sm:text-lg md:text-xl text-cream-200 font-sans">
                         {t(stat.descKey)}
                       </p>
                     </div>
@@ -103,27 +103,27 @@ export default function HomePage() {
             {/* Carousel Controls */}
             <button
               onClick={() => setCurrentSlide((s) => s === 0 ? stats.length - 1 : s - 1)}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold-500 text-forest-900 flex items-center justify-center hover:bg-gold-400 transition-colors z-10"
+              className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gold-500 text-forest-900 flex items-center justify-center hover:bg-gold-400 active:scale-95 transition-all z-10 touch-manipulation"
               aria-label="Previous"
             >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={() => setCurrentSlide((s) => (s + 1) % stats.length)}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold-500 text-forest-900 flex items-center justify-center hover:bg-gold-400 transition-colors z-10"
+              className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gold-500 text-forest-900 flex items-center justify-center hover:bg-gold-400 active:scale-95 transition-all z-10 touch-manipulation"
               aria-label="Next"
             >
-              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Carousel Indicators */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6">
               {stats.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-gold-500' : 'bg-cream-400/30'
+                  className={`w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-colors touch-manipulation ${
+                    index === currentSlide ? 'bg-gold-500' : 'bg-cream-400/30 hover:bg-cream-400/50'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
