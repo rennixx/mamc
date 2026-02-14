@@ -194,7 +194,7 @@ export function Header() {
                 </button>
 
                 {langOpen && (
-                  <div className="absolute right-0 mt-2 w-36 glass-card rounded-xl py-2 shadow-lg z-50">
+                  <div className="absolute right-0 mt-2 w-36 menu-card rounded-xl py-2 shadow-lg z-50">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
