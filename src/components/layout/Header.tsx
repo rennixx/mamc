@@ -22,6 +22,8 @@ export function Header() {
   const { data: session, status } = useSession()
   const [userMenuOpen, setUserMenuOpen] = useState(false)
   const userMenuRef = useRef<HTMLDivElement>(null)
+  const [langOpen, setLangOpen] = useState(false)
+  const langRef = useRef<HTMLDivElement>(null)
 
   const user = session?.user as { name?: string; email?: string; role?: string; points?: number } | undefined
 
@@ -30,6 +32,17 @@ export function Header() {
     const close = (e: MouseEvent) => {
       if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) {
         setUserMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [])
+
+  // Close language dropdown on outside click
+  useEffect(() => {
+    const close = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false)
       }
     }
     document.addEventListener('mousedown', close)
@@ -126,6 +139,8 @@ export function Header() {
     { code: 'ar' as const, label: 'عربي' },
   ]
 
+  const isKurdish = language === 'ku'
+
   const handleLanguageChange = (lang: 'en' | 'ku' | 'ar') => {
     setLanguage(lang)
     closeMobileMenu()
@@ -157,7 +172,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link ${pathname === link.href ? 'text-gold-400' : ''}`}
+                  className={`nav-link ${pathname === link.href ? 'text-gold-400' : ''} ${isKurdish ? 'text-xs' : ''}`}
                 >
                   {link.label}
                 </Link>
@@ -166,17 +181,31 @@ export function Header() {
 
             {/* Desktop Right Side */}
             <div className="hidden lg:flex items-center gap-3">
-              {/* Language Switcher */}
-              <div className="flex rounded-lg overflow-hidden border border-cream-400/20">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className={`lang-button ${language === lang.code ? 'lang-button-active' : 'lang-button-inactive'}`}
-                  >
-                    {lang.label}
-                  </button>
-                ))}
+              {/* Language Switcher (dropdown) */}
+              <div className="relative" ref={langRef}>
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  aria-expanded={langOpen}
+                  aria-haspopup="menu"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cream-400/10 transition-colors text-cream-100"
+                >
+                  <span className="text-sm font-bold">{languages.find((l) => l.code === language)?.label}</span>
+                  <ChevronDown className={`w-4 h-4 text-cream-300 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {langOpen && (
+                  <div className="absolute right-0 mt-2 w-36 glass-card rounded-xl py-2 shadow-lg z-50">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => { handleLanguageChange(lang.code); setLangOpen(false) }}
+                        className={`w-full text-left px-4 py-2 text-sm transition-colors ${language === lang.code ? 'bg-gold-500 text-forest-900 rounded-lg' : 'text-cream-100 hover:bg-cream-400/10'}`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Theme Toggle */}
@@ -344,7 +373,7 @@ export function Header() {
                       key={link.href}
                       href={link.href}
                       onClick={closeMobileMenu}
-                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${pathname === link.href ? 'text-gold-400 bg-gold-400/10' : 'text-cream-100 hover:bg-cream-400/5'}`}
+                      className={`block px-4 py-3 rounded-lg ${isKurdish ? 'text-sm' : 'text-base'} font-medium transition-all ${pathname === link.href ? 'text-gold-400 bg-gold-400/10' : 'text-cream-100 hover:bg-cream-400/5'}`}
                     >
                       {link.label}
                     </Link>
