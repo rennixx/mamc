@@ -83,6 +83,50 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team */}
+      <section className="section-spacing border-t border-cream-400/10">
+        <div className="container-breathable">
+          <h2 className="section-heading">Our Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {['ahmad', 'sara', 'omar', 'lana', 'karwan', 'dina'].map((key) => {
+              const hasImage = key === 'ahmad'
+              return (
+                <div
+                  key={key}
+                  className="group rounded-2xl overflow-hidden border border-cream-400/20 bg-forest-800/50 hover:bg-forest-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  {/* Photo */}
+                  <div className="relative aspect-[4/5] bg-forest-900/50 overflow-hidden">
+                    {hasImage ? (
+                      <Image
+                        src="/images/facility/riding-arena.png"
+                        alt={t(`team.members.${key}.name`)}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Users className="w-24 h-24 text-cream-400/40" />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-5">
+                    <h3 className="text-lg font-serif font-bold text-cream-100 mb-2">
+                      {t(`team.members.${key}.name`)}
+                    </h3>
+                    <p className="text-cream-300 font-sans text-sm leading-relaxed">
+                      {t(`team.members.${key}.role`)}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Facility Gallery */}
       <section className="section-spacing border-t border-cream-400/10">
         <div className="container-breathable">

@@ -44,5 +44,34 @@
     "heading": "Join us at Mam Center",
     "text": "Where passion meets professionalism in every stride.",
     "button": "Book Your Experience"
+  },
+  "team": {
+    "heading": "Our Team",
+    "members": {
+      "ahmad": {
+        "name": "Ahmad Kareem",
+        "role": "Founder & Head Trainer"
+      },
+      "sara": {
+        "name": "Sara Mohammed",
+        "role": "Senior Riding Instructor"
+      },
+      "omar": {
+        "name": "Omar Hassan",
+        "role": "Horse Care Manager"
+      },
+      "lana": {
+        "name": "Lana Ali",
+        "role": "Youth Program Coordinator"
+      },
+      "karwan": {
+        "name": "Karwan Jamal",
+        "role": "Safari & Trail Guide"
+      },
+      "dina": {
+        "name": "Dina Rashid",
+        "role": "Operations Manager"
+      }
+    }
   }
 }
