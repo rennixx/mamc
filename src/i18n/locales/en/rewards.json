@@ -1,4 +1,22 @@
 {
+  "howItWorks": {
+    "title": "How Points Work",
+    "subtitle": "Earn points and redeem them for exclusive rewards",
+    "steps": {
+      "booking": {
+        "title": "Book a Service",
+        "description": "Earn 10 points for every booking you make"
+      },
+      "referral": {
+        "title": "Refer Friends",
+        "description": "Get 50 points when your friends sign up and make their first booking"
+      },
+      "redeem": {
+        "title": "Redeem Rewards",
+        "description": "Use your points to get discounts and free services"
+      }
+    }
+  },
   "catalog": {
     "title": "Rewards Catalog",
     "subtitle": "Redeem your points for amazing rewards",
@@ -17,7 +35,7 @@
     "stockLeft": "{{count}} left",
     "unlimited": "Unlimited",
     "loginToRedeem": "Sign in to redeem rewards",
-    "noRewards": "No rewards available at the moment"
+    "noRewards": "No rewards available at moment"
   },
   "admin": {
     "title": "Manage Rewards",

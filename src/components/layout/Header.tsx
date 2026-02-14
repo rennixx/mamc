@@ -111,6 +111,7 @@ export function Header() {
   }, [mobileMounted, closeMobileMenu])
 
   const navLinks = [
+    { href: '/', label: t('home', 'Home') },
     { href: '/about', label: t('about', 'About') },
     { href: '/services', label: t('services', 'Services') },
     { href: '/horses', label: t('horses', 'Horses') },
