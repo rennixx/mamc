@@ -68,7 +68,7 @@ export function Header() {
               alt="Mam Center"
               width={120}
               height={48}
-              className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
+              className="h-10 w-auto object-contain brightness-0 dark:invert"
               priority
             />
           </Link>
