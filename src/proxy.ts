@@ -28,17 +28,25 @@ async function verifyAdminToken(request: NextRequest) {
 export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  // DEBUG: Log all requests to see if proxy is working
+  console.log('[PROXY] Request:', pathname, 'Cookies:', request.cookies.getAll().map(c => c.name))
+
   // Admin routes - use admin auth
   if (pathname.startsWith('/admin')) {
+    console.log('[PROXY] Admin route detected')
+
     // Skip auth check for admin login page
     if (pathname === '/admin/login') {
+      console.log('[PROXY] Skipping auth for /admin/login')
       return NextResponse.next()
     }
 
     // Verify admin JWT token
     const adminUser = await verifyAdminToken(request)
+    console.log('[PROXY] Admin user:', adminUser)
 
     if (!adminUser) {
+      console.log('[PROXY] No admin token, redirecting to /admin/login')
       const url = request.nextUrl.clone()
       url.pathname = '/admin/login'
       return NextResponse.redirect(url)
@@ -46,11 +54,13 @@ export default async function proxy(request: NextRequest) {
 
     // Check if user has admin/staff role
     if (adminUser.role !== 'ADMIN' && adminUser.role !== 'STAFF') {
+      console.log('[PROXY] Invalid role:', adminUser.role)
       const url = request.nextUrl.clone()
       url.pathname = '/admin/login'
       return NextResponse.redirect(url)
     }
 
+    console.log('[PROXY] Access granted for', adminUser.email)
     return NextResponse.next()
   }
 
@@ -63,5 +73,10 @@ export default async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/profile/:path*'],
+  matcher: [
+    // Match all paths starting with /admin except /admin/login
+    '/admin/:path*',
+    // Match all paths starting with /profile
+    '/profile/:path*',
+  ],
 }
