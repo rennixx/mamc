@@ -269,7 +269,7 @@ export function Footer() {
             </p>
             <span className="hidden md:inline text-cream-400/50">•</span>
             <div className="flex items-center gap-2">
-              <span className="text-cream-400/70 text-xs font-sans">Made By</span>
+              <span className="text-cream-400/70 text-xs font-sans">{t('madeBy')}</span>
               <a
                 href="https://www.instagram.com/icyrendev/"
                 target="_blank"
