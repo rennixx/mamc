@@ -3,24 +3,43 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
-import { Menu, X, Sun, Moon } from 'lucide-react'
+import { Menu, X, Sun, Moon, Star, User, LogOut, Gift, ChevronDown } from 'lucide-react'
+import { useSession, signOut } from 'next-auth/react'
 import { useMobileMenu, useLanguage } from '@/hooks/useApp'
 import { useAppStore } from '@/store'
+import { useState, useRef, useEffect } from 'react'
 
 export function Header() {
   const { t } = useTranslation('nav')
+  const { t: tAuth } = useTranslation('auth')
   const pathname = usePathname()
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useMobileMenu()
   const { language, setLanguage } = useLanguage()
   const theme = useAppStore((s) => s.theme)
   const toggleTheme = useAppStore((s) => s.toggleTheme)
+  const { data: session, status } = useSession()
+  const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const userMenuRef = useRef<HTMLDivElement>(null)
+
+  const user = session?.user as { name?: string; email?: string; role?: string; points?: number } | undefined
+
+  // Close user menu on outside click
+  useEffect(() => {
+    const close = (e: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) {
+        setUserMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [])
 
   const navLinks = [
     { href: '/services', label: t('services', 'Services') },
     { href: '/horses', label: t('horses', 'Horses') },
+    { href: '/rewards', label: t('rewards', 'Rewards') },
     { href: '/gallery', label: t('gallery', 'Gallery') },
     { href: '/about', label: t('about', 'About') },
-    { href: '/team', label: t('team', 'Team') },
     { href: '/contact', label: t('contact', 'Contact') },
   ]
 
@@ -34,6 +53,8 @@ export function Header() {
     setLanguage(lang)
     closeMobileMenu()
   }
+
+  const isLoggedIn = status === 'authenticated' && !!user
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -81,6 +102,74 @@ export function Header() {
               {theme === 'dark' ? <Sun className="w-5 h-5 text-cream-100" /> : <Moon className="w-5 h-5 text-cream-100" />}
             </button>
 
+            {/* Auth Section */}
+            {isLoggedIn ? (
+              <div className="relative" ref={userMenuRef}>
+                <button
+                  onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cream-400/10 transition-colors"
+                >
+                  <div className="w-7 h-7 rounded-full bg-gold-500/20 flex items-center justify-center">
+                    <User className="w-4 h-4 text-gold-400" />
+                  </div>
+                  <span className="text-cream-100 text-sm font-medium max-w-[100px] truncate">
+                    {user.name || user.email?.split('@')[0]}
+                  </span>
+                  {typeof user.points === 'number' && (
+                    <span className="flex items-center gap-1 text-gold-400 text-xs font-bold">
+                      <Star className="w-3 h-3" />
+                      {user.points}
+                    </span>
+                  )}
+                  <ChevronDown className={`w-3 h-3 text-cream-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {userMenuOpen && (
+                  <div className="absolute end-0 top-full mt-2 w-48 glass-card rounded-xl py-2 shadow-lg">
+                    <Link
+                      href="/profile"
+                      onClick={() => setUserMenuOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm"
+                    >
+                      <User className="w-4 h-4" />
+                      {tAuth('profile.title', 'My Profile')}
+                    </Link>
+                    <Link
+                      href="/rewards"
+                      onClick={() => setUserMenuOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm"
+                    >
+                      <Gift className="w-4 h-4" />
+                      {t('rewards', 'Rewards')}
+                    </Link>
+                    {(user.role === 'ADMIN' || user.role === 'STAFF') && (
+                      <Link
+                        href="/admin"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-cream-100 hover:bg-cream-400/10 text-sm border-t border-cream-400/10"
+                      >
+                        {tAuth('profile.title', 'Admin Panel')}
+                      </Link>
+                    )}
+                    <button
+                      onClick={() => { setUserMenuOpen(false); signOut({ callbackUrl: '/' }) }}
+                      className="w-full flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-400/10 text-sm border-t border-cream-400/10"
+                    >
+                      <LogOut className="w-4 h-4" />
+                      {tAuth('logout', 'Sign Out')}
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                href="/login"
+                className="px-4 py-2 text-cream-100 hover:text-gold-400 font-sans text-sm transition-colors"
+              >
+                {tAuth('login', 'Sign In')}
+              </Link>
+            )}
+
             {/* Book Now CTA */}
             <Link
               href="/booking"
@@ -121,6 +210,39 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Mobile Auth */}
+            {isLoggedIn ? (
+              <>
+                <Link
+                  href="/profile"
+                  onClick={closeMobileMenu}
+                  className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors flex items-center gap-2"
+                >
+                  <User className="w-5 h-5" />
+                  {tAuth('profile.title', 'My Profile')}
+                  {typeof user.points === 'number' && (
+                    <span className="flex items-center gap-1 text-gold-400 text-sm">
+                      <Star className="w-3 h-3" />{user.points}
+                    </span>
+                  )}
+                </Link>
+                <button
+                  onClick={() => { closeMobileMenu(); signOut({ callbackUrl: '/' }) }}
+                  className="text-lg font-sans text-red-400 hover:text-red-300 transition-colors"
+                >
+                  {tAuth('logout', 'Sign Out')}
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                onClick={closeMobileMenu}
+                className="text-xl font-sans text-cream-100 hover:text-gold-400 transition-colors"
+              >
+                {tAuth('login', 'Sign In')}
+              </Link>
+            )}
 
             <Link
               href="/booking"

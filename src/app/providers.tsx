@@ -1,6 +1,7 @@
 'use client'
 
 import { ReactNode, useEffect } from 'react'
+import { SessionProvider } from 'next-auth/react'
 import { I18nProvider } from '@/components/common/I18nProvider'
 import { useAppStore } from '@/store'
 
@@ -21,9 +22,11 @@ function ThemeInitializer() {
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <I18nProvider>
-      <ThemeInitializer />
-      {children}
-    </I18nProvider>
+    <SessionProvider>
+      <I18nProvider>
+        <ThemeInitializer />
+        {children}
+      </I18nProvider>
+    </SessionProvider>
   )
 }

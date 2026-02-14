@@ -36,6 +36,12 @@ export async function PATCH(
     const { id } = await params
     const body = await request.json()
 
+    // Check if status is changing to COMPLETED - need to award points
+    const currentBooking = await db.booking.findUnique({
+      where: { id },
+      select: { status: true, userId: true },
+    })
+
     const booking = await db.booking.update({
       where: { id },
       data: body,
@@ -44,6 +50,27 @@ export async function PATCH(
         location: true,
       },
     })
+
+    // Award points when booking is completed and has a linked user
+    if (
+      body.status === 'COMPLETED' &&
+      currentBooking?.status !== 'COMPLETED' &&
+      currentBooking?.userId
+    ) {
+      await db.user.update({
+        where: { id: currentBooking.userId },
+        data: { points: { increment: 50 } },
+      })
+      await db.pointTransaction.create({
+        data: {
+          userId: currentBooking.userId,
+          amount: 50,
+          type: 'BOOKING_COMPLETED',
+          description: 'Points earned for completed booking',
+          bookingId: id,
+        },
+      })
+    }
 
     return NextResponse.json({ data: booking })
   } catch (error) {

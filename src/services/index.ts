@@ -3,3 +3,6 @@ export { getAllHorses, getAvailableHorses, getHorseById, createHorse, updateHors
 export { getDayConfig, isDateAvailable, getAvailableSlots, blockDate, unblockDate, setDateConfig, bookTimeSlot, releaseSlot, getCalendarRange, getBookedSlots } from './calendarService'
 export { submitContactMessage, getAllMessages, markMessageRead } from './contactService'
 export { getIpLocation, getBrowserLocationInfo } from './ipGeolocation'
+export { register, sendOtp, verifyOtp } from './authService'
+export { getAllRewards, getRewardById, createReward, updateReward, deleteReward, redeemReward } from './rewardService'
+export { getProfile, updateProfile, getPointsHistory, getUserRewards, getUserBookings, getAdminUsers, getAdminUser, updateAdminUser } from './userService'

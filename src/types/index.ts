@@ -30,10 +30,91 @@ export interface Booking {
   time: string
   status: 'PENDING' | 'CONFIRMED' | 'COMPLETED' | 'CANCELLED'
   notes?: string
+  userId?: string
+  user?: UserProfile
   horses: { horseId: string; horse: Horse }[]
   location?: BookingLocation
+  appliedReward?: UserReward
   createdAt: string
   updatedAt: string
+}
+
+// ─── User & Auth Types ────────────────────────────────
+
+export type UserRoleType = 'ADMIN' | 'STAFF' | 'USER'
+export type PointActionType = 'SIGNUP_BONUS' | 'BOOKING_COMPLETED' | 'REFERRAL_BONUS' | 'REWARD_REDEEMED' | 'ADMIN_ADJUSTMENT'
+export type RewardType = 'DISCOUNT' | 'FREE_SERVICE'
+
+export interface UserProfile {
+  id: string
+  name?: string
+  email: string
+  phone?: string
+  image?: string
+  role: UserRoleType
+  points: number
+  referralCode?: string
+  referredById?: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface PointTransaction {
+  id: string
+  userId: string
+  amount: number
+  type: PointActionType
+  description?: string
+  bookingId?: string
+  rewardId?: string
+  createdAt: string
+}
+
+export interface Reward {
+  id: string
+  title: string
+  titleKu?: string
+  titleAr?: string
+  description?: string
+  descriptionKu?: string
+  descriptionAr?: string
+  type: RewardType
+  pointCost: number
+  discountPercent?: number
+  freeService?: 'SAFARI' | 'ACADEMY' | 'PRIVATE' | 'EVENT'
+  active: boolean
+  stock?: number
+  image?: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface UserReward {
+  id: string
+  userId: string
+  rewardId: string
+  reward?: Reward
+  redeemedAt: string
+  used: boolean
+  usedAt?: string
+  bookingId?: string
+}
+
+export interface RegisterRequest {
+  name: string
+  email: string
+  password: string
+  phone?: string
+  referralCode?: string
+}
+
+export interface OtpRequest {
+  phone: string
+}
+
+export interface OtpVerifyRequest {
+  phone: string
+  code: string
 }
 
 export interface BookingLocation {

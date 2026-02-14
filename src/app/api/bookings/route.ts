@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
+import { auth } from '@/lib/auth'
 
 // GET /api/bookings — list all bookings (with filters)
 export async function GET(request: NextRequest) {
@@ -27,6 +28,7 @@ export async function GET(request: NextRequest) {
       include: {
         horses: { include: { horse: true } },
         location: true,
+        user: { select: { id: true, name: true, email: true, phone: true } },
       },
       orderBy: [{ date: 'desc' }, { time: 'desc' }],
     })
@@ -41,14 +43,19 @@ export async function GET(request: NextRequest) {
 // POST /api/bookings — create a new booking
 export async function POST(request: NextRequest) {
   try {
+    const session = await auth()
     const body = await request.json()
     const { horseIds, location, ...bookingData } = body
+
+    // Link to authenticated user if logged in
+    const userId = session?.user?.id || null
 
     const booking = await db.booking.create({
       data: {
         ...bookingData,
         date: new Date(bookingData.date),
         status: bookingData.status || 'PENDING',
+        userId,
         horses: horseIds?.length
           ? { create: horseIds.map((horseId: string) => ({ horseId })) }
           : undefined,

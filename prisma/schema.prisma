@@ -14,10 +14,19 @@ model User {
   email         String    @unique
   emailVerified DateTime?
   password      String? // Hashed password for credentials auth
+  phone         String?   @unique
   image         String?
-  role          UserRole  @default(ADMIN)
+  role          UserRole  @default(USER)
+  points        Int       @default(0)
+  referralCode  String?   @unique
+  referredById  String?
+  referredBy    User?     @relation("UserReferrals", fields: [referredById], references: [id])
+  referrals     User[]    @relation("UserReferrals")
   accounts      Account[]
   sessions      Session[]
+  bookings      Booking[]
+  pointHistory  PointTransaction[]
+  rewards       UserReward[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
@@ -65,6 +74,7 @@ model VerificationToken {
 enum UserRole {
   ADMIN
   STAFF
+  USER
 }
 
 // ─── Horses ───────────────────────────────────────────
@@ -119,8 +129,11 @@ model Booking {
   time            String        // HH:MM format
   status          BookingStatus @default(PENDING)
   notes           String?       // Admin notes
+  userId          String?
+  user            User?         @relation(fields: [userId], references: [id])
   horses          BookingHorse[]
   location        BookingLocation?
+  appliedReward   UserReward?   @relation("RewardBooking")
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
 
@@ -207,4 +220,81 @@ model ContactMessage {
   createdAt DateTime @default(now())
 
   @@map("contact_messages")
+}
+
+// ─── Points & Rewards ─────────────────────────────────
+
+model PointTransaction {
+  id          String            @id @default(cuid())
+  userId      String
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Int               // positive = earned, negative = spent
+  type        PointActionType
+  description String?
+  bookingId   String?
+  rewardId    String?
+  createdAt   DateTime          @default(now())
+
+  @@map("point_transactions")
+}
+
+enum PointActionType {
+  SIGNUP_BONUS
+  BOOKING_COMPLETED
+  REFERRAL_BONUS
+  REWARD_REDEEMED
+  ADMIN_ADJUSTMENT
+}
+
+model Reward {
+  id              String      @id @default(cuid())
+  title           String
+  titleKu         String?
+  titleAr         String?
+  description     String?     @db.Text
+  descriptionKu   String?     @db.Text
+  descriptionAr   String?     @db.Text
+  type            RewardType
+  pointCost       Int
+  discountPercent Int?        // for DISCOUNT type
+  freeService     ServiceType? // for FREE_SERVICE type
+  active          Boolean     @default(true)
+  stock           Int?        // null = unlimited
+  image           String?
+  redemptions     UserReward[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("rewards")
+}
+
+enum RewardType {
+  DISCOUNT
+  FREE_SERVICE
+}
+
+model UserReward {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rewardId   String
+  reward     Reward   @relation(fields: [rewardId], references: [id], onDelete: Cascade)
+  redeemedAt DateTime @default(now())
+  used       Boolean  @default(false)
+  usedAt     DateTime?
+  bookingId  String?  @unique
+  booking    Booking? @relation("RewardBooking", fields: [bookingId], references: [id])
+
+  @@map("user_rewards")
+}
+
+model OtpCode {
+  id        String   @id @default(cuid())
+  phone     String
+  code      String
+  expiresAt DateTime
+  verified  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("otp_codes")
 }

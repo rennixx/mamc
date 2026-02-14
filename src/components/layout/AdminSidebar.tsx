@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import {
   LayoutDashboard, CalendarDays, Users, PlusCircle,
-  ChevronLeft, Settings, HelpCircle, LogOut
+  ChevronLeft, Settings, Gift, UserCog
 } from 'lucide-react'
 import { useMobileMenu } from '@/hooks/useApp'
 
@@ -16,6 +16,8 @@ const sidebarLinks = [
   { href: '/admin/calendar', icon: CalendarDays, labelKey: 'calendar' },
   { href: '/admin/calendar-management', icon: Settings, labelKey: 'calendarManagement' },
   { href: '/admin/new', icon: PlusCircle, labelKey: 'newBooking' },
+  { href: '/admin/rewards', icon: Gift, labelKey: 'rewards' },
+  { href: '/admin/users', icon: UserCog, labelKey: 'users' },
 ]
 
 export function AdminSidebar() {
