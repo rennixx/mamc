@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import { Signature } from './Signature'
 
 // Social icon components (using SVG to avoid deprecated lucide-react icons)
 const InstagramIcon = ({ className }: { className?: string }) => (
@@ -260,11 +261,18 @@ export function Footer() {
             opacity: isVisible ? 1 : 0,
             transition: 'opacity 500ms ease 500ms',
           }}
-          className="mt-8 md:mt-10 pt-5 md:pt-6 border-t border-cream-400/20 text-center"
+          className="mt-8 md:mt-10 pt-5 md:pt-6 border-t border-cream-400/20"
         >
-          <p className="text-cream-300 text-xs md:text-sm font-sans">
-            {t('copyright', { year: new Date().getFullYear() })}
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4">
+            <p className="text-cream-300 text-xs md:text-sm font-sans">
+              {t('copyright', { year: new Date().getFullYear() })}
+            </p>
+            <span className="hidden md:inline text-cream-400/50">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-cream-400/70 text-xs font-sans">Made By</span>
+              <Signature className="h-7 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
         </div>
       </div>
     </footer>
